@@ -16,7 +16,7 @@ export default function HeaderBox(props: THeaderProps) {
   return (
     <>
         <Link href='/' className='inline-block'>
-            <Image src='/images/logo-dark.png' width={150} height={50} alt='Site Logo' />
+            <Image src='/images/logo-color.png' width={150} height={50} alt='Site Logo' />
         </Link>
         <Typography className='mb-[1px]' mt={2} variant='subtitle1'>{header}</Typography>
         <Typography variant='body2'>{subheader}</Typography>
