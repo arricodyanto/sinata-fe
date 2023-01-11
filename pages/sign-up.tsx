@@ -4,6 +4,7 @@ import React from 'react'
 import HeaderBox from '../components/molecules/HeaderBox'
 import CoverSide from '../components/molecules/CoverSide'
 import SignUpForm from '../components/organism/SignUpForm'
+import Link from 'next/link'
 
 export default function SignUp() {
   return (
@@ -17,7 +18,7 @@ export default function SignUp() {
             lg: 1100,
             },
         }}>
-            <Box my={9} gridColumn={2} className="border rounded-md bg-white shadow-sm">
+            <Box my={9} gridColumn={2} className="border rounded-md bg-white shadow-sm mb-4">
                 <Grid container py={4}>
                     <Grid item lg={6} sm={6} px={4}>
                         <HeaderBox header='Halo, Civitas Akademika!' subheader='Silakan melakukan proses pendaftaran untuk bisa melakukan ajuan pelayanan.' />
@@ -32,6 +33,9 @@ export default function SignUp() {
                 </Grid>
             </Box>
         </Container>
+        <Box className='grid place-items-center'>
+            <Typography variant='body2' className='text-gray-500'>Sudah memiliki akun? <Link href='/sign-in' className='text-sky-700 underline'>Sign in</Link></Typography>
+        </Box>
     </>
   )
 }
