@@ -33,7 +33,7 @@ export default function SignUp() {
                 </Grid>
             </Box>
         </Container>
-        <Box className='grid place-items-center'>
+        <Box className='grid place-items-center mb-4'>
             <Typography variant='body2' className='text-gray-500'>Sudah memiliki akun? <Link href='/sign-in' className='text-sky-700 underline'>Sign in</Link></Typography>
         </Box>
     </>
