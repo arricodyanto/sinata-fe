@@ -58,9 +58,9 @@ export default function Appnav(props: any) {
                         <React.Fragment key={anchor}>
                           <Button variant='outlined' onClick={toggleDrawer(anchor, true)} sx={{ color: trigger? 'white' : 'primary', borderColor: 'secondary'}}><MenuIcon/></Button>
                           <Drawer anchor={anchor} open={drawer[anchor]} onClose={toggleDrawer(anchor, false)} PaperProps={{ sx: {backgroundColor: '#323742'}}}>
-                            <Box className='pt-4 text-gray-100' sx={{ width: 240 }} role="presentation" onClick={toggleDrawer(anchor, false)} onKeyDown={toggleDrawer(anchor, false)}>
+                            <Box className='pt-4 text-light' sx={{ width: 240 }} role="presentation" onClick={toggleDrawer(anchor, false)} onKeyDown={toggleDrawer(anchor, false)}>
                               <Typography variant='h6' className='' sx={{display:'flex', justifyContent:'center', alignItems:'center', fontSize: 18}}>SINATA</Typography>
-                              <Divider className='pt-5 border-gray-600' />
+                              <Divider className='pt-5' />
                               <List>
                                 <ListItem>
                                   <ListItemButton>
