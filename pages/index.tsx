@@ -26,19 +26,19 @@ export default function Home() {
             <Grid item xs={4}>
               <Link href="/" className='grid place-items-center align-middle hover:brightness-125'>
                 <GroupsRoundedIcon color='primary' sx={{ fontSize: { xs: 50, sm: 40} }}/>
-                <Typography variant='h6' className='font-bold' sx={{display: {xs: 'none', sm: 'block'}}}>Layanan Hubungan Masyarakat</Typography>
+                <Typography variant='h6' className='font-bold text-center' sx={{display: {xs: 'none', sm: 'block'}}}>Layanan Hubungan Masyarakat</Typography>
               </Link>
             </Grid>
             <Grid item xs={4}>
               <Link href='/' className='grid place-items-center align-middle hover:brightness-125'>
                 <CloudUploadIcon color='primary' sx={{ fontSize: { xs: 50, sm: 40} }}/>
-                <Typography variant='h6' className='font-bold'sx={{display: {xs: 'none', sm: 'block'}}}>Layanan Publikasi</Typography>
+                <Typography variant='h6' className='font-bold text-center'sx={{display: {xs: 'none', sm: 'block'}}}>Layanan Publikasi</Typography>
               </Link>
             </Grid>
             <Grid item xs={4}>
               <Link href='/' className='grid place-items-center align-middle hover:brightness-125'>
                 <PermMediaRoundedIcon color='primary' sx={{ fontSize: { xs: 50, sm: 40} }}/>
-                <Typography variant='h6' className='font-bold'sx={{display: {xs: 'none', sm: 'block'}}}>Layanan Media</Typography>
+                <Typography variant='h6' className='font-bold text-center'sx={{display: {xs: 'none', sm: 'block'}}}>Layanan Media</Typography>
               </Link>
             </Grid>
           </Grid>
