@@ -3,7 +3,7 @@ import Appnav from '../components/organism/Appnav'
 import { Box, Container, Grid, Paper, Stack, Typography } from '@mui/material'
 import Image from 'next/image'
 import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
-import PublishRoundedIcon from '@mui/icons-material/PublishRounded';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import PermMediaRoundedIcon from '@mui/icons-material/PermMediaRounded';
 import Link from 'next/link';
 
@@ -21,23 +21,23 @@ export default function Home() {
         <Image src='/images/hero-5.jpg' alt="Hero's Site" layout='fill' objectFit='cover' className='pt-0 brightness-[0.3]'/>
       </Box>      
       <Container className='px-5'>
-        <Paper variant='outlined' className='h-28 -translate-y-9 shadow-lg rounded-xl p-5 px-4'>
-          <Grid container spacing={2}>
-            <Grid item sm={4}>
-              <Link href="/" className='grid justify-center place-items-center'>
-                <GroupsRoundedIcon color='primary' fontSize='large'/>
+        <Paper variant='outlined' className='-translate-y-14 shadow-lg rounded-xl p-5 px-4'>
+          <Grid container spacing={2} className='px-5'>
+            <Grid item xs={4}>
+              <Link href="/" className='grid place-items-center align-middle hover:brightness-125'>
+                <GroupsRoundedIcon color='primary' sx={{ fontSize: { xs: 50, sm: 40} }}/>
                 <Typography variant='h6' className='font-bold' sx={{display: {xs: 'none', sm: 'block'}}}>Layanan Hubungan Masyarakat</Typography>
               </Link>
             </Grid>
-            <Grid item sm={4}>
-              <Link href='/' className='grid justify-center place-items-center'>
-                <PublishRoundedIcon color='primary' fontSize='large'/>
+            <Grid item xs={4}>
+              <Link href='/' className='grid place-items-center align-middle hover:brightness-125'>
+                <CloudUploadIcon color='primary' sx={{ fontSize: { xs: 50, sm: 40} }}/>
                 <Typography variant='h6' className='font-bold'sx={{display: {xs: 'none', sm: 'block'}}}>Layanan Publikasi</Typography>
               </Link>
             </Grid>
-            <Grid item sm={4}>
-              <Link href='/' className='grid justify-center place-items-center'>
-                <PermMediaRoundedIcon color='primary'  fontSize='large'/>
+            <Grid item xs={4}>
+              <Link href='/' className='grid place-items-center align-middle hover:brightness-125'>
+                <PermMediaRoundedIcon color='primary' sx={{ fontSize: { xs: 50, sm: 40} }}/>
                 <Typography variant='h6' className='font-bold'sx={{display: {xs: 'none', sm: 'block'}}}>Layanan Media</Typography>
               </Link>
             </Grid>
