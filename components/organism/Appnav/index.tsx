@@ -50,7 +50,7 @@ export default function Appnav(props: any) {
     <>
         <ElevationScroll>
             <AppBar elevation={0} sx={{ backgroundColor: trigger ? "primary" : "transparent", boxShadow: trigger ? 3 : 0}} className='transition-all duration-500 ease-in-out'>
-              <Toolbar sx={{height: 70}}>
+              <Toolbar sx={{height: {xs: 70, sm: 80, lg: 70}}}>
                 <Container>
                   <Grid container spacing={1} alignItems='center' className='relative'>
                     <Grid item xs={2} sx={{ display: {xs: 'flex', sm: 'none' }}}>
@@ -60,7 +60,7 @@ export default function Appnav(props: any) {
                           <Drawer anchor={anchor} open={drawer[anchor]} onClose={toggleDrawer(anchor, false)} PaperProps={{ sx: {backgroundColor: '#323742'}}}>
                             <Box className='pt-4 text-light' sx={{ width: 240 }} role="presentation" onClick={toggleDrawer(anchor, false)} onKeyDown={toggleDrawer(anchor, false)}>
                               <Typography variant='h6' className='' sx={{display:'flex', justifyContent:'center', alignItems:'center', fontSize: 18}}>SINATA</Typography>
-                              <Divider className='pt-5' />
+                              <Divider className='pt-5 border-gray-600' />
                               <List>
                                 <ListItem>
                                   <ListItemButton>
