@@ -1,7 +1,6 @@
 import { Stack, Typography } from '@mui/material'
 import Image from 'next/image'
 import React from 'react'
-import { StackProps } from '@mui/material'
 
 type TCoverSideProps = {
     src: string,
