@@ -14,6 +14,12 @@ export default function DaisyCarousel() {
         <Box className='carousel-item'>
             <EventCard eventDate='14 Jan 2023' eventTime='11:00' eventImage='/images/hero-3.jpg' eventTitle='Event 3' eventDesc='Lorem, ipsum dolor sit amet consectetur adipisicing.' eventLink='/'/>
         </Box>
+        <Box className='carousel-item'>
+            <EventCard eventDate='15 Jan 2023' eventTime='13:00' eventImage='/images/hero-4.jpg' eventTitle='Event 4' eventDesc='Lorem, ipsum dolor sit amet consectetur adipisicing.' eventLink='/'/>
+        </Box>
+        <Box className='carousel-item'>
+            <EventCard eventDate='18 Jan 2023' eventTime='09:30' eventImage='/images/hero-5.jpg' eventTitle='Event 5' eventDesc='Lorem, ipsum dolor sit amet consectetur adipisicing.' eventLink='/'/>
+        </Box>
     </Box>
   )
 }

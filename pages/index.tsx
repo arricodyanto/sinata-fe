@@ -46,12 +46,21 @@ export default function Home() {
               </Grid>
             </Grid>
           </Paper>
-          <Box sx={{ maxWidth: {xs: 350, sm: 700, lg: 1200}}}>
-            <Paper variant='outlined'>
-              {/* <EventCarousel /> */}
-              <DaisyCarousel />
-            </Paper>
-          </Box>
+        </Container>
+        <Container sx={{width: {xs: 360, sm: 760, lg: 1280}}}>
+          <Paper variant='outlined' className='shadow-md rounded-xl p-5 px-4'>
+            <Grid container spacing={2}>
+              <Grid item xs={12} md={5}>
+                <Stack spacing={2} className='p-5'>
+                  <Typography variant='h5' className='font-bold'>Berita Terbaru</Typography>
+                </Stack>
+              </Grid>
+              <Grid item xs={12} md={7}>
+                {/* <EventCarousel /> */}
+                <DaisyCarousel />
+              </Grid>
+            </Grid>
+          </Paper>
         </Container>
       </Box>
     </>
