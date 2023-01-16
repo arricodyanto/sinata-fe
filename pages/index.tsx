@@ -8,6 +8,7 @@ import PermMediaRoundedIcon from '@mui/icons-material/PermMediaRounded';
 import Link from 'next/link';
 import EventCarousel from '../components/organism/EventCarousel';
 import DaisyCarousel from '../components/organism/DaisyCarousel';
+import EventCalendar from '../components/organism/EventCalendar';
 
 export default function Home() {
   return (
@@ -23,7 +24,7 @@ export default function Home() {
         <Image src='/images/hero-5.jpg' alt="Hero's Site" layout='fill' objectFit='cover' className='pt-0 brightness-[0.3]'/>
       </Box>      
       <Box className='bg-white pb-20'>
-        <Container className='px-5'>
+        <Container sx={{width: {xs: 380, sm: 760, lg: 1280}}}>
           <Paper variant='outlined' className='-translate-y-14 xs:-translate-y-9 shadow-lg rounded-xl p-5 px-4'>
             <Grid container spacing={2} className='px-5'>
               <Grid item xs={4}>
@@ -47,17 +48,21 @@ export default function Home() {
             </Grid>
           </Paper>
         </Container>
-        <Container sx={{width: {xs: 360, sm: 760, lg: 1280}}}>
+        <Container sx={{width: {xs: 380, sm: 760, lg: 1280}}}>
           <Paper variant='outlined' className='shadow-md rounded-xl p-5 px-4'>
             <Grid container spacing={2}>
               <Grid item xs={12} md={5}>
-                <Stack spacing={2} className='p-5'>
-                  <Typography variant='h5' className='font-bold'>Berita Terbaru</Typography>
+                <Stack spacing={2}>
+                  <Typography variant='h5' className='font-bold mb-2' color='primary'>Kalendar Agenda</Typography>
+                  <EventCalendar />
                 </Stack>
               </Grid>
               <Grid item xs={12} md={7}>
                 {/* <EventCarousel /> */}
-                <DaisyCarousel />
+                <Box>
+                  <Typography variant='h5' className='font-bold mb-2' color='primary'>Agenda Terkini</Typography>
+                  <DaisyCarousel />
+                </Box>
               </Grid>
             </Grid>
           </Paper>
