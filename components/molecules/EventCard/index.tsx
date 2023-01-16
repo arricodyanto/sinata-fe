@@ -32,7 +32,7 @@ export default function EventCard(props: TEventCard) {
             </Typography>}
         />
         <CardMedia component='img' height='128' image={eventImage} alt='Event Image' />
-        <CardContent sx={{ height: 120}}>
+        <CardContent sx={{ height: 120 }}>
             <Typography variant='body1' color='text.primary' className='mb-1 truncate'>{eventTitle}</Typography>
             <Typography variant='body2' color='text.secondary' className='leading-[1rem] line-clamp-3'>{eventDesc}</Typography>
         </CardContent>
