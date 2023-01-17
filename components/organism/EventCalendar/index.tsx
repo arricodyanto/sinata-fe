@@ -1,8 +1,8 @@
 import React from 'react'
-import dayjs, {Dayjs} from 'dayjs'
+import dayjs, { Dayjs } from 'dayjs'
 import { LocalizationProvider, StaticDatePicker } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { Alert, Box, Button, CardContent, Divider, Modal, TextField, Typography } from '@mui/material';
+import { Alert, Badge, Box, Button, CardContent, Divider, Modal, TextField, Typography } from '@mui/material';
 import 'react-calendar/dist/Calendar.css';
 import event from '../../../json/events.json'
 import EventModalItems from '../EventModalItems';
@@ -40,17 +40,23 @@ export default function EventCalendar() {
        }
      }
     }
-
+    
   return (
     <>
-     <LocalizationProvider dateAdapter={AdapterDayjs}>
+     <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale='id'>
          <StaticDatePicker
             // orientation='landscape'
+            className='w-80 h-[21rem]'
             displayStaticWrapperAs='desktop'
             openTo='day'
             value={date}
             onChange={handleDate}
             renderInput={(params) => <TextField {...params} />}
+            componentsProps={{
+                actionBar: {
+                    actions: ['today'],
+                },
+            }}
         />
         <Modal 
             open={open} 

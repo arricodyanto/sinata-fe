@@ -54,7 +54,9 @@ export default function Home() {
               <Grid item xs={12} md={5}>
                 <Stack spacing={2}>
                   <Typography variant='h5' className='font-bold mb-2' color='primary'>Kalendar Agenda</Typography>
-                  <EventCalendar />
+                  <Box className='justify-center flex'>
+                    <EventCalendar />
+                  </Box>
                 </Stack>
               </Grid>
               <Grid item xs={12} md={7}>
