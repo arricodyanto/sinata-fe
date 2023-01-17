@@ -3,6 +3,7 @@
         "id": 1,
         "title": "Event 1",
         "date": "1/1/2023",
+        "sdate": 1,
         "description": "Event 1 Lorem, ipsum dolor sit amet consectetur adipisicing.",
         "image": "/images/hero-1.jpg",
         "link": "/"
@@ -10,7 +11,8 @@
     {
         "id": 2,
         "title": "Event 2",
-        "date": "1/2/2023",
+        "date": "2/1/2023",
+        "sdate": 2,
         "description": "Event 2 Lorem, ipsum dolor sit amet consectetur adipisicing.",
         "image": "/images/hero-2.jpg",
         "link": "/"
@@ -18,7 +20,8 @@
     {
         "id": 3,
         "title": "Event 3",
-        "date": "1/2/2023",
+        "date": "2/1/2023",
+        "sdate": 2,
         "description": "Event 3 Lorem, ipsum dolor sit amet consectetur adipisicing.",
         "image": "/images/hero-3.jpg",
         "link": "/"
@@ -26,7 +29,8 @@
     {
         "id": 4,
         "title": "Event 4",
-        "date": "1/7/2023",
+        "date": "7/1/2023",
+        "sdate": 7,
         "description": "Event 4 Lorem, ipsum dolor sit amet consectetur adipisicing.",
         "image": "/images/hero-4.jpg",
         "link": "/"
@@ -34,7 +38,8 @@
     {
         "id": 5,
         "title": "Event 5",
-        "date": "1/7/2023",
+        "date": "7/1/2023",
+        "sdate": 7,
         "description": "Event 5 Lorem, ipsum dolor sit amet consectetur adipisicing.",
         "image": "/images/hero-5.jpg",
         "link": "/"
@@ -42,7 +47,8 @@
     {
         "id": 6,
         "title": "Event 6",
-        "date": "1/7/2023",
+        "date": "7/1/2023",
+        "sdate": 7,
         "description": "Event 6 Description",
         "image": "/images/hero-6.jpg",
         "link": "/"
@@ -50,9 +56,28 @@
     {
         "id": 7,
         "title": "Event 7",
-        "date": "1/7/2023",
+        "date": "7/1/2023",
+        "sdate": 7,
         "description": "Event 7 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing",
         "image": "/images/hero-1.jpg",
+        "link": "/"
+    },
+    {
+        "id": 17,
+        "title": "Event 17",
+        "date": "17/1/2023",
+        "sdate": 17,
+        "description": "Event 7 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing",
+        "image": "/images/hero-2.jpg",
+        "link": "/"
+    },
+    {
+        "id": 18,
+        "title": "Event 18",
+        "date": "8/2/2023",
+        "sdate": 8,
+        "description": "Event 7 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing",
+        "image": "/images/hero-2.jpg",
         "link": "/"
     }
 ]
