@@ -10,6 +10,7 @@ type TFilteredDate = {
   id: number
   title: String
   date: String
+  sdate: number
   description: String
   image: String
   link: String
