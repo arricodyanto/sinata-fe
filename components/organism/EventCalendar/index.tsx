@@ -11,7 +11,7 @@ import EventModalItems from '../EventModalItems';
 
 
 export default function EventCalendar() {
-  const initialValue = dayjs('2022-04-07')
+  const initialValue = dayjs()
   const [fetchP, setFetchP] = React.useState<number[]>([])
   const requestAbortController = React.useRef<AbortController | null>(null);
   const [isLoading, setIsLoading] = React.useState(false);
