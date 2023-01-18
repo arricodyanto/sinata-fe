@@ -37,7 +37,7 @@ export default function EventModalItems(props: EventModalItemsProps) {
                     <CalendarMonthOutlinedIcon sx={{ fontSize: 10}}/> {item.date}
                     <ScheduleOutlinedIcon sx={{ fontSize: 10, marginLeft: 1}}/> {item.date}
                 </Typography>
-                <Typography variant='caption' className='leading-[1rem] line-clamp-3 mt-1'>{item.description}</Typography>
+                <Typography variant='caption' className='leading-[1rem] line-clamp-2 mt-1'>{item.description}</Typography>
               </CardContent>
               <CardActions className='h-0 flex bottom-3 right-0 absolute'>
                   <Link href={`${item.link}`}>

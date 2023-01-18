@@ -64,20 +64,38 @@
     },
     {
         "id": 17,
-        "title": "Event 17",
+        "title": "Event 8",
         "date": "17/1/2023",
         "sdate": 17,
-        "description": "Event 7 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing",
+        "description": "Event 9 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing",
         "image": "/images/hero-2.jpg",
         "link": "/"
     },
     {
         "id": 18,
-        "title": "Event 18",
+        "title": "Event 9",
         "date": "8/2/2023",
         "sdate": 8,
-        "description": "Event 7 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing",
+        "description": "Event 9 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing",
         "image": "/images/hero-2.jpg",
+        "link": "/"
+    },
+    {
+        "id": 19,
+        "title": "Event 10",
+        "date": "21/3/2023",
+        "sdate": 8,
+        "description": "Event 10 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing",
+        "image": "/images/hero-4.jpg",
+        "link": "/"
+    },
+    {
+        "id": 20,
+        "title": "Event 11",
+        "date": "27/3/2023",
+        "sdate": 8,
+        "description": "Event 11 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing sit amet consectetur adipisicing",
+        "image": "/images/hero-1.jpg",
         "link": "/"
     }
 ]
