@@ -93,8 +93,9 @@ export default function EventCalendar() {
     setHighlightedDays([]);
     fetchHighlightedDays(date, fetchP);
     const getCurrentMonth = date.month()+1;
-    filterEvent(getCurrentMonth)
-    // console.log(currentMonth)
+    const getCurrentYear = date.year()
+    filterEvent(getCurrentMonth, getCurrentYear)
+    // console.log(getCurrentYear)
   };
 
   const handleDateChange = (newValue:any) => {
@@ -118,7 +119,7 @@ export default function EventCalendar() {
     }
   }
 
-  function filterEvent(getCurrentMonth:number) {
+  function filterEvent(getCurrentMonth:number, getCurrentYear:number) {
     // get array of object from db (json)
     const jsonValue = event.map((item) => item.date)
     // console.log(jsonValue)
@@ -127,12 +128,20 @@ export default function EventCalendar() {
     const currentMonth = getCurrentMonth
     // console.log(currentMonth)
 
+    // get current year from handleMonthChange
+    const currentYear = getCurrentYear
+    // console.log(currentYear)
+
     // filter array of object from db (json) by current month
     const filterMonthdb = jsonValue.filter((item) => item.split('/')[1] == currentMonth.toString())
     // const splitDate = filterMonthdb.map((item) => item.split('/')[1] == currentMonth.toString())
+
+    // filter array from filterMonthdb by current year
+    const filterYeardb = filterMonthdb.filter((item) => item.split('/')[2] == currentYear.toString())
+    // console.log(filterYeardb)
     
     // get only date from array of object from db (json)
-    const stringDate = filterMonthdb.map((item) => item.split('/')[0])
+    const stringDate = filterYeardb.map((item) => item.split('/')[0])
 
     // convert date string to number
     const highlightDays = stringDate.map(Number)
