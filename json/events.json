@@ -97,5 +97,14 @@
         "description": "Event 11 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing sit amet consectetur adipisicing",
         "image": "/images/hero-1.jpg",
         "link": "/"
+    },
+    {
+        "id": 20,
+        "title": "Event 12",
+        "date": "9/1/2024",
+        "sdate": 8,
+        "description": "Event 12 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing sit amet consectetur adipisicing",
+        "image": "/images/hero-3.jpg",
+        "link": "/"
     }
 ]
