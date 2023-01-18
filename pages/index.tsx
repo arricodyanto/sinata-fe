@@ -9,6 +9,7 @@ import Link from 'next/link';
 import EventCarousel from '../components/organism/EventCarousel';
 import DaisyCarousel from '../components/organism/DaisyCarousel';
 import EventCalendar from '../components/organism/EventCalendar';
+import EventDynamic from '../components/organism/EventDynamic';
 
 export default function Home() {
   return (
@@ -56,7 +57,8 @@ export default function Home() {
                   <Typography variant='h5' className='font-bold mb-2' color='primary'>Kalendar Agenda</Typography>
                   <Box className='justify-center flex'>
                     <EventCalendar />
-                    {/* <PickerCalendar /> */}
+                    {/* <EventtCalendar /> */}
+                    {/* <EventDynamic /> */}
                   </Box>
                 </Stack>
               </Grid>
