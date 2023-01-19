@@ -12,14 +12,14 @@ export default function SignUp() {
         <Head>
             <title>Create a New Account - Sinata</title>
         </Head>
-        <Box className='grid place-items-center mt-12 h-[100vh] bg-light'>
+        <Box className='grid place-items-center bg-light' sx={{height: {xs: '100vh'}}}>
             <Container sx={{ width: {
                 xs: 360,
                 sm: 760,
                 lg: 1100,
                 },
             }}>
-                <Box my={9} gridColumn={2} className="border rounded-md bg-white shadow-sm -mb-[10rem]">
+                <Box my={9} gridColumn={2} className="border rounded-md bg-white shadow-sm">
                     <Grid container py={4}>
                         <Grid item lg={6} sm={6} px={4}>
                             <HeaderBox header='Halo, Civitas Akademika!' subheader='Silakan melakukan proses pendaftaran untuk bisa melakukan ajuan pelayanan.' />
@@ -34,7 +34,7 @@ export default function SignUp() {
                     </Grid>
                 </Box>
             </Container>
-            <Box className='grid place-items-center'>
+            <Box sx={{marginTop: {xs: '-5rem', sm: '-26rem', lg: '-5rem'}}}>
                 <Typography variant='body2' className='text-gray-500'>Sudah memiliki akun? <Link href='/sign-in' className='text-sky-700 underline'>Sign in</Link></Typography>
             </Box>
         </Box>
