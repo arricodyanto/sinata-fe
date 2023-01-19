@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Appnav from '../components/organism/Appnav'
-import { Box, Container, Grid, Paper, Stack, Typography } from '@mui/material'
+import { Box, Button, Container, Grid, Paper, Stack, Typography } from '@mui/material'
 import Image from 'next/image'
 import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
@@ -10,6 +10,8 @@ import EventCarousel from '../components/organism/EventCarousel';
 import DaisyCarousel from '../components/organism/DaisyCarousel';
 import EventCalendar from '../components/organism/EventCalendar';
 import EventDynamic from '../components/organism/EventDynamic';
+import PengumumanContent from '../components/organism/PengumumanContent';
+import Footer from '../components/organism/Footer';
 
 export default function Home() {
   return (
@@ -24,7 +26,7 @@ export default function Home() {
         <Appnav />
         <Image src='/images/hero-5.jpg' alt="Hero's Site" layout='fill' objectFit='cover' className='pt-0 brightness-[0.3]'/>
       </Box>      
-      <Box className='bg-white pb-20'>
+      <Box className='bg-white'>
         <Container sx={{width: {xs: 380, sm: 760, lg: 1280}}}>
           <Paper variant='outlined' className='-translate-y-14 xs:-translate-y-9 shadow-lg rounded-xl p-5 px-4'>
             <Grid container spacing={2} className='px-5'>
@@ -67,11 +69,25 @@ export default function Home() {
                 <Box>
                   <Typography variant='h5' className='font-bold mb-2' color='primary'>Agenda Terkini</Typography>
                   <DaisyCarousel />
+                  <Box className='flex justify-center mt-6'>
+                    <Button variant='outlined' color='primary' size='small' className='rounded-lg capitalize'>Lihat Lainnya</Button>
+                  </Box>
+
                 </Box>
               </Grid>
             </Grid>
+            <Box className='mt-4'>
+              <Typography variant='h5' className='font-bold mb-6' color='primary'>Pengumuman Sistem</Typography>
+              <Grid container spacing={2} className='my-4 -mx-1'>
+                <PengumumanContent />
+              </Grid>
+              <Box className='flex justify-center mb-8'>
+                <Button variant='outlined' color='primary' size='medium' className='capitalize rounded-lg'>Lihat Lainnya</Button>
+              </Box>
+            </Box>
           </Paper>
         </Container>
+        <Footer />
       </Box>
     </>
   )
