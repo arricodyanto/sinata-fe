@@ -28,24 +28,16 @@ export default function EventCalendar() {
     description: "",
     image: "",
     link: ""
-}])
+  }])
 
-//   console.log(highlightedDays);
-
-  function getRandomNumber(min: number, max: number) {
-    return Math.round(Math.random() * (max - min) + min);
-  }
-  
-  /**
-   * Mimic fetch with abort controller https://developer.mozilla.org/en-US/docs/Web/API/AbortController/abort
-   * ⚠️ No IE11 support
-   */
   function fakeFetch(date: Dayjs, { signal }: { signal: AbortSignal }, highlightDays: number[]) {
     return new Promise<{ daysToHighlight: number[] }>((resolve, reject) => {
       const timeout = setTimeout(() => {
         // const daysInMonth = date.daysInMonth();
-        const daysToHighlight = highlightDays
-        // console.log(daysToHighlight);
+        const daysToHighlight = highlightDays;
+        
+        const dateValue = value?.format('D-M-YYYY')
+        console.log(highlightDays)
   
         resolve({ daysToHighlight });
       }, 500);

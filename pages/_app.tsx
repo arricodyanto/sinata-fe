@@ -12,10 +12,7 @@ const theme = createTheme({
     }
   },
   typography: {
-    fontFamily: "'IBM Plex Sans', sans-serif",
-    body2: {
-      color: '#4b5563'
-    }
+    fontFamily: "'IBM Plex Sans', sans-serif"
   }
 })
 
