@@ -77,7 +77,7 @@ export default function Appnav(props: any) {
                                     <ListItemIcon>
                                       <InfoOutlinedIcon sx={{color: '#f3f4f6'}} />
                                     </ListItemIcon>
-                                    <Link href='/'>
+                                    <Link href='/about'>
                                       <Typography variant='body1'>Tentang</Typography>
                                     </Link>
                                   </ListItemButton>
@@ -133,7 +133,7 @@ export default function Appnav(props: any) {
                         <Link href='/' className='text-light'>
                           <Typography variant='body1' className='hover:brightness-90 hover:text-underline underline-offset-8'>Beranda</Typography>
                         </Link>
-                        <Link href='/' className='text-light'>
+                        <Link href='/about' className='text-light'>
                           <Typography variant='body1' className='hover:brightness-90 hover:text-underline underline-offset-8'>Tentang</Typography>
                         </Link>
                         <Link href='/' className='text-light'>

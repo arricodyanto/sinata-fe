@@ -4,7 +4,7 @@ import EventCard from '../../molecules/EventCard'
 
 export default function DaisyCarousel() {
   return (
-    <Box className='carousel carousel-center p-2' gap={2}>
+    <Box className='carousel carousel-center py-2 px-6' gap={2}>
         <Box className='carousel-item'>
             <EventCard eventDate='13 Jan 2023' eventTime='08:00' eventImage='/images/hero-1.jpg' eventTitle='Event 1' eventDesc='Lorem, ipsum dolor sit amet consectetur adipisicing.' eventLink='/'/>
         </Box>

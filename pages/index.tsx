@@ -52,7 +52,7 @@ export default function Home() {
           </Paper>
         </Container>
         <Container sx={{width: {xs: 380, sm: 760, lg: 1280}}}>
-          <Paper variant='outlined' className='shadow-md rounded-xl p-5 px-4'>
+          {/* <Paper variant='outlined' className='shadow-md rounded-xl p-5 px-4'> */}
             <Grid container spacing={2}>
               <Grid item xs={12} md={5}>
                 <Stack spacing={2}>
@@ -85,7 +85,7 @@ export default function Home() {
                 <Button variant='outlined' color='primary' size='medium' className='capitalize rounded-lg'>Lihat Lainnya</Button>
               </Box>
             </Box>
-          </Paper>
+          {/* </Paper> */}
         </Container>
         <Footer />
       </Box>
