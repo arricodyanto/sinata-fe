@@ -69,7 +69,7 @@ export default function Home() {
                 <Box>
                   <Typography variant='h5' className='font-bold mb-2' color='primary'>Agenda Terkini</Typography>
                   <DaisyCarousel />
-                  <Box className='flex justify-center mt-6'>
+                  <Box className='flex justify-center mt-6 mb-10'>
                     <Button variant='outlined' color='primary' size='small' className='rounded-lg capitalize'>Lihat Lainnya</Button>
                   </Box>
 
