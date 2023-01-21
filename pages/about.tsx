@@ -1,10 +1,10 @@
-import { Box, Card, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material'
+import { Box, Card, CardContent, CardMedia, Container, Grid, IconButton, Typography } from '@mui/material'
 import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
 import PageTitle from '../components/atoms/PageTitle'
 import HeaderPages from '../components/molecules/HeaderPages'
-import Appnav from '../components/organism/Appnav'
+import StaffCardItem from '../components/molecules/StaffCardItem'
 import Footer from '../components/organism/Footer'
 
 export default function About() {
@@ -31,25 +31,18 @@ export default function About() {
                     </Grid>
                 </Grid>
             </Container>
-            {/* <Box className='bg-primary'>
+            <Box className='bg-primary pb-20'>
                 <Container sx={{width: {xs: 380, sm: 760, lg: 1280}}}>
                     <Box className='pt-10 pb-4'>
                         <Typography variant='h5' className='font-bold text-white'>Our Staff</Typography>
                     </Box>
                     <Box>
                         <Grid container spacing={2}>
-                            <Grid item xs={6} sm={4} lg={3}>
-                                <Card sx={{ maxWidth: '100%'}}>
-                                    <CardMedia sx={{ height: 150 }} image='/images/card-people.jpeg' title='People Names' />
-                                    <CardContent>
-                                        Lorem, ipsum dolor.
-                                    </CardContent>
-                                </Card>
-                            </Grid>
+                            <StaffCardItem />
                         </Grid>
                     </Box>
                 </Container>
-            </Box> */}
+            </Box>
         <Footer />
         </Box>
     </>
