@@ -67,16 +67,18 @@ export default function About() {
                             <Paper elevation={1} className='p-8 rounded-3xl shadow-lg mt-4'>
                                 <Grid container spacing={2}>
                                     <Grid item xs={12} lg={4}>
-                                        <Button variant='contained' className='bg-primary text-white' startIcon={<CallIcon />} fullWidth disabled>(0271) 646994</Button>
+                                        <Link href='tel:0271646994' target='_blank'>
+                                            <Button variant='contained' color='primary' startIcon={<CallIcon />} fullWidth >(0271) 646994</Button>
+                                        </Link>
                                     </Grid>
                                     <Grid item xs={12} lg={4}>
                                         <Link href='https://wa.me/6285156723341' target='_blank'>
-                                            <Button variant='contained' color='success' className='text-white' startIcon={<WhatsAppIcon />} fullWidth >085156723341</Button>
+                                            <Button variant='contained' color='success' startIcon={<WhatsAppIcon />} fullWidth >085156723341</Button>
                                         </Link>
                                     </Grid>
                                     <Grid item xs={12} lg={4}>
                                         <Link href='mailto:humas@mail.uns.ac.id' target='_blank'>
-                                            <Button variant='contained' color='error' className='text-white' startIcon={<EmailIcon />} fullWidth >Mail</Button>
+                                            <Button variant='contained' color='error' startIcon={<EmailIcon />} fullWidth >Email</Button>
                                         </Link>
                                     </Grid>
                                 </Grid>
