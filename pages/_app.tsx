@@ -9,6 +9,14 @@ const theme = createTheme({
       light: '#38bdf8',
       dark: '#0284c7',
       contrastText: "#ffffff",
+    },
+    success: {
+      main: '#22c55e',
+      contrastText: "#ffffff",
+    },
+    error: {
+      main: '#ef4444',
+      contrastText: "#ffffff",
     }
   },
   typography: {

@@ -8,9 +8,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Footer() {
+    var year = new Date().getFullYear()
   return (
     <Box className=' bg-gray-800 text-white mt-12'>
-        <Container className='py-12 px-8'>
+        <Container className='pt-12 px-8'>
             <Grid container>
                 <Grid item xs={12} sm={6} className='mb-8'>
                     <Stack direction='row'>
@@ -53,6 +54,11 @@ export default function Footer() {
                     </Grid>
                 </Grid>
             </Grid>
+            <Divider className='mt-12 border-gray-700 w-screen -translate-x-[280px]' />
+            <Box className='text-center pb-4'>
+                <Typography variant='body2' className='mt-4 text-center text-xs'>&copy; {year} SINATA. All Rights Reserved.</Typography>
+                <Typography variant='caption' className='text-center text-xs'>Developed with <span className='text-primary'>hearts</span> by <Link href='https://github.com/arricodyanto' className='hover:brightness-90'>Arrico Handyanto</Link></Typography>
+            </Box>
         </Container>
     </Box>
   )

@@ -1,11 +1,15 @@
-import { Box, Card, CardContent, CardMedia, Container, Grid, IconButton, Typography } from '@mui/material'
-import Head from 'next/head'
+import { Box, Button, Card, CardContent, CardMedia, Container, Grid, IconButton, Paper, Typography } from '@mui/material'
 import Image from 'next/image'
 import React from 'react'
 import PageTitle from '../components/atoms/PageTitle'
 import HeaderPages from '../components/molecules/HeaderPages'
 import StaffCardItem from '../components/molecules/StaffCardItem'
 import Footer from '../components/organism/Footer'
+import NearMeIcon from '@mui/icons-material/NearMe';
+import CallIcon from '@mui/icons-material/Call';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import EmailIcon from '@mui/icons-material/Email';
+import Link from 'next/link'
 
 export default function About() {
   return (
@@ -33,14 +37,52 @@ export default function About() {
             </Container>
             <Box className='bg-primary pb-20'>
                 <Container sx={{width: {xs: 380, sm: 760, lg: 1280}}}>
-                    <Box className='pt-10 pb-4'>
-                        <Typography variant='h5' className='font-bold text-white'>Our Staff</Typography>
+                    <Box className='pt-10 pb-6'>
+                        <Typography variant='h5' className='font-bold text-white'>Staf Kami</Typography>
                     </Box>
                     <Box>
                         <Grid container spacing={2}>
                             <StaffCardItem />
                         </Grid>
                     </Box>
+                </Container>
+            </Box>
+            <Box>
+                <Container sx={{width: {xs: 380, sm: 760, lg: 1280}}}>
+                    <Box className='pt-10 pb-6'>
+                        <Typography variant='h5' className='font-bold text-primary'>Kontak Kami</Typography>
+                    </Box>
+                    <Grid container spacing={2}>
+                        <Grid item xs={12} sm={6}>
+                            <Typography variant='subtitle1'>Untuk informasi lebih lanjut, Anda bisa mendatangi kantor kami langsung di</Typography>
+                            <Paper elevation={1} className='p-10 rounded-3xl shadow-lg mt-4 mb-6'>
+                                <Typography variant='body1' className='text-primary mt-2'>Jalan Ir. Sutami 36 Kentingan, Jebres, Surakarta, Jawa Tengah. (Gedung Rektorat, Lantai 1)</Typography>
+                                <Link href='https://goo.gl/maps/nD3QwtjDXenjd1oH8' target='_blank'>
+                                    <Button variant='outlined' className='mt-4' endIcon={<NearMeIcon />}>Lihat Maps</Button>
+                                </Link>
+                            </Paper>
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <Typography variant='subtitle1' className='text-center font-bold'>Atau Anda bisa menghubungi Kami melalui</Typography>
+                            <Paper elevation={1} className='p-8 rounded-3xl shadow-lg mt-4'>
+                                <Grid container spacing={2}>
+                                    <Grid item xs={12} lg={4}>
+                                        <Button variant='contained' className='bg-primary text-white' startIcon={<CallIcon />} fullWidth disabled>(0271) 646994</Button>
+                                    </Grid>
+                                    <Grid item xs={12} lg={4}>
+                                        <Link href='https://wa.me/6285156723341' target='_blank'>
+                                            <Button variant='contained' color='success' className='text-white' startIcon={<WhatsAppIcon />} fullWidth >085156723341</Button>
+                                        </Link>
+                                    </Grid>
+                                    <Grid item xs={12} lg={4}>
+                                        <Link href='mailto:humas@mail.uns.ac.id' target='_blank'>
+                                            <Button variant='contained' color='error' className='text-white' startIcon={<EmailIcon />} fullWidth >Mail</Button>
+                                        </Link>
+                                    </Grid>
+                                </Grid>
+                            </Paper>
+                        </Grid>
+                    </Grid>
                 </Container>
             </Box>
         <Footer />
