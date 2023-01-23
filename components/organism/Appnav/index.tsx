@@ -87,7 +87,7 @@ export default function Appnav(props: any) {
                                     <ListItemIcon>
                                       <EventOutlinedIcon sx={{color: '#f3f4f6'}} />
                                     </ListItemIcon>
-                                    <Link href='/'>
+                                    <Link href='/events'>
                                       <Typography variant='body1'>Agenda</Typography>
                                     </Link>
                                   </ListItemButton>
@@ -97,7 +97,7 @@ export default function Appnav(props: any) {
                                     <ListItemIcon>
                                       <NoteAltOutlinedIcon sx={{color: '#f3f4f6'}} />
                                     </ListItemIcon>
-                                    <Link href='/'>
+                                    <Link href='/guidelines'>
                                       <Typography variant='body1'>Panduan</Typography>
                                     </Link>
                                   </ListItemButton>
@@ -136,10 +136,10 @@ export default function Appnav(props: any) {
                         <Link href='/about' className='text-light'>
                           <Typography variant='body1' className='hover:brightness-90 hover:text-underline underline-offset-8'>Tentang</Typography>
                         </Link>
-                        <Link href='/' className='text-light'>
+                        <Link href='/events' className='text-light'>
                           <Typography variant='body1' className='hover:brightness-90 hover:text-underline underline-offset-8'>Agenda</Typography>
                         </Link>
-                        <Link href='/' className='text-light'>
+                        <Link href='/guidelines' className='text-light'>
                           <Typography variant='body1' className='hover:brightness-90 hover:text-underline underline-offset-8'>Panduan</Typography>
                         </Link>
                         <Link href='/sign-in' className='text-light'>

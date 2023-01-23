@@ -54,7 +54,7 @@ export default function Footer() {
                     </Grid>
                 </Grid>
             </Grid>
-            <Divider className='mt-12 border-gray-700 w-screen -translate-x-[280px]' />
+            <Divider className='mt-12 border-gray-700 left-0' />
             <Box className='text-center pb-4'>
                 <Typography variant='body2' className='mt-4 text-center text-xs'>&copy; {year} SINATA. All Rights Reserved.</Typography>
                 <Typography variant='caption' className='text-center text-xs'>Developed with <span className='text-primary'>hearts</span> by <Link href='https://github.com/arricodyanto' className='hover:brightness-90'>Arrico Handyanto</Link></Typography>

@@ -1,25 +1,20 @@
 import { Box } from '@mui/material'
 import React from 'react'
 import EventCard from '../../molecules/EventCard'
+import event from '../../../json/events.json'
 
 export default function DaisyCarousel() {
   return (
     <Box className='carousel carousel-center py-2 px-6' gap={2}>
-        <Box className='carousel-item'>
-            <EventCard eventDate='13 Jan 2023' eventTime='08:00' eventImage='/images/hero-1.jpg' eventTitle='Event 1' eventDesc='Lorem, ipsum dolor sit amet consectetur adipisicing.' eventLink='/'/>
-        </Box>
-        <Box className='carousel-item'>
-            <EventCard eventDate='13 Jan 2023' eventTime='17:00' eventImage='/images/hero-2.jpg' eventTitle='Event 2' eventDesc='Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quaerat repellendus aliquid minima deserunt quae et officia molestiae! Reiciendis praesentium ipsam fugiat magni qui deserunt iure voluptate at dicta vero laboriosam perspiciatis, accusamus, velit harum officia error ullam architecto pariatur laudantium, dolor eligendi. Alias dignissimos distinctio a eaque quis incidunt non veritatis nemo itaque, possimus temporibus facere qui molestiae et fugiat harum nulla, odio quia id laboriosam eligendi neque ad?' eventLink='/'/>
-        </Box>
-        <Box className='carousel-item'>
-            <EventCard eventDate='14 Jan 2023' eventTime='11:00' eventImage='/images/hero-3.jpg' eventTitle='Event 3' eventDesc='Lorem, ipsum dolor sit amet consectetur adipisicing.' eventLink='/'/>
-        </Box>
-        <Box className='carousel-item'>
-            <EventCard eventDate='15 Jan 2023' eventTime='13:00' eventImage='/images/hero-4.jpg' eventTitle='Event 4' eventDesc='Lorem, ipsum dolor sit amet consectetur adipisicing.' eventLink='/'/>
-        </Box>
-        <Box className='carousel-item'>
-            <EventCard eventDate='18 Jan 2023' eventTime='09:30' eventImage='/images/hero-5.jpg' eventTitle='Event 5' eventDesc='Lorem, ipsum dolor sit amet consectetur adipisicing.' eventLink='/'/>
-        </Box>
+        <>
+            { event.map((item) =>  {
+                return (
+                    <Box key={item.id} className='carousel-item'>
+                        <EventCard eventDate={item.date} eventTime={item.date} eventImage={item.image} eventTitle={item.title} eventDesc={item.description} eventLink={item.link}/>
+                    </Box>
+                )
+            })}
+        </>        
     </Box>
   )
 }
