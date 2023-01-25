@@ -15,7 +15,7 @@ export default function About() {
   return (
     <>
         <Box className='bg-white'>
-        <HeaderPages titlePage='Tentang Kami - Sistem Informasi Manajemen Pelayanan dan Berita' srcImg='/images/bg-about.jpg'/>
+            <HeaderPages titlePage='Tentang Kami - Sistem Informasi Manajemen Pelayanan dan Berita' srcImg='/images/bg-about.jpg'/>
             <Container sx={{width: {xs: 380, sm: 760, lg: 1280}, marginBottom: 10}}>
                 <PageTitle title='Tentang Kami' />
                 <Image src='/images/dokumentasi-1.jpg' alt="Hero's Page" layout='responsive' width={200} height={100} className='rounded-lg shadow-lg'/>
@@ -87,7 +87,7 @@ export default function About() {
                     </Grid>
                 </Container>
             </Box>
-        <Footer />
+            <Footer />
         </Box>
     </>
   )

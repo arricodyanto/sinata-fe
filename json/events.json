@@ -99,12 +99,39 @@
         "link": "/"
     },
     {
-        "id": 20,
+        "id": 21,
         "title": "Event 12",
-        "date": "9/1/2024",
+        "date": "26/1/2023",
         "sdate": 8,
         "description": "Event 12 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing sit amet consectetur adipisicing",
+        "image": "/images/hero-1.jpg",
+        "link": "/"
+    },
+    {
+        "id": 22,
+        "title": "Event 13",
+        "date": "26/1/2023",
+        "sdate": 8,
+        "description": "Event 13 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing sit amet consectetur adipisicing",
+        "image": "/images/hero-2.jpg",
+        "link": "/"
+    },
+    {
+        "id": 23,
+        "title": "Event 14",
+        "date": "27/1/2023",
+        "sdate": 8,
+        "description": "Event 14 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing sit amet consectetur adipisicing",
         "image": "/images/hero-3.jpg",
+        "link": "/"
+    },
+    {
+        "id": 24,
+        "title": "Event 15",
+        "date": "27/1/2023",
+        "sdate": 8,
+        "description": "Event 15 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing sit amet consectetur adipisicing",
+        "image": "/images/hero-4.jpg",
         "link": "/"
     }
 ]
