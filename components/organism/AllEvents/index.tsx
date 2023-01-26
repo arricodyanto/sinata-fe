@@ -21,9 +21,9 @@ export default function AllEvents() {
                       {item.sifat}
                     </Typography>
                   </Box>
-                  <Box className="bg-white py-1 px-3 absolute bottom-0 right-0 m-3 rounded-md">
-                    <Typography variant="body2" className="text-gray-500 flex">
-                      <Avatar alt={item.publisher} src={item.avatar} sx={{ width: 20, height: 20 }} className='mr-1'/>
+                  <Box className="bg-white py-1 px-3 absolute bottom-0 right-0 m-3 rounded-md flex">
+                    <Avatar alt={item.publisher} src={item.avatar} sx={{ width: 20, height: 20 }} className='mr-1'/>
+                    <Typography variant="body2" className="text-gray-500">
                       {item.publisher}
                     </Typography>
                   </Box>
@@ -55,7 +55,7 @@ export default function AllEvents() {
                   </Grid>
                 </CardContent>
                 <CardActions className="px-3">
-                  <Link href="#">
+                  <Link href="/events">
                     <Button variant="text" color="primary" size="small">
                       Lihat Detail
                     </Button>
