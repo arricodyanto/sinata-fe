@@ -14,15 +14,6 @@ export default function AllEvents() {
           return (
             <Grid key={item.id} item xs={12} sm={4} className="justify-center flex" >
               <Card sx={{ width: 330 }} variant="elevation" className="rounded-xl shadow-lg border relative" >
-                {/* <CardHeader className="text-center py-3 h-7" title={ 
-                  <Typography variant="caption" color="text.primary" className="truncate">
-                    <CalendarMonthOutlinedIcon sx={{ fontSize: 10 }} />{" "}
-                    {item.date}
-                    <ScheduleOutlinedIcon sx={{ fontSize: 10, marginLeft: 1 }} />{" "}
-                    {item.time}
-                  </Typography>
-                  }
-                /> */}
                 <Box className="relative">
                   <CardMedia component="img" image={item.image} alt="Event Image" />
                   <Box className="bg-white py-0 px-1 absolute top-0 left-0 m-3 rounded-lg">
