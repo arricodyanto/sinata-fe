@@ -28,15 +28,15 @@ export default function AllEvents() {
                     </Typography>
                   </Box>
                 </Box>
-                <CardContent className="max-h-40">
+                <CardContent className="max-h-40 pb-0">
                   <Typography variant="body1" color="text.primary" className="mb-1 truncate" >
                     {item.title}
                   </Typography>
                   <Typography variant="body2" color="text.secondary" className="leading-[1rem] line-clamp-3" >
                     {item.description}
                   </Typography>
-                  <Divider className="my-4"/>
-                  <Grid container spacing={1} className="">
+                  <Divider className="mt-4 mb-2"/>
+                  <Grid container spacing={1}>
                     <Grid item xs={4} className="flex justify-center">
                       <Typography variant="caption" className="truncate text-gray-500">
                         <CalendarMonthOutlinedIcon sx={{ fontSize: 11 }} color='primary' className="mr-1" />{item.date}
