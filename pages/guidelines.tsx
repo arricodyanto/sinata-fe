@@ -7,7 +7,7 @@ import HeaderPages from '../components/molecules/HeaderPages'
 import Footer from '../components/organism/Footer'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import FaqsItem from '../components/molecules/FaqsItem'
+import FaqItems from '../components/atoms/FaqItems'
 
 export default function GuideLines() {
   return (
@@ -26,7 +26,7 @@ export default function GuideLines() {
                 <GuidelineItems />
               </Box>
               <Grid container spacing={2}>
-                  <Grid item xs={12} md={5}>
+                  <Grid item xs={12} md={5} className='mb-8'>
                       <Typography variant='h6' className='font-bold mb-4' color='primary'>
                         Bantuan
                       </Typography>
@@ -45,7 +45,7 @@ export default function GuideLines() {
                       </Link>
                   </Grid>
                   <Grid item xs={12} md={7}>
-                      <FaqsItem />
+                      <FaqItems />
                   </Grid>
               </Grid>
           </Container>
