@@ -2367,6 +2367,11 @@ react-calendar@^4.0.0:
     get-user-locale "^1.2.0"
     prop-types "^15.6.0"
 
+react-daisyui@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/react-daisyui/-/react-daisyui-3.0.2.tgz#d0e9080e2c81b47f2bad5ebb2b370c2183fc40da"
+  integrity sha512-Zyhrdu4AkdqSPJ3OoeZLumDlMug/nvgQ2q20nkU7Yz96wjWXIS4795uWXM34bRZ//fYacrlmaH2lCPHWMNkXGg==
+
 react-dom@18.2.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
