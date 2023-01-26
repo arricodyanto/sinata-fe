@@ -47,7 +47,7 @@ export default function About() {
                     </Box>
                 </Container>
             </Box>
-            <Box>
+            <Box id='kontak'>
                 <Container sx={{width: {xs: 380, sm: 760, lg: 1280}}}>
                     <Box className='pt-10 pb-6'>
                         <Typography variant='h5' className='font-bold text-primary'>Kontak Kami</Typography>
