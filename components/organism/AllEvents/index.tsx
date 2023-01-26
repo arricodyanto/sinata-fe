@@ -4,6 +4,7 @@ import event from "../../../json/events.json";
 import Link from "next/link";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import ScheduleOutlinedIcon from "@mui/icons-material/ScheduleOutlined";
+import PlaceIcon from '@mui/icons-material/Place';
 
 export default function AllEvents() {
   return (
@@ -36,7 +37,7 @@ export default function AllEvents() {
                     </Typography>
                   </Box>
                 </Box>
-                <CardContent className="max-h-44">
+                <CardContent className="max-h-40">
                   <Typography variant="body1" color="text.primary" className="mb-1 truncate" >
                     {item.title}
                   </Typography>
@@ -46,7 +47,19 @@ export default function AllEvents() {
                   <Divider className="my-4"/>
                   <Grid container spacing={1} className="">
                     <Grid item xs={4} className="flex justify-center">
-                      Lorem.
+                      <Typography variant="caption" className="truncate text-gray-500">
+                        <CalendarMonthOutlinedIcon sx={{ fontSize: 11 }} color='primary' className="mr-1" />{item.date}
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={4} className="flex justify-center">
+                      <Typography variant="caption" className="truncate text-gray-500">
+                        <ScheduleOutlinedIcon sx={{ fontSize: 11 }} color='primary' className="mr-1" />{item.time}
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={4} className="flex justify-center">
+                      <Typography variant="caption" className="truncate text-gray-500">
+                        <PlaceIcon sx={{ fontSize: 12 }} color='primary' className="mr-1" />{item.location}
+                      </Typography>
                     </Grid>
                   </Grid>
                 </CardContent>
