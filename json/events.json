@@ -6,7 +6,12 @@
     "sdate": 1,
     "description": "Event 1 Lorem, ipsum dolor sit amet consectetur adipisicing.",
     "image": "/images/hero-1.jpg",
-    "link": "/"
+    "link": "/",
+    "location": "Location 1",
+    "time": "10:00 WIB",
+    "publisher": "Dave Johnson",
+    "avatar": "/images/avatar/avatar-6.jpg",
+    "sifat": "🌐 Terbuka untuk Umum"
   },
   {
     "id": 2,
@@ -15,7 +20,12 @@
     "sdate": 2,
     "description": "Event 2 Lorem, ipsum dolor sit amet consectetur adipisicing.",
     "image": "/images/hero-2.jpg",
-    "link": "/"
+    "link": "/",
+    "location": "Location 1",
+    "time": "10:00 WIB WIB",
+    "publisher": "Dave Johnson",
+    "avatar": "/images/avatar/avatar-6.jpg",
+    "sifat": "🌐 Terbuka untuk Umum"
   },
   {
     "id": 3,
@@ -24,7 +34,12 @@
     "sdate": 2,
     "description": "Event 3 Lorem, ipsum dolor sit amet consectetur adipisicing.",
     "image": "/images/hero-3.jpg",
-    "link": "/"
+    "link": "/",
+    "location": "Location 1",
+    "time": "10:00 WIB",
+    "publisher": "Dave Johnson",
+    "avatar": "/images/avatar/avatar-6.jpg",
+    "sifat": "🌐 Terbuka untuk Umum"
   },
   {
     "id": 4,
@@ -33,7 +48,12 @@
     "sdate": 7,
     "description": "Event 4 Lorem, ipsum dolor sit amet consectetur adipisicing.",
     "image": "/images/hero-4.jpg",
-    "link": "/"
+    "link": "/",
+    "location": "Location 1",
+    "time": "10:00 WIB",
+    "publisher": "Dave Johnson",
+    "avatar": "/images/avatar/avatar-6.jpg",
+    "sifat": "🌐 Terbuka untuk Umum"
   },
   {
     "id": 5,
@@ -42,7 +62,12 @@
     "sdate": 7,
     "description": "Event 5 Lorem, ipsum dolor sit amet consectetur adipisicing.",
     "image": "/images/hero-5.jpg",
-    "link": "/"
+    "link": "/",
+    "location": "Location 1",
+    "time": "10:00 WIB",
+    "publisher": "Dave Johnson",
+    "avatar": "/images/avatar/avatar-6.jpg",
+    "sifat": "🌐 Terbuka untuk Umum"
   },
   {
     "id": 6,
@@ -51,7 +76,12 @@
     "sdate": 7,
     "description": "Event 6 Description",
     "image": "/images/hero-6.jpg",
-    "link": "/"
+    "link": "/",
+    "location": "Location 1",
+    "time": "10:00 WIB",
+    "publisher": "Dave Johnson",
+    "avatar": "/images/avatar/avatar-6.jpg",
+    "sifat": "🌐 Terbuka untuk Umum"
   },
   {
     "id": 7,
@@ -60,7 +90,12 @@
     "sdate": 7,
     "description": "Event 7 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing",
     "image": "/images/hero-1.jpg",
-    "link": "/"
+    "link": "/",
+    "location": "Location 1",
+    "time": "10:00 WIB",
+    "publisher": "Dave Johnson",
+    "avatar": "/images/avatar/avatar-6.jpg",
+    "sifat": "🌐 Terbuka untuk Umum"
   },
   {
     "id": 17,
@@ -69,7 +104,12 @@
     "sdate": 17,
     "description": "Event 9 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing",
     "image": "/images/hero-2.jpg",
-    "link": "/"
+    "link": "/",
+    "location": "Location 1",
+    "time": "10:00 WIB",
+    "publisher": "Dave Johnson",
+    "avatar": "/images/avatar/avatar-6.jpg",
+    "sifat": "🌐 Terbuka untuk Umum"
   },
   {
     "id": 18,
@@ -78,7 +118,12 @@
     "sdate": 8,
     "description": "Event 9 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing",
     "image": "/images/hero-2.jpg",
-    "link": "/"
+    "link": "/",
+    "location": "Location 1",
+    "time": "10:00 WIB",
+    "publisher": "Dave Johnson",
+    "avatar": "/images/avatar/avatar-6.jpg",
+    "sifat": "🌐 Terbuka untuk Umum"
   },
   {
     "id": 19,
@@ -87,7 +132,12 @@
     "sdate": 8,
     "description": "Event 10 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing",
     "image": "/images/hero-4.jpg",
-    "link": "/"
+    "link": "/",
+    "location": "Location 1",
+    "time": "10:00 WIB",
+    "publisher": "Dave Johnson",
+    "avatar": "/images/avatar/avatar-6.jpg",
+    "sifat": "🌐 Terbuka untuk Umum"
   },
   {
     "id": 20,
@@ -96,7 +146,12 @@
     "sdate": 8,
     "description": "Event 11 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing sit amet consectetur adipisicing",
     "image": "/images/hero-1.jpg",
-    "link": "/"
+    "link": "/",
+    "location": "Location 1",
+    "time": "10:00 WIB",
+    "publisher": "Dave Johnson",
+    "avatar": "/images/avatar/avatar-6.jpg",
+    "sifat": "🌐 Terbuka untuk Umum"
   },
   {
     "id": 21,
@@ -105,7 +160,12 @@
     "sdate": 8,
     "description": "Event 12 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing sit amet consectetur adipisicing",
     "image": "/images/hero-1.jpg",
-    "link": "/"
+    "link": "/",
+    "location": "Location 1",
+    "time": "10:00 WIB",
+    "publisher": "Dave Johnson",
+    "avatar": "/images/avatar/avatar-6.jpg",
+    "sifat": "🌐 Terbuka untuk Umum"
   },
   {
     "id": 22,
@@ -114,7 +174,12 @@
     "sdate": 8,
     "description": "Event 13 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing sit amet consectetur adipisicing",
     "image": "/images/hero-2.jpg",
-    "link": "/"
+    "link": "/",
+    "location": "Location 1",
+    "time": "10:00 WIB",
+    "publisher": "Dave Johnson",
+    "avatar": "/images/avatar/avatar-6.jpg",
+    "sifat": "🌐 Terbuka untuk Umum"
   },
   {
     "id": 23,
@@ -123,7 +188,12 @@
     "sdate": 8,
     "description": "Event 14 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing sit amet consectetur adipisicing",
     "image": "/images/hero-3.jpg",
-    "link": "/"
+    "link": "/",
+    "location": "Location 1",
+    "time": "10:00 WIB",
+    "publisher": "Dave Johnson",
+    "avatar": "/images/avatar/avatar-6.jpg",
+    "sifat": "🌐 Terbuka untuk Umum"
   },
   {
     "id": 24,
@@ -132,6 +202,11 @@
     "sdate": 8,
     "description": "Event 15 Description, Event 7 Lorem, ipsum dolor sit amet consectetur adipisicing sit amet consectetur adipisicing",
     "image": "/images/hero-4.jpg",
-    "link": "/"
+    "link": "/",
+    "location": "Location 1",
+    "time": "10:00 WIB",
+    "publisher": "Dave Johnson",
+    "avatar": "/images/avatar/avatar-6.jpg",
+    "sifat": "✉️ Undangan"
   }
 ]
