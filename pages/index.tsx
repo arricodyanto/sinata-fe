@@ -12,6 +12,7 @@ import EventCalendar from '../components/organism/EventCalendar';
 import EventDynamic from '../components/organism/EventDynamic';
 import PengumumanContent from '../components/organism/PengumumanContent';
 import Footer from '../components/organism/Footer';
+import UpdatesNotification from '../components/organism/UpdatesNotification';
 
 export default function Home() {
   return (
@@ -22,11 +23,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box className='w-screen h-[80vh] relative'>
-        <Appnav />
-        <Image src='/images/hero-5.jpg' alt="Hero's Site" layout='fill' objectFit='cover' className='pt-0 brightness-[0.3]'/>
-      </Box>      
-      <Box className='bg-white'>
+      <Box className='bg-white'> 
+        <UpdatesNotification />
+        <Box className='w-screen h-[80vh] relative'>
+          <Appnav />
+          <Image src='/images/hero-5.jpg' alt="Hero's Site" layout='fill' objectFit='cover' className='pt-0 brightness-[0.3]'/>
+        </Box>      
         <Container sx={{width: {xs: 380, sm: 760, lg: 1280}}}>
           <Paper variant='outlined' className='-translate-y-14 xs:-translate-y-9 shadow-lg rounded-xl p-5 px-4'>
             <Grid container spacing={2} className='px-5'>

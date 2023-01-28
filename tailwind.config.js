@@ -13,6 +13,11 @@ module.exports = {
         light: "#f3f4f6"
       },
     },
+    screens: {
+      'xs': '320px',
+      'sm': '760px',
+      'lg': '1280px'
+    }
   },
   plugins: [require("daisyui"), require('@tailwindcss/line-clamp')],
   corePlugins: {
