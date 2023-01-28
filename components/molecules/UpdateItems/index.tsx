@@ -83,8 +83,9 @@ export default function UpdateItems() {
                 <li>- Add onclick event on infographics</li>
             </TimelineUpdates> 
             <TimelineUpdates date='28 Jan, 2023' version='v1.3.3'>
-                <li>- Add updates log to halaman beranda</li>
-                <li>- Update content of Update Log!</li>
+                <li>- Add Updates Log to halaman beranda</li>
+                <li>- Update content of Updates Log</li>
+                <li>- Disable on hover Updates Log</li>
             </TimelineUpdates> 
         </Stack>
     </>

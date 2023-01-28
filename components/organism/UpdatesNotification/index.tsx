@@ -10,7 +10,7 @@ export default function UpdatesNotification() {
   return (
     <>
         <Modal open={open} onClose={handleClose} aria-labelledby="updates-modal-title" aria-describedby="updates-modal-description">
-            <Box className='absolute bg-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 xs:w-[360px] sm:w-[700px] h-[500px] outline-0 rounded-md overflow-hidden hover:overflow-y-auto'>
+            <Box className='absolute bg-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 xs:w-[360px] sm:w-[700px] h-[500px] outline-0 rounded-md overflow-y-auto'>
                 <Stack id='updates-modal-title' direction="row" spacing={2} className='py-2 px-4 bg-gray-100 rounded-t-md sticky top-0 z-10'>
                     <Typography variant="subtitle1" className='font-bold text-gray-600'>
                         Updates Log!
