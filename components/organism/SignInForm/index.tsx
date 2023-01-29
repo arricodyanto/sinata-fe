@@ -23,7 +23,7 @@ export default function SignInForm () {
                     </Link>
                 </Grid>
             </Grid>
-            <Button variant='contained' fullWidth color='primary' className='mt-4'>Sign in</Button>
+            <Button href='/users/dashboard' variant='contained' fullWidth color='primary' className='mt-4'>Sign in</Button>
         </Box>
       </form>
     </>
