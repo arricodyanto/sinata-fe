@@ -1,6 +1,9 @@
 import React from 'react'
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import { AppBar, Box, Container, Toolbar } from '@mui/material';
+import { Stack } from '@mui/system';
+import DrawerItems from '../../molecules/DrawerItems';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 
 function ElevationScroll(props: any) {
     const { children } = props
@@ -39,9 +42,13 @@ export default function DashboardAppnav(props: any) {
         <ElevationScroll>
             <AppBar elevation={1} sx={{ boxShadow: trigger ? 'box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)' : 0 }} className='bg-transparent transition-all duration-500 ease-in-out'>
                 <Toolbar sx={{height: {xs: 70, sm: 80, lg: 70}}} className='bg-white shadow-sm text-gray-600'>
-                    <Container sx={{ width: {xs: 380, sm: 760, lg: 1280} }} className='flex items-center justify-between'>
-                        Lorem, ipsum dolor.
-                    </Container>
+                    <Stack sx={{ width: {xs: 380, sm: 760, lg: 1280} }} className='flex'>
+                        <Stack direction='row' justifyContent='flex-end' spacing={2}>
+                            <DrawerItems alt='notif-icon' icon={<NotificationsNoneIcon className='focus:ring-1' />}>
+                                Hello
+                            </DrawerItems>
+                        </Stack>
+                    </Stack>
                 </Toolbar>
             </AppBar>
         </ElevationScroll>
