@@ -87,6 +87,9 @@ export default function UpdateItems() {
                 <li>- Update content of Updates Log</li>
                 <li>- Disable on hover Updates Log</li>
             </TimelineUpdates> 
+            <TimelineUpdates date='29 Jan, 2023' version='v1.4.0'>
+                <li>- Add user&apos;s dashboard pages</li>
+            </TimelineUpdates> 
         </Stack>
     </>
   )
