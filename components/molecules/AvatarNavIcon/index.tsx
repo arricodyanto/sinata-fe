@@ -38,7 +38,7 @@ export default function AvatarNavIcon() {
                         </Stack>
                     </Link>
                     <Divider light className='my-3'/>
-                    <Link href=''>
+                    <Link href='/sign-in'>
                         <Stack direction='row' alignItems='center' className='hover:text-primary text-gray-500'>
                             <LogoutOutlinedIcon className='text-[16px]' />
                             <Typography variant='body2' className='ml-2'>Sign Out</Typography>
