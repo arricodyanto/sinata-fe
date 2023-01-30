@@ -98,6 +98,11 @@ export default function UpdateItems() {
                 <li>- Remove IconDrawer and replace it with IconPopover</li>
                 <li>- Update Updates Log content</li>
             </TimelineUpdates> 
+            <TimelineUpdates date='31 Jan, 2023' version='v1.4.2'>
+                <li>- Add Avatar Nav Icon to dashboard</li>
+                <li>- Add different search icon base on device</li>
+                <li>- Update Updates Log content</li>
+            </TimelineUpdates> 
         </Stack>
     </>
   )
