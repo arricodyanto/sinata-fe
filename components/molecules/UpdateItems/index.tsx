@@ -94,7 +94,7 @@ export default function UpdateItems() {
                 <li>- Add user dashboard appbar</li>
                 <li>- Add IconDrawer to Dashboard Appnav</li>
             </TimelineUpdates> 
-            <TimelineUpdates date='29 Jan, 2023' version='v1.4.2'>
+            <TimelineUpdates date='30 Jan, 2023' version='v1.4.2'>
                 <li>- Remove IconDrawer and replace it with IconPopover</li>
                 <li>- Update Updates Log content</li>
             </TimelineUpdates> 
