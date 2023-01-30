@@ -30,7 +30,7 @@ export default function AppnavMenu() {
                             <ListItem disablePadding className='max-h-[70px]'>
                                 <ListItemButton className='px-6'>
                                     <ListItemAvatar>
-                                        <Avatar alt='John Doe' src='/images/avatar/avatar-5.jpg' />
+                                        <Avatar alt='Alex Gryffin' src='/images/avatar/avatar-5.jpg' />
                                     </ListItemAvatar>
                                     <ListItemText primary='John Doe' secondary='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' className='truncate'/>
                                 </ListItemButton>
@@ -39,7 +39,7 @@ export default function AppnavMenu() {
                             <ListItem disablePadding className='max-h-[70px]'>
                                 <ListItemButton className='px-6'>
                                     <ListItemAvatar>
-                                        <Avatar alt='John Doe' src='/images/avatar/avatar-4.jpg' />
+                                        <Avatar alt='Gary Doe' src='/images/avatar/avatar-4.jpg' />
                                     </ListItemAvatar>
                                     <ListItemText primary='John Doe' secondary='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' className='truncate'/>
                                 </ListItemButton>
@@ -48,7 +48,7 @@ export default function AppnavMenu() {
                             <ListItem disablePadding className='max-h-[70px]'>
                                 <ListItemButton className='px-6'>
                                     <ListItemAvatar>
-                                        <Avatar alt='John Doe' src='/images/avatar/avatar-3.jpg' />
+                                        <Avatar alt='' src='/images/avatar/avatar-3.jpg' />
                                     </ListItemAvatar>
                                     <ListItemText primary='John Doe' secondary='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' className='truncate'/>
                                 </ListItemButton>
@@ -57,7 +57,7 @@ export default function AppnavMenu() {
                             <ListItem disablePadding className='max-h-[70px]'>
                                 <ListItemButton className='px-6'>
                                     <ListItemAvatar>
-                                        <Avatar alt='John Doe' src='/images/avatar/avatar-2.jpg' />
+                                        <Avatar alt='Samuel Ying' src='/images/avatar/avatar-2.jpg' />
                                     </ListItemAvatar>
                                     <ListItemText primary='John Doe' secondary='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' className='truncate'/>
                                 </ListItemButton>
@@ -74,7 +74,7 @@ export default function AppnavMenu() {
                             <Divider light className='pb-0'/>
                         </List>
                     </Box>
-                    <Button fullWidth variant='text' className='text-primary text-sm capitalize mt-2 h-9'>View All</Button>
+                    <Button fullWidth variant='text' className='text-primary text-sm capitalize mt-2 -mb-2 h-9'>View All</Button>
                 </Box>
             </Slide>
         </IconPopover>
