@@ -1,9 +1,8 @@
 import React from 'react'
 import useScrollTrigger from '@mui/material/useScrollTrigger';
-import { AppBar, Box, Container, Toolbar } from '@mui/material';
+import { AppBar, Box, Button, Container, Toolbar, Typography } from '@mui/material';
 import { Stack } from '@mui/system';
-import DrawerItems from '../../molecules/DrawerItems';
-import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import AppnavMenu from '../AppnavMenu';
 
 function ElevationScroll(props: any) {
     const { children } = props
@@ -44,9 +43,7 @@ export default function DashboardAppnav(props: any) {
                 <Toolbar sx={{height: {xs: 70, sm: 80, lg: 70}}} className='bg-white shadow-sm text-gray-600'>
                     <Stack sx={{ width: {xs: 380, sm: 760, lg: 1280} }} className='flex'>
                         <Stack direction='row' justifyContent='flex-end' spacing={2}>
-                            <DrawerItems alt='notif-icon' icon={<NotificationsNoneIcon className='focus:ring-1' />}>
-                                Hello
-                            </DrawerItems>
+                            <AppnavMenu />
                         </Stack>
                     </Stack>
                 </Toolbar>
