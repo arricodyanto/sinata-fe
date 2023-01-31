@@ -29,7 +29,7 @@ export default function IconPopover(props: TIconPopoverProps) {
 
   return (
     <>
-        <IconButton disableRipple sx={{ height: `${height}`, "&.MuiButtonBase-root:hover": { bgcolor: "transparent"} }} className={anchorEl? 'text-primary' : ''} aria-label={alt} aria-describedby={id} onClick={handleClick}>{icon}</IconButton>
+        <IconButton disableRipple sx={{ height: `${height}`, "&.MuiButtonBase-root:hover": { bgcolor: "transparent"} }} className={anchorEl? 'text-primary' : 'hover:text-primary'} aria-label={alt} aria-describedby={id} onClick={handleClick}>{icon}</IconButton>
         <Popover id={id} open={open} anchorEl={anchorEl} onClose={handleClose} className='translate-y-6' anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }} transformOrigin={{ vertical: 'top', horizontal: 'center' }} PaperProps={{sx: {boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'}}} TransitionComponent={Zoom}>
             {content()}
         </Popover>

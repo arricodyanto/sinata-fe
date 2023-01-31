@@ -113,3 +113,16 @@ a {
     color-scheme: light;
   }
 }
+
+/** Customize Scrollbar style */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply rounded-full bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-gray-300;
+}
