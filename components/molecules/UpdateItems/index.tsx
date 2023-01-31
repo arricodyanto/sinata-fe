@@ -1,7 +1,7 @@
-import { Stack, Typography } from '@mui/material'
-import React from 'react'
-import TimelineBottom from '../../atoms/TimelineBottom'
-import TimelineUpdates from '../../atoms/TimelineUpdates'
+import React from 'react';
+import { Stack, Typography } from '@mui/material';
+import TimelineBottom from '../../atoms/TimelineBottom';
+import TimelineUpdates from '../../atoms/TimelineUpdates';
 
 export default function UpdateItems() {
   return (
@@ -101,6 +101,7 @@ export default function UpdateItems() {
             <TimelineUpdates date='31 Jan, 2023' version='v1.4.2'>
                 <li>- Add Avatar Nav Icon to dashboard</li>
                 <li>- Add different search icon base on device</li>
+                <li>- Add fullscreen button to dasboard appnav</li>
                 <li>- Update Updates Log content</li>
             </TimelineUpdates> 
         </Stack>
