@@ -14,9 +14,11 @@ module.exports = {
       },
     },
     screens: {
-      'xs': '320px',
-      'sm': '760px',
-      'lg': '1280px'
+      'xs': '310px',
+      'sm': '360px',
+      'md': '760px',
+      'lg': '1200px',
+      'xl': '1536px',
     }
   },
   plugins: [require("daisyui"), require('@tailwindcss/line-clamp')],

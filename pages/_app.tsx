@@ -3,6 +3,15 @@ import type { AppProps } from 'next/app'
 import { createTheme, ThemeProvider } from '@mui/material';
 
 const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 310,
+      sm: 360,
+      md: 760,
+      lg: 1200,
+      xl: 1536,
+    }
+  },
   palette: {
     primary: {
       main: '#0ea5e9',
