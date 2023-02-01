@@ -1,8 +1,8 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { createTheme, ThemeProvider } from '@mui/material';
+import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material';
 
-const theme = createTheme({
+let theme = createTheme({
   breakpoints: {
     values: {
       xs: 310,
@@ -32,6 +32,7 @@ const theme = createTheme({
     fontFamily: "'IBM Plex Sans', sans-serif"
   }
 })
+theme = responsiveFontSizes(theme);
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

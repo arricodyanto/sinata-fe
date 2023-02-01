@@ -26,34 +26,34 @@ export default function Home() {
       </Head>
       <Box className='bg-white'> 
         <UpdatesNotification />
-        <Box className='w-screen h-[80vh] relative'>
+        <Box className='w-screen xs:h-[70vh] lg:h-[80vh] relative'>
           <Appnav />
           <Image src='/images/hero-5.jpg' alt="Hero's Site" layout='fill' objectFit='cover' className='pt-0 brightness-[0.3]'/>
         </Box>
           <ContainerPage>
-          <Paper variant='outlined' className='-translate-y-14 xs:-translate-y-9 shadow-lg rounded-xl p-5 px-4'>
-            <Grid container spacing={2} className='px-5'>
-              <Grid item xs={4}>
-                <Link href="/" className='grid place-items-center align-middle hover:brightness-125'>
-                  <GroupsRoundedIcon color='primary' sx={{ fontSize: { xs: 50, md: 40} }}/>
-                  <Typography variant='h6' className='font-bold text-center' sx={{display: {xs: 'none', md: 'block'}}}>Layanan Hubungan Masyarakat</Typography>
-                </Link>
+            <Paper variant='outlined' className='-translate-y-14 xs:-translate-y-9 shadow-lg rounded-xl p-5 px-4'>
+              <Grid container spacing={2} className='px-5'>
+                <Grid item xs={4}>
+                  <Link href="/" className='grid place-items-center align-middle hover:brightness-125'>
+                    <GroupsRoundedIcon color='primary' sx={{ fontSize: { xs: 50, md: 40} }}/>
+                    <Typography variant='h6' className='font-bold text-center' sx={{display: {xs: 'none', md: 'block'}}}>Layanan Hubungan Masyarakat</Typography>
+                  </Link>
+                </Grid>
+                <Grid item xs={4}>
+                  <Link href='/' className='grid place-items-center align-middle hover:brightness-125'>
+                    <CloudUploadIcon color='primary' sx={{ fontSize: { xs: 50, md: 40} }}/>
+                    <Typography variant='h6' className='font-bold text-center'sx={{display: {xs: 'none', md: 'block'}}}>Layanan Publikasi</Typography>
+                  </Link>
+                </Grid>
+                <Grid item xs={4}>
+                  <Link href='/' className='grid place-items-center align-middle hover:brightness-125'>
+                    <PermMediaRoundedIcon color='primary' sx={{ fontSize: { xs: 50, md: 40} }}/>
+                    <Typography variant='h6' className='font-bold text-center'sx={{display: {xs: 'none', md: 'block'}}}>Layanan Media</Typography>
+                  </Link>
+                </Grid>
               </Grid>
-              <Grid item xs={4}>
-                <Link href='/' className='grid place-items-center align-middle hover:brightness-125'>
-                  <CloudUploadIcon color='primary' sx={{ fontSize: { xs: 50, md: 40} }}/>
-                  <Typography variant='h6' className='font-bold text-center'sx={{display: {xs: 'none', md: 'block'}}}>Layanan Publikasi</Typography>
-                </Link>
-              </Grid>
-              <Grid item xs={4}>
-                <Link href='/' className='grid place-items-center align-middle hover:brightness-125'>
-                  <PermMediaRoundedIcon color='primary' sx={{ fontSize: { xs: 50, md: 40} }}/>
-                  <Typography variant='h6' className='font-bold text-center'sx={{display: {xs: 'none', md: 'block'}}}>Layanan Media</Typography>
-                </Link>
-              </Grid>
-            </Grid>
-          </Paper>
-          {/* <Paper variant='outlined' className='shadow-md rounded-xl p-5 px-4'> */}
+            </Paper>
+            {/* <Paper variant='outlined' className='shadow-md rounded-xl p-5 px-4'> */}
             <Grid container spacing={2}>
               <Grid item xs={12} md={5}>
                 <Stack spacing={2}>
