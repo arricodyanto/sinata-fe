@@ -53,14 +53,14 @@ const Search = styled('div')(({ theme }) => ({
 export default function SearchNavIcon() {
   return (
     <>
-        <Box sx={{display: {xs:'block', sm: 'none'}}}>
+        <Box sx={{display: {xs:'block', md: 'none'}}}>
             <IconPopover alt='Search' height='40px' icon={<SearchOutlinedIcon />}>
-                <Box className='xs:w-[85vw] sm:w-52'>
+                <Box className='xs:w-[85vw] md:w-52'>
                     <TextfieldSearch />
                 </Box>
             </IconPopover>
         </Box>
-        <Box sx={{display: {xs: 'none', sm: 'block'}}}>
+        <Box sx={{display: {xs: 'none', md: 'block'}}}>
             <Search className='bg-gray-100 mr-4'>
                 <SearchIconWrapper>
                 <SearchOutlinedIcon />
