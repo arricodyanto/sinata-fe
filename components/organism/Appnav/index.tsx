@@ -11,6 +11,7 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import EventOutlinedIcon from '@mui/icons-material/EventOutlined';
 import NoteAltOutlinedIcon from '@mui/icons-material/NoteAltOutlined';
 import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
+import ContainerPage from '../../atoms/ContainerPage';
 
 function ElevationScroll(props: any) {
   const { children } = props
@@ -50,10 +51,10 @@ export default function Appnav(props: any) {
     <>
         <ElevationScroll>
             <AppBar elevation={0} sx={{ backgroundColor: trigger ? "primary" : "transparent", boxShadow: trigger ? 3 : 0}} className='transition-all duration-500 ease-in-out'>
-              <Toolbar sx={{height: {xs: 70, sm: 80, lg: 70}}}>
-                <Container>
+              <Toolbar sx={{height: {xs: 70, md: 80, lg: 70}}}>
+                <ContainerPage>
                   <Grid container spacing={1} alignItems='center' className='relative'>
-                    <Grid item xs={2} sx={{ display: {xs: 'flex', sm: 'none' }}}>
+                    <Grid item xs={2} sx={{ display: {xs: 'flex', md: 'none' }}}>
                       {(['left'] as const).map((anchor) => (
                         <React.Fragment key={anchor}>
                           <Button variant='outlined' onClick={toggleDrawer(anchor, true)} sx={{ color: trigger? 'white' : 'primary', borderColor: 'secondary'}}><MenuIcon/></Button>
@@ -118,18 +119,18 @@ export default function Appnav(props: any) {
                         </React.Fragment>
                       ))}
                     </Grid>
-                    <Grid item xs={8} sx={{ display: {xs: 'flex', sm: 'none' }}} className='justify-center'>
+                    <Grid item xs={8} sx={{ display: {xs: 'flex', md: 'none' }}} className='justify-center'>
                       <Link href='/'>
                         <Image src={ trigger ? '/images/logo-light.png': '/images/logo-color.png'} width={100} height={35} alt="Site's Logo"/>
                       </Link>
                     </Grid>
-                    <Grid item sx={{ display: {xs: 'none', sm: 'flex' }}}>
+                    <Grid item sx={{ display: {xs: 'none', md: 'flex' }}}>
                       <Link href='/'>
                         <Image src={ trigger ? '/images/logo-light.png': '/images/logo-color.png'} width={100} height={35} alt="Site's Logo"/>
                       </Link>
                     </Grid>
                     <Grid item className='absolute flex right-0'>
-                      <Stack spacing={2} direction='row' sx={{ display: {xs: 'none', sm: 'flex' }}}>
+                      <Stack spacing={2} direction='row' sx={{ display: {xs: 'none', md: 'flex' }}}>
                         <Link href='/' className='text-light'>
                           <Typography variant='body1' className='hover:brightness-90 hover:text-underline underline-offset-8'>Beranda</Typography>
                         </Link>
@@ -148,7 +149,7 @@ export default function Appnav(props: any) {
                       </Stack>
                     </Grid>
                   </Grid>
-                </Container>
+                </ContainerPage>
               </Toolbar>
             </AppBar>
         </ElevationScroll>

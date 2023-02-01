@@ -11,7 +11,7 @@ export default function StaffCardItem() {
             staff.map((item) => {
                 if (item.id % 2 === 0 ) {
                     return (
-                        <Grid key={item.id} item xs={6} sm={3} className='mt-16 -mb-16'>
+                        <Grid key={item.id} item xs={6} md={3} className='mt-16 -mb-16'>
                             <Card sx={{ maxWidth: '100%', backgroundColor: 'transparent'}} className='shadow-none text-white rounded-none justify-self-center'>
                                 <CardMedia sx={{ height: 250 }} image={item.image} title='People Names' className='rounded-md'/>
                                 <CardContent className='px-0'>
@@ -24,7 +24,7 @@ export default function StaffCardItem() {
                     )
                 } else {
                     return (
-                        <Grid key={item.id} item xs={6} sm={3} className=''>
+                        <Grid key={item.id} item xs={6} md={3} className=''>
                             <Card sx={{ maxWidth: '100%', backgroundColor: 'transparent'}} className='shadow-none text-white rounded-none justify-self-center'>
                                 <CardMedia sx={{ height: 250 }} image={item.image} title='People Names' className='rounded-md'/>
                                 <CardContent className='px-0'>

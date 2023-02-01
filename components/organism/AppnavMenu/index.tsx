@@ -1,6 +1,7 @@
 import { Button } from '@mui/material';
 import React from 'react'
 import FullscreenButton from '../../atoms/FullscreenButton';
+import InputSearch from '../../atoms/InputSearch';
 import AvatarNavIcon from '../../molecules/AvatarNavIcon';
 import NotifNavIcon from '../../molecules/NotifNavIcon';
 import SearchNavIcon from '../../molecules/SearchNavIcon';
@@ -17,6 +18,12 @@ export default function AppnavMenu() {
         setIsFullscreen(true);
         }
     }
+    // const data = [
+    //     { title: 'Hello' },
+    //     { title: 'World' },
+    //     { title: 'Hello World' },
+    //     { title: 'Hello World2' },
+    // ]
 
   return (
     <>  
@@ -24,6 +31,7 @@ export default function AppnavMenu() {
         <FullscreenButton />
         <NotifNavIcon />
         <AvatarNavIcon />
+        {/* <InputSearch /> */}
     </>
   )
 }

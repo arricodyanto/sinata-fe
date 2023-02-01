@@ -72,7 +72,7 @@ export default function NotifNavIcon() {
                         <Divider light className='pb-0'/>
                     </List>
                 </Box>
-                <Button fullWidth variant='outlined' className='text-primary text-sm capitalize mt-2 -mb-2 h-9'>View All</Button>
+                <Button sx={{"&.MuiButtonBase-root:hover": { bgcolor: "transparent"}}} variant='text' className='text-primary text-sm capitalize mt-2 -mb-2' fullWidth disableRipple>View All</Button>
             </Box>
         </IconPopover>
     </>
