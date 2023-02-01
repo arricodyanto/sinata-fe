@@ -1,4 +1,4 @@
-import { Box, IconButton, Popover, Slide, Zoom } from '@mui/material'
+import { Box, IconButton, Popover, Zoom } from '@mui/material'
 import React from 'react'
 
 type TIconPopoverProps = {

@@ -22,7 +22,7 @@ export default function HeaderPages(props: THeaderPagesProps) {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Box sx={{ height: {xs: '7rem', sm: '10rem'}}} className='w-screen relative'>
+        <Box sx={{ height: {xs: '7rem', md: '10rem'}}} className='w-screen relative'>
             <Appnav />
             <Image src={srcImg} alt="Hero's Site" layout='fill' objectFit='cover' className='pt-0 brightness-[0.3] rounded-br-[7rem]'/>
         </Box>
