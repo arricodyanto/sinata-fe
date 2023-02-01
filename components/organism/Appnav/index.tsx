@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
-import CssBaseline from '@mui/material/CssBaseline';
+import React from 'react'
 import { AppBar, Box, Button, Divider, Drawer, Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Stack, Toolbar, Typography } from '@mui/material';
-import { Container } from '@mui/system';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -52,12 +50,12 @@ export default function Appnav(props: any) {
         <ElevationScroll>
             <AppBar elevation={0} sx={{ backgroundColor: trigger ? "primary" : "transparent", boxShadow: trigger ? 3 : 0}} className='transition-all duration-500 ease-in-out'>
               <Toolbar sx={{height: {xs: 70, md: 80, lg: 70}}}>
-                <ContainerPage>
+                <ContainerPage disableGutters>
                   <Grid container spacing={1} alignItems='center' className='relative'>
                     <Grid item xs={2} sx={{ display: {xs: 'flex', md: 'none' }}}>
                       {(['left'] as const).map((anchor) => (
                         <React.Fragment key={anchor}>
-                          <Button variant='outlined' onClick={toggleDrawer(anchor, true)} sx={{ color: trigger? 'white' : 'primary', borderColor: 'secondary'}}><MenuIcon/></Button>
+                          <Button variant='outlined' className='w-[10px]' onClick={toggleDrawer(anchor, true)} sx={{ color: trigger? 'white' : 'primary', borderColor: 'secondary'}}><MenuIcon/></Button>
                           <Drawer anchor={anchor} open={drawer[anchor]} onClose={toggleDrawer(anchor, false)} PaperProps={{ sx: {backgroundColor: '#323742'}}}>
                             <Box className='pt-4 text-light' sx={{ width: 240 }} role="presentation" onClick={toggleDrawer(anchor, false)} onKeyDown={toggleDrawer(anchor, false)}>
                               <Typography variant='h6' className='' sx={{display:'flex', justifyContent:'center', alignItems:'center', fontSize: 18}}>SINATA</Typography>

@@ -13,13 +13,13 @@ export default function AvatarNavIcon() {
         <IconPopover height='auto' alt='user-icon' icon={
             <>
                 <Avatar alt='John Doe' src='/images/avatar/avatar-4.jpg' />
-                <Stack direction='row' alignItems='center' sx={{ display: {xs: 'none', sm: 'flex'}}}>
+                <Stack direction='row' alignItems='center' sx={{ display: {xs: 'none', md: 'flex'}}}>
                     <Typography variant='body2' className='ml-2 text-gray-500'>Gary Doe</Typography>
                     <ExpandMoreIcon className='text-gray-500 text-base' />
                 </Stack>
             </>
         }>
-            <Box className='xs:w-[85vw] sm:w-52'>
+            <Box className='xs:w-[85vw] md:w-52'>
                 <Stack direction='row' alignItems='center' justifyContent='space-between'>
                     <Typography variant='body2' className='text-gray-600 font-medium'>Selamat Datang!</Typography>
                     <Chip label='User' variant='filled' color='primary' sx={{ height: 14}} className='text-[10px]' />
