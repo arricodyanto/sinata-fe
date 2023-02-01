@@ -8,16 +8,17 @@ import Footer from '../components/organism/Footer'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import FaqItems from '../components/atoms/FaqItems'
+import ContainerPage from '../components/atoms/ContainerPage'
 
 export default function GuideLines() {
   return (
     <>
       <Box className='bg-white'>
           <HeaderPages titlePage='Panduan - Sistem Informasi Manajemen Pelayanan dan Berita' srcImg='/images/bg-guides.jpg' />
-          <Container sx={{width: {xs: 380, sm: 760, lg: 1280}}}>
+            <ContainerPage>
               <PageTitle title='Panduan' />
               <Box className='mb-6'>
-                <Typography variant='h2' className='mb-2 text-gray-600'>
+                <Typography variant='h3' className='mb-2 text-gray-600'>
                   Panduan Penggunaan
                 </Typography>
                 <Typography variant='body1' className='mb-4 text-gray-500 italic'>
@@ -48,7 +49,7 @@ export default function GuideLines() {
                       <FaqItems />
                   </Grid>
               </Grid>
-          </Container>
+            </ContainerPage>
           <Footer />
       </Box>
     </>

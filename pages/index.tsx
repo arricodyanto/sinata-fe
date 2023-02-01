@@ -13,6 +13,7 @@ import EventDynamic from '../components/organism/EventDynamic';
 import PengumumanContent from '../components/organism/PengumumanContent';
 import Footer from '../components/organism/Footer';
 import UpdatesNotification from '../components/organism/UpdatesNotification';
+import ContainerPage from '../components/atoms/ContainerPage';
 
 export default function Home() {
   return (
@@ -28,32 +29,30 @@ export default function Home() {
         <Box className='w-screen h-[80vh] relative'>
           <Appnav />
           <Image src='/images/hero-5.jpg' alt="Hero's Site" layout='fill' objectFit='cover' className='pt-0 brightness-[0.3]'/>
-        </Box>      
-        <Container sx={{width: {xs: 380, sm: 760, lg: 1280}}}>
+        </Box>
+          <ContainerPage>
           <Paper variant='outlined' className='-translate-y-14 xs:-translate-y-9 shadow-lg rounded-xl p-5 px-4'>
             <Grid container spacing={2} className='px-5'>
               <Grid item xs={4}>
                 <Link href="/" className='grid place-items-center align-middle hover:brightness-125'>
-                  <GroupsRoundedIcon color='primary' sx={{ fontSize: { xs: 50, sm: 40} }}/>
-                  <Typography variant='h6' className='font-bold text-center' sx={{display: {xs: 'none', sm: 'block'}}}>Layanan Hubungan Masyarakat</Typography>
+                  <GroupsRoundedIcon color='primary' sx={{ fontSize: { xs: 50, md: 40} }}/>
+                  <Typography variant='h6' className='font-bold text-center' sx={{display: {xs: 'none', md: 'block'}}}>Layanan Hubungan Masyarakat</Typography>
                 </Link>
               </Grid>
               <Grid item xs={4}>
                 <Link href='/' className='grid place-items-center align-middle hover:brightness-125'>
-                  <CloudUploadIcon color='primary' sx={{ fontSize: { xs: 50, sm: 40} }}/>
-                  <Typography variant='h6' className='font-bold text-center'sx={{display: {xs: 'none', sm: 'block'}}}>Layanan Publikasi</Typography>
+                  <CloudUploadIcon color='primary' sx={{ fontSize: { xs: 50, md: 40} }}/>
+                  <Typography variant='h6' className='font-bold text-center'sx={{display: {xs: 'none', md: 'block'}}}>Layanan Publikasi</Typography>
                 </Link>
               </Grid>
               <Grid item xs={4}>
                 <Link href='/' className='grid place-items-center align-middle hover:brightness-125'>
-                  <PermMediaRoundedIcon color='primary' sx={{ fontSize: { xs: 50, sm: 40} }}/>
-                  <Typography variant='h6' className='font-bold text-center'sx={{display: {xs: 'none', sm: 'block'}}}>Layanan Media</Typography>
+                  <PermMediaRoundedIcon color='primary' sx={{ fontSize: { xs: 50, md: 40} }}/>
+                  <Typography variant='h6' className='font-bold text-center'sx={{display: {xs: 'none', md: 'block'}}}>Layanan Media</Typography>
                 </Link>
               </Grid>
             </Grid>
           </Paper>
-        </Container>
-        <Container sx={{width: {xs: 380, sm: 760, lg: 1280}}}>
           {/* <Paper variant='outlined' className='shadow-md rounded-xl p-5 px-4'> */}
             <Grid container spacing={2}>
               <Grid item xs={12} md={5}>
@@ -92,7 +91,7 @@ export default function Home() {
               </Box>
             </Box>
           {/* </Paper> */}
-        </Container>
+        </ContainerPage>
         <Footer />
       </Box>
     </>

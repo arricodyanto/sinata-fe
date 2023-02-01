@@ -1,5 +1,6 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
+import ContainerPage from "../components/atoms/ContainerPage";
 import PageTitle from "../components/atoms/PageTitle";
 import HeaderPages from "../components/molecules/HeaderPages";
 import AllEvents from "../components/organism/AllEvents";
@@ -15,7 +16,7 @@ export default function Events() {
         titlePage="Agenda - Sistem Informasi Manajemen Pelayanan dan Berita"
         srcImg="/images/bg-events.jpg"
       />
-      <Container sx={{ width: { xs: 380, sm: 760, lg: 1280 } }}>
+      <ContainerPage>
         <PageTitle title="Agenda" />
         <Grid container spacing={2}>
           <Grid item xs={12} md={4} className="justify-center flex">
@@ -40,7 +41,7 @@ export default function Events() {
           </Typography>
           <AllEvents />
         </Box>
-      </Container>
+      </ContainerPage>
       <Footer />
     </Box>
   );

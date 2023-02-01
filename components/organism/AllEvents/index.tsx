@@ -12,8 +12,8 @@ export default function AllEvents() {
       <Grid container spacing={3}>
         {event.map((item) => {
           return (
-            <Grid key={item.id} item xs={12} sm={4} className="justify-center flex" >
-              <Card sx={{ width: 330 }} variant="elevation" className="rounded-xl shadow-lg border relative" >
+            <Grid key={item.id} item xs={12} md={4} className="justify-center flex" >
+              <Card sx={{ maxWidth: 400 }} variant="elevation" className="rounded-xl shadow-lg border relative" >
                 <Box className="relative">
                   <CardMedia component="img" image={item.image} alt="Event Image" />
                   <Box className="bg-white py-0 px-1 absolute top-0 left-0 m-3 rounded-lg">

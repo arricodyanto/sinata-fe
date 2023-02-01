@@ -29,13 +29,13 @@ export default function EventModalItems(props: EventModalItemsProps) {
     { filteredDate.map((item) => {
       return (
         <Card key={item.id} className='mb-3' sx={{ display: 'flex'}}>
-            <CardMedia sx={{ width: { xs: 100, sm: 150 }, height: 140}} component='img' image={`${item.image}`} alt='event-cover'/>
+            <CardMedia sx={{ width: { xs: 100, sm: 120 }, height: 140}} component='img' image={`${item.image}`} alt='event-cover'/>
             <Box className='p-2 relative'>
-              <CardContent sx={{ width: {xs: 200, sm: 280}, height: 120, padding: 1}}>
-                <Typography variant='subtitle1' fontStyle='bold'>{item.title}</Typography>
-                <Typography variant='caption' color='text.primary' className='truncate'>
+              <CardContent sx={{ width: {xs: 150, sm: 180}, height: 120, padding: 1}}>
+                <Typography variant='subtitle1' fontStyle='bold' className='truncate'>{item.title}</Typography>
+                <Typography variant='caption' color='text.primary' className='truncate xs:text-[10px] sm:text-[13px]'>
                     <CalendarMonthOutlinedIcon sx={{ fontSize: 10}}/> {item.date}
-                    <ScheduleOutlinedIcon sx={{ fontSize: 10, marginLeft: 1}}/> {item.date}
+                    <ScheduleOutlinedIcon sx={{ fontSize: 10, marginLeft: 1}}/>{item.date}
                 </Typography>
                 <Typography variant='caption' className='leading-[1rem] line-clamp-2 mt-1'>{item.description}</Typography>
               </CardContent>

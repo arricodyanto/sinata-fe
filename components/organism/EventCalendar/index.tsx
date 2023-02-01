@@ -149,7 +149,7 @@ export default function EventCalendar() {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <StaticDatePicker
-        className='w-80 h-[23rem]'
+        className='max-w-80 h-[23rem]'
         openTo='day'
         displayStaticWrapperAs='desktop'
         value={value}
@@ -181,7 +181,7 @@ export default function EventCalendar() {
       />
       
       <Modal open={open} onClose={() => setOpen(false)} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-            <Box sx={{ maxWidth: {xs: 360, sm: 512}, maxHeight: 530}} className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white border p-4 rounded-lg overflow-y-auto'>
+            <Box sx={{ maxWidth: {xs: 300, sm: 380, md: 512}, maxHeight: 530}} className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white border p-4 rounded-lg overflow-y-auto'>
                 <Typography id="modal-modal-title" variant="h6" component="h2">
                     List Agenda
                 </Typography>
