@@ -1,15 +1,19 @@
-import { Container } from '@mui/material'
 import React from 'react'
+import { Container, ContainerProps } from '@mui/material'
 
 type TContainerPageProps = {
     className?: string
     children?: React.ReactNode
 }
 
-export default function ContainerPage(props: TContainerPageProps) {
-    const { className, children } = props
+export default function ContainerPage(props: TContainerPageProps & Partial<ContainerProps>) {
+    const { 
+        className, 
+        children,
+        ...containerProps
+     } = props
   return (
-    <Container sx={{width: {xs: 320, sm: 380, md: 760, lg: 1280}}} className={className}>
+    <Container {...containerProps} sx={{ maxWidth: {xs: 320, sm: 420, md: 800, lg: 1150}}} className={className}>
         {children}
     </Container>
   )

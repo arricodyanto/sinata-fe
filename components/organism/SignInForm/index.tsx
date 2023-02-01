@@ -1,4 +1,4 @@
-import { Box, Button, Checkbox, FormControlLabel, Grid, Typography } from '@mui/material'
+import { Box, Button, Checkbox, FormControlLabel, Grid, Stack, Typography } from '@mui/material'
 import React from 'react'
 import Link from 'next/link'
 import TextfieldIcon from '../../atoms/TextfieldIcon'
@@ -15,7 +15,7 @@ export default function SignInForm () {
             <TextfieldPass icon={<KeyIcon />} />
             <Grid container>
                 <Grid item xs={7}>
-                    <FormControlLabel className='pl-1' control={<Checkbox size='small'/>} label={<Typography variant='body2'>Remember me</Typography>}/>
+                    <FormControlLabel className='pl-1' control={<Checkbox size='small'/>} label={<Typography sx={{ fontSize: {xs: '12px', sm: '14px'}}}>Remember me</Typography>}/>
                 </Grid>
                 <Grid item xs={5}>
                     <Link href='/'>
