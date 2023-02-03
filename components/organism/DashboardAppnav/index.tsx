@@ -17,6 +17,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function ElevationScroll(props: any) {
     const { children } = props
@@ -180,7 +181,16 @@ export default function DashboardAppnav(props: any) {
       </ElevationScroll>
       <Drawer variant="permanent" open={open} PaperProps={{ sx: { backgroundColor: '#323742', color: '#9ca3af' }}}>
         <DrawerHeader>
-            {!open? <Image src='/images/logo-sm.png' width={30} height={30} alt='logo' className=''/> : <Image src='/images/logo-color.png' width={90} height={30} alt='logo' className=''/>}
+            {
+              !open? 
+              <Link href='/users/dashboard'>
+                <Image src='/images/logo-sm.png' width={30} height={30} alt='logo' className=''/> 
+              </Link>
+              : 
+              <Link href='/users/dashboard'>
+                <Image src='/images/logo-color.png' width={90} height={30} alt='logo' className=''/>
+              </Link>
+            }
         </DrawerHeader>
         <Divider className='border-gray-700' />
         {/* <List>
