@@ -6,10 +6,10 @@ import DashboardAppnav from '../../components/organism/DashboardAppnav'
 export default function Dashboard() {
   return (
     <>
-        <Box className='bg-light h-[1000px]'>
-            <TitlePage title='Dashboard User - Sinata' />
-            <DashboardAppnav />
-        </Box>
+      <Box className='bg-light h-[1000px]'>
+        <TitlePage title='Dashboard User - Sinata' />
+        <DashboardAppnav />
+      </Box>
     </>
   )
 }

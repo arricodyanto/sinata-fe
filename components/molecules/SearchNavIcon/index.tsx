@@ -68,6 +68,7 @@ export default function SearchNavIcon() {
                 <StyledInputBase
                     placeholder="Search…"
                     inputProps={{ 'aria-label': 'search' }}
+                    className='text-gray-600'
                 />
             </Search>
         </Box>
