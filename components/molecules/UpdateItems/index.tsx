@@ -108,8 +108,13 @@ export default function UpdateItems() {
                 <li>- Add Input Search (unused yet)</li>
                 <li>- Update responsive breakpoints</li>
             </TimelineUpdates> 
-            <TimelineUpdates date='1 Feb, 2023' version='v1.4.2'>
+            <TimelineUpdates date='2 Feb, 2023' version='v1.4.2'>
                 <li>- Fix all container width</li>
+                <li>- Fix Dashboard Appnav</li>
+                <li>- Update Updates Log content</li>
+            </TimelineUpdates> 
+            <TimelineUpdates date='3 Feb, 2023' version='v1.4.2'>
+                <li>- Update Sidebar Drawer for desktop device</li>
                 <li>- Update Updates Log content</li>
             </TimelineUpdates> 
         </Stack>

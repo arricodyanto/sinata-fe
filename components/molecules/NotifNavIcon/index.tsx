@@ -1,12 +1,12 @@
 import React from 'react'
-import { Avatar, Box, Button, Divider, List, ListItem, ListItemAvatar, ListItemButton, ListItemText, Stack, Typography } from '@mui/material'
+import { Avatar, Badge, Box, Button, Divider, List, ListItem, ListItemAvatar, ListItemButton, ListItemText, Stack, Typography } from '@mui/material'
 import IconPopover from '../../molecules/IconPopover'
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 
 export default function NotifNavIcon() {
   return (
     <>
-        <IconPopover height='40px' alt='notif-icon' icon={<NotificationsNoneIcon />}>
+        <IconPopover height='40px' alt='notif-icon' icon={<Badge badgeContent={3} color='primary' className='mr-1'><NotificationsNoneIcon /></Badge>}>
             <Box className='xs:w-[85vw] sm:w-80'>
                 <Stack direction='row' justifyContent='space-between' alignItems='center' className='mb-3'>
                     <Typography variant='body2' className='text-gray-600 font-medium'>Notifications</Typography>
