@@ -63,50 +63,50 @@ export default function Appnav(props: any) {
                               <List>
                                 <ListItem>
                                   <ListItemButton>
-                                    <ListItemIcon>
-                                      <HomeOutlinedIcon sx={{ color: '#f3f4f6'}}/>
-                                    </ListItemIcon>
                                     <Link href='/'> 
+                                      <ListItemIcon>
+                                        <HomeOutlinedIcon sx={{ color: '#f3f4f6'}}/>
+                                      </ListItemIcon>
                                       <Typography variant='body1'>Beranda</Typography>
                                     </Link>
                                   </ListItemButton>
                                 </ListItem>
                                 <ListItem>
                                   <ListItemButton>
-                                    <ListItemIcon>
-                                      <InfoOutlinedIcon sx={{color: '#f3f4f6'}} />
-                                    </ListItemIcon>
                                     <Link href='/about'>
+                                      <ListItemIcon>
+                                        <InfoOutlinedIcon sx={{color: '#f3f4f6'}} />
+                                      </ListItemIcon>
                                       <Typography variant='body1'>Tentang</Typography>
                                     </Link>
                                   </ListItemButton>
                                 </ListItem>
                                 <ListItem>
                                   <ListItemButton>
-                                    <ListItemIcon>
-                                      <EventOutlinedIcon sx={{color: '#f3f4f6'}} />
-                                    </ListItemIcon>
                                     <Link href='/events'>
+                                      <ListItemIcon>
+                                        <EventOutlinedIcon sx={{color: '#f3f4f6'}} />
+                                      </ListItemIcon>
                                       <Typography variant='body1'>Agenda</Typography>
                                     </Link>
                                   </ListItemButton>
                                 </ListItem>
                                 <ListItem>
                                   <ListItemButton>
-                                    <ListItemIcon>
-                                      <NoteAltOutlinedIcon sx={{color: '#f3f4f6'}} />
-                                    </ListItemIcon>
                                     <Link href='/guidelines'>
+                                      <ListItemIcon>
+                                        <NoteAltOutlinedIcon sx={{color: '#f3f4f6'}} />
+                                      </ListItemIcon>
                                       <Typography variant='body1'>Panduan</Typography>
                                     </Link>
                                   </ListItemButton>
                                 </ListItem>
                                 <ListItem>
                                   <ListItemButton>
-                                    <ListItemIcon>
-                                      <LoginOutlinedIcon sx={{color: '#f3f4f6'}} />
-                                    </ListItemIcon>
                                     <Link href='/sign-in'>
+                                      <ListItemIcon>
+                                        <LoginOutlinedIcon sx={{color: '#f3f4f6'}} />
+                                      </ListItemIcon>
                                       <Typography variant='body1'>Sign in</Typography>
                                     </Link>
                                   </ListItemButton>

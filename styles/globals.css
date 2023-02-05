@@ -116,7 +116,7 @@ a {
 
 /** Customize Scrollbar style */
 ::-webkit-scrollbar {
-  @apply w-2;
+  @apply xs:w-1 lg:w-2;
 }
 
 ::-webkit-scrollbar-track {
