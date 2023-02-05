@@ -19,6 +19,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import Image from 'next/image';
 import Link from 'next/link';
 import FooterDashboard from '../FooterDashboard';
+import DrawerMobile from '../DrawerMobile';
 
 type  TDashboardUserProps = {
     children: React.ReactNode;
@@ -109,34 +110,40 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 export default function DashboardUser(props: any) {
-    const { children } = props
-    const trigger = useScrollTrigger({
-        disableHysteresis: true, 
-        threshold: 0,
-    })
-    // const theme = useTheme();
-    const [windowWidth, setWindowWidth] = React.useState(760)
-    React.useEffect(() => {
-      setWindowWidth(window.innerWidth)
-      const handleResize = () => {
-        setWindowWidth(window.innerWidth)
-      }
-      window.addEventListener("resize", handleResize);
-      if(windowWidth < 760) {
-          setOpen(false)
-      } else {
-          setOpen(true)
-      }
-      // handleResize();
-    }, [windowWidth])
-    const [open, setOpen] = React.useState(true)
-    const handleDrawerOpen = () => {
-        setOpen(true);
-    };
+  const { children } = props
 
-    const handleDrawerClose = () => {
-        setOpen(false);
-    };
+  // Elevate Scroll Trigger
+  const trigger = useScrollTrigger({
+      disableHysteresis: true, 
+      threshold: 0,
+  })
+
+  // Desktop Drawer
+  // const theme = useTheme();
+  const [windowWidth, setWindowWidth] = React.useState(760)
+  React.useEffect(() => {
+    setWindowWidth(window.innerWidth)
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth)
+    }
+    window.addEventListener("resize", handleResize);
+    if(windowWidth < 760) {
+        setOpen(false)
+    } else {
+        setOpen(true)
+    }
+    // handleResize();
+  }, [windowWidth])
+  const [open, setOpen] = React.useState(true)
+  const handleDrawerOpen = () => {
+      setOpen(true);
+  }
+
+  const handleDrawerClose = () => {
+      setOpen(false);
+  }
+  
+  // Mobile Drawer
 
   return (
     <>
@@ -177,7 +184,8 @@ export default function DashboardUser(props: any) {
                 <IconButton aria-label="open drawer" className={!open? 'translate-x-16 transition-all duration-200 ease-in-out rotate-90 text-primary xs:hidden md:flex' : 'hover:text-primary  xs:hidden md:flex'} onClick={!open? handleDrawerOpen : handleDrawerClose} edge="start">
                   <MenuIcon />
                 </IconButton>
-                <IconButton className='hover:text-primary xs:flex md:hidden h-[36px]' aria-label='sidebar'><MenuIcon fontSize='small'/></IconButton>
+                <DrawerMobile />
+                {/* <IconButton className='hover:text-primary xs:flex md:hidden h-[36px]' aria-label='sidebar'><MenuIcon fontSize='small'/></IconButton> */}
               </Stack>
               <Stack direction='row' alignItems='center'>
                   <AppnavMenu />
@@ -213,7 +221,7 @@ export default function DashboardUser(props: any) {
           ))}
         </List> */}
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }} className='min-h-screen'>
+      <Box component="main" sx={{ flexGrow: 1, pt: 3, px: 3 }} className='min-h-screen'>
         <DrawerHeader />
         {children}
         <FooterDashboard />
