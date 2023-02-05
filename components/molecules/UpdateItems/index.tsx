@@ -121,6 +121,7 @@ export default function UpdateItems() {
                 <li>- Fix Dashboard Appnav for mobile device</li>
                 <li>- Add blur, transparent effect to Dashboard Appnav after scrolling</li>
                 <li>- Add Footer Dashboard</li>
+                <li>- Add Sidebar Drawer Menu for mobile device</li>
                 <li>- Update Updates Log content</li>
             </TimelineUpdates> 
         </Stack>
