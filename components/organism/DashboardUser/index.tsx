@@ -18,6 +18,12 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import Image from 'next/image';
 import Link from 'next/link';
+import FooterDashboard from '../FooterDashboard';
+import DrawerMobile from '../DrawerMobile';
+
+type  TDashboardUserProps = {
+    children: React.ReactNode;
+}
 
 function ElevationScroll(props: any) {
     const { children } = props
@@ -27,11 +33,9 @@ function ElevationScroll(props: any) {
       threshold: 100, 
     });
     return React.cloneElement(children, {
-        elevation: trigger ? 0 : 0  
+        elevation: trigger ? 4 : 0  
     });
   }
-
-type Anchor = 'left';
 
 const drawerWidth = 240;
 
@@ -50,8 +54,8 @@ const closedMixin = (theme: Theme): CSSObject => ({
     duration: theme.transitions.duration.leavingScreen,
   }),
   overflowX: 'hidden',
-  width: `calc(${theme.spacing(7)} + 1px)`,
-  [theme.breakpoints.up('sm')]: {
+  width: `calc(${theme.spacing(0)} + 1px)`,
+  [theme.breakpoints.up('md')]: {
     width: `calc(${theme.spacing(8)} + 1px)`,
   },
 });
@@ -105,34 +109,41 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function DashboardAppnav(props: any) {
-    const trigger = useScrollTrigger({
-        disableHysteresis: true, 
-        threshold: 0,
-    })
-    // const theme = useTheme();
-    const [windowWidth, setWindowWidth] = React.useState(760)
-    React.useEffect(() => {
-      setWindowWidth(window.innerWidth)
-      const handleResize = () => {
-        setWindowWidth(window.innerWidth)
-      }
-      window.addEventListener("resize", handleResize);
-      if(windowWidth < 760) {
-          setOpen(false)
-      } else {
-          setOpen(true)
-      }
-      // handleResize();
-    }, [windowWidth])
-    const [open, setOpen] = React.useState(true)
-    const handleDrawerOpen = () => {
-        setOpen(true);
-    };
+export default function DashboardUser(props: any) {
+  const { children } = props
 
-    const handleDrawerClose = () => {
-        setOpen(false);
-    };
+  // Elevate Scroll Trigger
+  const trigger = useScrollTrigger({
+      disableHysteresis: true, 
+      threshold: 0,
+  })
+
+  // Desktop Drawer
+  // const theme = useTheme();
+  const [windowWidth, setWindowWidth] = React.useState(760)
+  React.useEffect(() => {
+    setWindowWidth(window.innerWidth)
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth)
+    }
+    window.addEventListener("resize", handleResize);
+    if(windowWidth < 760) {
+        setOpen(false)
+    } else {
+        setOpen(true)
+    }
+    // handleResize();
+  }, [windowWidth])
+  const [open, setOpen] = React.useState(true)
+  const handleDrawerOpen = () => {
+      setOpen(true);
+  }
+
+  const handleDrawerClose = () => {
+      setOpen(false);
+  }
+  
+  // Mobile Drawer
 
   return (
     <>
@@ -160,9 +171,7 @@ export default function DashboardAppnav(props: any) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <ElevationScroll>
-        <AppBar position="fixed" open={open} sx={{ 
-          boxShadow: trigger ? '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)' : '',
-          }} className='bg-white'>
+        <AppBar position="fixed" open={open} className={trigger ? 'backdrop-blur-[5px] bg-white/80 shadow-sm' : 'bg-white'}>
           <Toolbar className='pl-0'>
             <Stack direction='row' justifyContent='space-between' alignItems='center' className='w-full'>
               <Stack className='transition-all duration-2000 ease-in-out' direction='row' alignItems='center' spacing={1}>
@@ -175,7 +184,8 @@ export default function DashboardAppnav(props: any) {
                 <IconButton aria-label="open drawer" className={!open? 'translate-x-16 transition-all duration-200 ease-in-out rotate-90 text-primary xs:hidden md:flex' : 'hover:text-primary  xs:hidden md:flex'} onClick={!open? handleDrawerOpen : handleDrawerClose} edge="start">
                   <MenuIcon />
                 </IconButton>
-                <IconButton className='hover:text-primary xs:flex md:hidden h-[36px]' aria-label='sidebar'><MenuIcon fontSize='small'/></IconButton>
+                <DrawerMobile />
+                {/* <IconButton className='hover:text-primary xs:flex md:hidden h-[36px]' aria-label='sidebar'><MenuIcon fontSize='small'/></IconButton> */}
               </Stack>
               <Stack direction='row' alignItems='center'>
                   <AppnavMenu />
@@ -211,35 +221,10 @@ export default function DashboardAppnav(props: any) {
           ))}
         </List> */}
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box component="main" sx={{ flexGrow: 1, pt: 3, px: 3 }} className='min-h-screen'>
         <DrawerHeader />
-        {/* <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-          enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-          imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-          Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-          Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-          nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-          leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-          feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-          consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-          sapien faucibus et molestie ac.
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-          eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-          neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-          tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-          sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-          tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-          gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-          et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-          tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-          eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography> */}
+        {children}
+        <FooterDashboard />
       </Box>
     </Box>
     </>
