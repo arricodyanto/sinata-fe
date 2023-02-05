@@ -31,7 +31,7 @@ function ElevationScroll(props: any) {
     });
   }
 
-// type Anchor = 'left';
+type Anchor = 'left';
 
 const drawerWidth = 240;
 
@@ -110,23 +110,22 @@ export default function DashboardAppnav(props: any) {
         disableHysteresis: true, 
         threshold: 0,
     })
-    // const [drawer, setDrawer] = React.useState({ left: false });
-    // const toggleDrawer =
-    // (anchor: Anchor, open: boolean) =>
-    // (event: React.KeyboardEvent | React.MouseEvent) => {
-    //     if (
-    //     event.type === 'keydown' &&
-    //     ((event as React.KeyboardEvent).key === 'Tab' ||
-    //         (event as React.KeyboardEvent).key === 'Shift')
-    //     ) {
-    //     return;
-    //     }
-    //     setDrawer({ ...drawer, [anchor]: open });
-    // };
-
     // const theme = useTheme();
-    const [open, setOpen] = React.useState(true);
-
+    const [windowWidth, setWindowWidth] = React.useState(760)
+    React.useEffect(() => {
+      setWindowWidth(window.innerWidth)
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth)
+      }
+      window.addEventListener("resize", handleResize);
+      if(windowWidth < 760) {
+          setOpen(false)
+      } else {
+          setOpen(true)
+      }
+      // handleResize();
+    }, [windowWidth])
+    const [open, setOpen] = React.useState(true)
     const handleDrawerOpen = () => {
         setOpen(true);
     };
@@ -164,13 +163,19 @@ export default function DashboardAppnav(props: any) {
         <AppBar position="fixed" open={open} sx={{ 
           boxShadow: trigger ? '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)' : '',
           }} className='bg-white'>
-          <Toolbar>
+          <Toolbar className='pl-0'>
             <Stack direction='row' justifyContent='space-between' alignItems='center' className='w-full'>
-              <Stack className='transition-all duration-2000 ease-in-out'>
+              <Stack className='transition-all duration-2000 ease-in-out' direction='row' alignItems='center' spacing={1}>
+                <Stack className='bg-[#323742] w-16 h-16 xs:flex md:hidden' justifyContent='center' alignItems='center'>
+                  <Link href='/users/dashboard'>
+                    <Image src='/images/logo-sm.png' width={30} height={30} alt='logo' className=''/> 
+                  </Link>
+                </Stack>
                   {/* <IconButton onClick={toggleDrawer('left', true)} className='hover:text-primary' aria-label='sidebar'><MenuIcon fontSize='small'/></IconButton> */}
-                <IconButton aria-label="open drawer" className={!open? 'translate-x-16 transition-all duration-200 ease-in-out rotate-90 text-primary' : 'hover:text-primary'} onClick={!open? handleDrawerOpen : handleDrawerClose} edge="start">
+                <IconButton aria-label="open drawer" className={!open? 'translate-x-16 transition-all duration-200 ease-in-out rotate-90 text-primary xs:hidden md:flex' : 'hover:text-primary  xs:hidden md:flex'} onClick={!open? handleDrawerOpen : handleDrawerClose} edge="start">
                   <MenuIcon />
                 </IconButton>
+                <IconButton className='hover:text-primary xs:flex md:hidden h-[36px]' aria-label='sidebar'><MenuIcon fontSize='small'/></IconButton>
               </Stack>
               <Stack direction='row' alignItems='center'>
                   <AppnavMenu />
@@ -179,7 +184,7 @@ export default function DashboardAppnav(props: any) {
           </Toolbar>
         </AppBar>
       </ElevationScroll>
-      <Drawer variant="permanent" open={open} PaperProps={{ sx: { backgroundColor: '#323742', color: '#9ca3af' }}}>
+      <Drawer variant="permanent" open={open} PaperProps={{ sx: { backgroundColor: '#323742', color: '#9ca3af', display: {xs: 'none', md: 'block'} }}}>
         <DrawerHeader>
             {
               !open? 

@@ -117,6 +117,10 @@ export default function UpdateItems() {
                 <li>- Update Sidebar Drawer for desktop device</li>
                 <li>- Update Updates Log content</li>
             </TimelineUpdates> 
+            <TimelineUpdates date='5 Feb, 2023' version='v1.4.2'>
+                <li>- Fix Dashboard Appnav for mobile device</li>
+                <li>- Update Updates Log content</li>
+            </TimelineUpdates> 
         </Stack>
     </>
   )
