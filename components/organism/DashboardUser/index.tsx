@@ -21,6 +21,10 @@ import Link from 'next/link';
 import FooterDashboard from '../FooterDashboard';
 import DrawerMobile from '../DrawerMobile';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import DateRangeOutlinedIcon from '@mui/icons-material/DateRangeOutlined';
+import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
+import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 
@@ -148,7 +152,7 @@ export default function DashboardUser(props: any) {
   // Menu List
   const [openMenu, setOpenMenu] = React.useState(false)
   const handleClick = () => {
-    setOpenMenu(!openMenu)
+    setOpenMenu((prevOpenMenu => !prevOpenMenu))
   }
   const listMenu = (
     <>
@@ -159,38 +163,93 @@ export default function DashboardUser(props: any) {
               <ListItemIcon sx={{ minWidth: 0, mr: open ? 2 : {xs: 2, md: 'auto'}, justifyContent: 'center', }}>
                 <HomeOutlinedIcon sx={{ color: '#9ca3af'}} className='' fontSize='small' />
               </ListItemIcon>
-              <Typography variant='body1' className='text-gray-400 w-full' sx={{ opacity: open ? {xs: 0, md: 1} : {xs: 1, md: 0} }}>Dashboard</Typography>
+              <Typography variant='body2' className='text-gray-400 w-full' sx={{ opacity: open ? {xs: 0, md: 1} : {xs: 1, md: 0} }}>Dashboard</Typography>
             </ListItemButton>
           </Link>
         </ListItem>
       </List>
-      <Divider light className='border-gray-600 mx-5' />
+      <Divider light className='border-gray-600 mx-5 mb-4' />
       <List subheader={
-        <Typography variant='overline' className='font-bold text-[#9ca3af] px-5 py-2'>Layanan</Typography>
+        <Typography variant='overline' className='font-bold text-[#9ca3af] px-5'>Layanan</Typography>
       }>
         <ListItem disablePadding sx={{ display: 'block' }} className='text-[#9ca3af] transition-all ease-in-out'>
           <Link href='#'>
             <ListItemButton onClick={handleClick} sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5, }} className='xs:pl-7 md:pl-5 hover:brightness-[1.6]'>
               <ListItemIcon sx={{ minWidth: 0, mr: open ? 2 : {xs: 2, md: 'auto'}, justifyContent: 'center', }}>
-                <HomeOutlinedIcon sx={{ color: '#9ca3af'}} className='' fontSize='small' />
+                <DateRangeOutlinedIcon sx={{ color: '#9ca3af'}} className='' fontSize='small' />
               </ListItemIcon>
-              <Typography variant='body1' className='text-gray-400 w-full' sx={{ opacity: open ? {xs: 0, md: 1} : {xs: 1, md: 0} }}>Riwayat</Typography>
+              <Typography variant='body2' className='text-gray-400 w-full' sx={{ opacity: open ? {xs: 0, md: 1} : {xs: 1, md: 0} }}>Riwayat</Typography>
               {openMenu ? <ExpandLess sx={{ color: '#9ca3af'}} fontSize='small' /> : <ExpandMore sx={{ color: '#9ca3af'}} fontSize='small' />}
             </ListItemButton>
             <Collapse in={openMenu} timeout={500} unmountOnExit>
               <List disablePadding>
                 <Link href='/users/dashboard'>
                   <ListItemButton className='hover:brightness-[1.6]'>
-                    <Typography variant='body1' className='text-gray-400 xs:pl-12 md:pl-10'>Riwayat Kegiatan</Typography>
+                    <Typography variant='body2' className='text-gray-400 xs:pl-12 md:pl-10'>Riwayat Kegiatan</Typography>
                   </ListItemButton>
                 </Link>
                 <Link href='/users/dashboard'>
                   <ListItemButton className='hover:brightness-[1.6]'>
-                    <Typography variant='body1' className='text-gray-400 xs:pl-12 md:pl-10'>Tambah Kegiatan</Typography>
+                    <Typography variant='body2' className='text-gray-400 xs:pl-12 md:pl-10'>Tambah Kegiatan</Typography>
                   </ListItemButton>
                 </Link>
               </List>
             </Collapse>
+          </Link>
+        </ListItem>
+        <ListItem disablePadding sx={{ display: 'block' }} className='text-[#9ca3af] transition-all ease-in-out'>
+          <Link href='#'>
+            <ListItemButton onClick={handleClick} sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5, }} className='xs:pl-7 md:pl-5 hover:brightness-[1.6]'>
+              <ListItemIcon sx={{ minWidth: 0, mr: open ? 2 : {xs: 2, md: 'auto'}, justifyContent: 'center', }}>
+                <Inventory2OutlinedIcon sx={{ color: '#9ca3af'}} className='' fontSize='small' />
+              </ListItemIcon>
+              <Typography variant='body2' className='text-gray-400 w-full' sx={{ opacity: open ? {xs: 0, md: 1} : {xs: 1, md: 0} }}>Ajukan Layanan</Typography>
+              {openMenu ? <ExpandLess sx={{ color: '#9ca3af'}} fontSize='small' /> : <ExpandMore sx={{ color: '#9ca3af'}} fontSize='small' />}
+            </ListItemButton>
+            <Collapse in={openMenu} timeout={500} unmountOnExit>
+              <List disablePadding>
+                <Link href='/users/dashboard'>
+                  <ListItemButton className='hover:brightness-[1.6]'>
+                    <Typography variant='body2' className='text-gray-400 xs:pl-12 md:pl-10'>Layanan Hubungan Masyarakat</Typography>
+                  </ListItemButton>
+                </Link>
+                <Link href='/users/dashboard'>
+                  <ListItemButton className='hover:brightness-[1.6]'>
+                    <Typography variant='body2' className='text-gray-400 xs:pl-12 md:pl-10'>Layanan Publikasi</Typography>
+                  </ListItemButton>
+                </Link>
+                <Link href='/users/dashboard'>
+                  <ListItemButton className='hover:brightness-[1.6]'>
+                    <Typography variant='body2' className='text-gray-400 xs:pl-12 md:pl-10'>Layanan Media</Typography>
+                  </ListItemButton>
+                </Link>
+              </List>
+            </Collapse>
+          </Link>
+        </ListItem>
+      </List>
+      <Divider light className='border-gray-600 mx-5 mb-4' />
+      <List subheader={
+        <Typography variant='overline' className='font-bold text-[#9ca3af] px-5'>Akun</Typography>
+      }>
+        <ListItem disablePadding sx={{ display: 'block' }} className='text-[#9ca3af] hover:brightness-[1.6] transition-all ease-in-out'>
+          <Link href='/users/dashboard'>
+            <ListItemButton sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5, }} className='xs:pl-7 md:pl-5'>
+              <ListItemIcon sx={{ minWidth: 0, mr: open ? 2 : {xs: 2, md: 'auto'}, justifyContent: 'center', }}>
+                <PersonOutlinedIcon sx={{ color: '#9ca3af'}} className='' fontSize='small' />
+              </ListItemIcon>
+              <Typography variant='body2' className='text-gray-400 w-full' sx={{ opacity: open ? {xs: 0, md: 1} : {xs: 1, md: 0} }}>Profil Akun</Typography>
+            </ListItemButton>
+          </Link>
+        </ListItem>
+        <ListItem disablePadding sx={{ display: 'block' }} className='text-[#9ca3af] hover:brightness-[1.6] transition-all ease-in-out'>
+          <Link href='/sign-in'>
+            <ListItemButton sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5, }} className='xs:pl-7 md:pl-5'>
+              <ListItemIcon sx={{ minWidth: 0, mr: open ? 2 : {xs: 2, md: 'auto'}, justifyContent: 'center', }}>
+                <LogoutOutlinedIcon sx={{ color: '#9ca3af'}} className='' fontSize='small' />
+              </ListItemIcon>
+              <Typography variant='body2' className='text-gray-400 w-full' sx={{ opacity: open ? {xs: 0, md: 1} : {xs: 1, md: 0} }}>Sign Out</Typography>
+            </ListItemButton>
           </Link>
         </ListItem>
       </List>
