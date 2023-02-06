@@ -124,8 +124,9 @@ export default function UpdateItems() {
                 <li>- Add Sidebar Drawer Menu for mobile device</li>
                 <li>- Update Updates Log content</li>
             </TimelineUpdates> 
-            <TimelineUpdates date='5 Feb, 2023' version='v1.4.2'>
-                <li>- Add ListMenu to Dashboard Appnav either on desktop device or mobile device</li>
+            <TimelineUpdates date='6 Feb, 2023' version='v1.4.2'>
+                <li>- Add List Menu to Dashboard Appnav either on desktop device or mobile device</li>
+                <li>- Add Menu Item to List Menu </li>
                 <li>- Update Updates Log content</li>
             </TimelineUpdates> 
         </Stack>

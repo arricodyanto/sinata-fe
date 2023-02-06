@@ -8,29 +8,29 @@ type TDrawerMobileProps = {
 
 export default function DrawerMobile(props: TDrawerMobileProps) {
     const { listMenu } = props;
-  const [drawer, setDrawer] = React.useState({
-    left: false,
-  });
+    const [drawer, setDrawer] = React.useState({
+        left: false,
+    })  
 
-  const toggleDrawer = (side: 'left', open: boolean) => (
-    event: React.KeyboardEvent | React.MouseEvent,
-  ) => {
-    if (
-      event.type === 'keydown' &&
-      ((event as React.KeyboardEvent).key === 'Tab' ||
-        (event as React.KeyboardEvent).key === 'Shift')
-    ) {
-      return;
-    }
+    const toggleDrawer = (side: 'left', open: boolean) => (
+        event: React.KeyboardEvent | React.MouseEvent,
+    ) => {
+        if (
+        event.type === 'keydown' &&
+        ((event as React.KeyboardEvent).key === 'Tab' ||
+            (event as React.KeyboardEvent).key === 'Shift')
+        ) {
+        return;
+        }
 
-    setDrawer({ ...drawer, [side]: open });
-  };
+        setDrawer({ ...drawer, [side]: open });
+    };
 
-  const sideList = (
-    <Box className='w-[250px] text-white' role="presentation" onClick={toggleDrawer('left', false)} onKeyDown={toggleDrawer('left', false)}>
-     {listMenu}
-    </Box>
-  );
+    const sideList = (
+        <Box className='w-[250px] text-white' role="presentation" onClick={toggleDrawer('left', true)} onKeyDown={toggleDrawer('left', false)}>
+        {listMenu}
+        </Box>
+    );
 
   return (
     <>
