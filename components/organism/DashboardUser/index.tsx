@@ -28,7 +28,7 @@ import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 
-type  TDashboardUserProps = {
+type TDashboardUserProps = {
     children: React.ReactNode;
 }
 
@@ -116,6 +116,63 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
+// Menu Item Nested
+
+// interface Item {
+//   id: number;
+//   title: string;
+//   icon: React.ReactNode;
+//   subitem?: [{
+//     id: number;
+//     subtitle: string;
+//     link: string;
+// }]
+
+// }
+const getCustomsOptions = () => {
+  return [
+    {
+      id: 1,
+      title: 'Riwayat',
+      icon: <DateRangeOutlinedIcon sx={{ color: '#9ca3af' }} fontSize='small' />,
+      subitem: [
+        {
+          id: 1,
+          subtitle: 'Riwayat Kegiatan',
+          link: '/users/dashboard',
+        },
+        {
+          id: 2,
+          subtitle: 'Tambah Kegiatn',
+          link: '/users/dashboard',
+        },
+      ],
+    },
+    {
+      id: 2,
+      title: 'Ajukan Layanan',
+      icon: <Inventory2OutlinedIcon sx={{ color: '#9ca3af' }} fontSize='small' />,
+      subitem: [
+        {
+          id: 1,
+          subtitle: 'Layanan Hubungan Masyarakat',
+          link: '/users/dashboard',
+        },
+        {
+          id: 2,
+          subtitle: 'Layanan Publikasi',
+          link: '/users/dashboard',
+        },
+        {
+          id: 3,
+          subtitle: 'Layanan Media',
+          link: '/users/dashboard',
+        }
+      ],
+    }
+  ]
+}
+
 export default function DashboardUser(props: any) {
   const { children } = props
 
@@ -150,9 +207,10 @@ export default function DashboardUser(props: any) {
   }
   
   // Menu List
-  const [openMenu, setOpenMenu] = React.useState(false)
-  const handleClick = () => {
-    setOpenMenu((prevOpenMenu => !prevOpenMenu))
+  const [openMenu, setOpenMenu] = React.useState({} as { [key: number]: boolean })
+  const items = getCustomsOptions()
+  const handleClick = (id:any) => {
+    setOpenMenu((prevState) => ({ ...prevState, [id]: !prevState[id] }))
   }
   const listMenu = (
     <>
@@ -173,31 +231,40 @@ export default function DashboardUser(props: any) {
         <Typography variant='overline' className='font-bold text-[#9ca3af] px-5'>Layanan</Typography>
       }>
         <ListItem disablePadding sx={{ display: 'block' }} className='text-[#9ca3af] transition-all ease-in-out'>
-          <Link href='#'>
-            <ListItemButton onClick={handleClick} sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5, }} className='xs:pl-7 md:pl-5 hover:brightness-[1.6]'>
-              <ListItemIcon sx={{ minWidth: 0, mr: open ? 2 : {xs: 2, md: 'auto'}, justifyContent: 'center', }}>
-                <DateRangeOutlinedIcon sx={{ color: '#9ca3af'}} className='' fontSize='small' />
-              </ListItemIcon>
-              <Typography variant='body2' className='text-gray-400 w-full' sx={{ opacity: open ? {xs: 0, md: 1} : {xs: 1, md: 0} }}>Riwayat</Typography>
-              {openMenu ? <ExpandLess sx={{ color: '#9ca3af'}} fontSize='small' /> : <ExpandMore sx={{ color: '#9ca3af'}} fontSize='small' />}
-            </ListItemButton>
-            <Collapse in={openMenu} timeout={500} unmountOnExit>
-              <List disablePadding>
-                <Link href='/users/dashboard'>
-                  <ListItemButton className='hover:brightness-[1.6]'>
-                    <Typography variant='body2' className='text-gray-400 xs:pl-12 md:pl-10'>Riwayat Kegiatan</Typography>
+          {items.map((item) => {
+            return(
+              <>
+                <Link href='#'>
+                  <ListItemButton onClick={() => handleClick(item.id)} sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5, }} className='xs:pl-7 md:pl-5 hover:brightness-[1.6]'>
+                    <ListItemIcon sx={{ minWidth: 0, mr: open ? 2 : {xs: 2, md: 'auto'}, justifyContent: 'center', }}>
+                      {/* <DateRangeOutlinedIcon sx={{ color: '#9ca3af'}} className='' fontSize='small' /> */}
+                      {item.icon}
+                    </ListItemIcon>
+                    <Typography variant='body2' className='text-gray-400 w-full' sx={{ opacity: open ? {xs: 0, md: 1} : {xs: 1, md: 0} }}>{item.title}</Typography>
+                    {openMenu[item.id] ? <ExpandLess sx={{ color: '#9ca3af'}} fontSize='small' /> : <ExpandMore sx={{ color: '#9ca3af'}} fontSize='small' />}
                   </ListItemButton>
+                  <Collapse in={openMenu[item.id]} timeout={500} unmountOnExit>
+                    <List disablePadding>
+                      {item.subitem.map((subitem) => {
+                        return(
+                          <>
+                            <Link href={subitem.link}>
+                              <ListItemButton className='hover:brightness-[1.6] translate-x-1'>
+                                <Typography variant='body2' className='text-gray-400 xs:pl-12 md:pl-10'>{subitem.subtitle}</Typography>
+                              </ListItemButton>
+                            </Link>
+                          </>
+                        )
+                      })}
+                    </List>
+                  </Collapse>
                 </Link>
-                <Link href='/users/dashboard'>
-                  <ListItemButton className='hover:brightness-[1.6]'>
-                    <Typography variant='body2' className='text-gray-400 xs:pl-12 md:pl-10'>Tambah Kegiatan</Typography>
-                  </ListItemButton>
-                </Link>
-              </List>
-            </Collapse>
-          </Link>
+              </>
+            )
+          })}
+          
         </ListItem>
-        <ListItem disablePadding sx={{ display: 'block' }} className='text-[#9ca3af] transition-all ease-in-out'>
+        {/* <ListItem disablePadding sx={{ display: 'block' }} className='text-[#9ca3af] transition-all ease-in-out'>
           <Link href='#'>
             <ListItemButton onClick={handleClick} sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5, }} className='xs:pl-7 md:pl-5 hover:brightness-[1.6]'>
               <ListItemIcon sx={{ minWidth: 0, mr: open ? 2 : {xs: 2, md: 'auto'}, justifyContent: 'center', }}>
@@ -226,7 +293,7 @@ export default function DashboardUser(props: any) {
               </List>
             </Collapse>
           </Link>
-        </ListItem>
+        </ListItem> */}
       </List>
       <Divider light className='border-gray-600 mx-5 mb-4' />
       <List subheader={
