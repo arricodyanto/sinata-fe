@@ -118,24 +118,23 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 // Menu Item Nested
 
-// interface Item {
-//   id: number;
-//   title: string;
-//   icon: React.ReactNode;
-//   subitem?: [{
-//     id: number;
-//     subtitle: string;
-//     link: string;
-// }]
-
-// }
-const getCustomsOptions = () => {
+type Item = {
+  id: number;
+  title: string;
+  icon: React.ReactNode;
+  subItem: {
+    id: number;
+    subtitle: string;
+    link: string;
+  }[],
+}
+const getCustomsOptions = ():Item[] => {
   return [
     {
       id: 1,
       title: 'Riwayat',
       icon: <DateRangeOutlinedIcon sx={{ color: '#9ca3af' }} fontSize='small' />,
-      subitem: [
+      subItem: [
         {
           id: 1,
           subtitle: 'Riwayat Kegiatan',
@@ -143,7 +142,7 @@ const getCustomsOptions = () => {
         },
         {
           id: 2,
-          subtitle: 'Tambah Kegiatn',
+          subtitle: 'Tambah Kegiatan',
           link: '/users/dashboard',
         },
       ],
@@ -152,7 +151,7 @@ const getCustomsOptions = () => {
       id: 2,
       title: 'Ajukan Layanan',
       icon: <Inventory2OutlinedIcon sx={{ color: '#9ca3af' }} fontSize='small' />,
-      subitem: [
+      subItem: [
         {
           id: 1,
           subtitle: 'Layanan Hubungan Masyarakat',
@@ -219,16 +218,16 @@ export default function DashboardUser(props: any) {
           <Link href='/users/dashboard'>
             <ListItemButton sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5, }} className='xs:pl-7 md:pl-5'>
               <ListItemIcon sx={{ minWidth: 0, mr: open ? 2 : {xs: 2, md: 'auto'}, justifyContent: 'center', }}>
-                <HomeOutlinedIcon sx={{ color: '#9ca3af'}} className='' fontSize='small' />
+                <HomeOutlinedIcon sx={{ color: '#9ca3af'}} fontSize='small' />
               </ListItemIcon>
-              <Typography variant='body2' className='text-gray-400 w-full' sx={{ opacity: open ? {xs: 0, md: 1} : {xs: 1, md: 0} }}>Dashboard</Typography>
+              <Typography variant='body2' className='text-gray-400 w-full' sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'} }}>Dashboard</Typography>
             </ListItemButton>
           </Link>
         </ListItem>
       </List>
       <Divider light className='border-gray-600 mx-5 mb-4' />
       <List subheader={
-        <Typography variant='overline' className='font-bold text-[#9ca3af] px-5'>Layanan</Typography>
+        <Typography variant='overline' sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'} }} className='font-bold text-[#9ca3af] px-5'>Layanan</Typography>
       }>
         <ListItem disablePadding sx={{ display: 'block' }} className='text-[#9ca3af] transition-all ease-in-out'>
           {items.map((item) => {
@@ -240,12 +239,12 @@ export default function DashboardUser(props: any) {
                       {/* <DateRangeOutlinedIcon sx={{ color: '#9ca3af'}} className='' fontSize='small' /> */}
                       {item.icon}
                     </ListItemIcon>
-                    <Typography variant='body2' className='text-gray-400 w-full' sx={{ opacity: open ? {xs: 0, md: 1} : {xs: 1, md: 0} }}>{item.title}</Typography>
-                    {openMenu[item.id] ? <ExpandLess sx={{ color: '#9ca3af'}} fontSize='small' /> : <ExpandMore sx={{ color: '#9ca3af'}} fontSize='small' />}
+                    <Typography variant='body2' className='text-gray-400 w-full' sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'} }}>{item.title}</Typography>
+                    {openMenu[item.id] ? <ExpandLess sx={{ color: '#9ca3af', display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'}}} fontSize='small' /> : <ExpandMore sx={{ color: '#9ca3af', display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'}}} fontSize='small' />}
                   </ListItemButton>
                   <Collapse in={openMenu[item.id]} timeout={500} unmountOnExit>
                     <List disablePadding>
-                      {item.subitem.map((subitem) => {
+                      {item.subItem.map((subitem) => {
                         return(
                           <>
                             <Link href={subitem.link}>
@@ -262,7 +261,6 @@ export default function DashboardUser(props: any) {
               </>
             )
           })}
-          
         </ListItem>
         {/* <ListItem disablePadding sx={{ display: 'block' }} className='text-[#9ca3af] transition-all ease-in-out'>
           <Link href='#'>
@@ -270,7 +268,7 @@ export default function DashboardUser(props: any) {
               <ListItemIcon sx={{ minWidth: 0, mr: open ? 2 : {xs: 2, md: 'auto'}, justifyContent: 'center', }}>
                 <Inventory2OutlinedIcon sx={{ color: '#9ca3af'}} className='' fontSize='small' />
               </ListItemIcon>
-              <Typography variant='body2' className='text-gray-400 w-full' sx={{ opacity: open ? {xs: 0, md: 1} : {xs: 1, md: 0} }}>Ajukan Layanan</Typography>
+              <Typography variant='body2' className='text-gray-400 w-full' sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'} }}>Ajukan Layanan</Typography>
               {openMenu ? <ExpandLess sx={{ color: '#9ca3af'}} fontSize='small' /> : <ExpandMore sx={{ color: '#9ca3af'}} fontSize='small' />}
             </ListItemButton>
             <Collapse in={openMenu} timeout={500} unmountOnExit>
@@ -297,7 +295,7 @@ export default function DashboardUser(props: any) {
       </List>
       <Divider light className='border-gray-600 mx-5 mb-4' />
       <List subheader={
-        <Typography variant='overline' className='font-bold text-[#9ca3af] px-5'>Akun</Typography>
+        <Typography variant='overline' sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'} }} className='font-bold text-[#9ca3af] px-5'>Akun</Typography>
       }>
         <ListItem disablePadding sx={{ display: 'block' }} className='text-[#9ca3af] hover:brightness-[1.6] transition-all ease-in-out'>
           <Link href='/users/dashboard'>
@@ -305,7 +303,7 @@ export default function DashboardUser(props: any) {
               <ListItemIcon sx={{ minWidth: 0, mr: open ? 2 : {xs: 2, md: 'auto'}, justifyContent: 'center', }}>
                 <PersonOutlinedIcon sx={{ color: '#9ca3af'}} className='' fontSize='small' />
               </ListItemIcon>
-              <Typography variant='body2' className='text-gray-400 w-full' sx={{ opacity: open ? {xs: 0, md: 1} : {xs: 1, md: 0} }}>Profil Akun</Typography>
+              <Typography variant='body2' className='text-gray-400 w-full' sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'} }}>Profil Akun</Typography>
             </ListItemButton>
           </Link>
         </ListItem>
@@ -315,7 +313,7 @@ export default function DashboardUser(props: any) {
               <ListItemIcon sx={{ minWidth: 0, mr: open ? 2 : {xs: 2, md: 'auto'}, justifyContent: 'center', }}>
                 <LogoutOutlinedIcon sx={{ color: '#9ca3af'}} className='' fontSize='small' />
               </ListItemIcon>
-              <Typography variant='body2' className='text-gray-400 w-full' sx={{ opacity: open ? {xs: 0, md: 1} : {xs: 1, md: 0} }}>Sign Out</Typography>
+              <Typography variant='body2' className='text-gray-400 w-full' sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'} }}>Sign Out</Typography>
             </ListItemButton>
           </Link>
         </ListItem>
