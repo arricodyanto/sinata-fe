@@ -62,54 +62,54 @@ export default function Appnav(props: any) {
                               <Divider className='pt-5 border-gray-600' />
                               <List>
                                 <ListItem>
-                                  <ListItemButton>
-                                    <Link href='/'> 
+                                  <Link href='/'> 
+                                    <ListItemButton>
                                       <ListItemIcon>
                                         <HomeOutlinedIcon sx={{ color: '#f3f4f6'}}/>
                                       </ListItemIcon>
                                       <Typography variant='body1'>Beranda</Typography>
-                                    </Link>
-                                  </ListItemButton>
+                                    </ListItemButton>
+                                  </Link>
                                 </ListItem>
                                 <ListItem>
-                                  <ListItemButton>
-                                    <Link href='/about'>
+                                  <Link href='/about'>
+                                    <ListItemButton>
                                       <ListItemIcon>
                                         <InfoOutlinedIcon sx={{color: '#f3f4f6'}} />
                                       </ListItemIcon>
                                       <Typography variant='body1'>Tentang</Typography>
-                                    </Link>
-                                  </ListItemButton>
+                                    </ListItemButton>
+                                  </Link>
                                 </ListItem>
                                 <ListItem>
-                                  <ListItemButton>
-                                    <Link href='/events'>
+                                  <Link href='/events'>
+                                    <ListItemButton>
                                       <ListItemIcon>
                                         <EventOutlinedIcon sx={{color: '#f3f4f6'}} />
                                       </ListItemIcon>
                                       <Typography variant='body1'>Agenda</Typography>
-                                    </Link>
-                                  </ListItemButton>
+                                    </ListItemButton>
+                                  </Link>
                                 </ListItem>
                                 <ListItem>
-                                  <ListItemButton>
-                                    <Link href='/guidelines'>
+                                  <Link href='/guidelines'>
+                                    <ListItemButton>
                                       <ListItemIcon>
                                         <NoteAltOutlinedIcon sx={{color: '#f3f4f6'}} />
                                       </ListItemIcon>
                                       <Typography variant='body1'>Panduan</Typography>
-                                    </Link>
-                                  </ListItemButton>
+                                    </ListItemButton>
+                                  </Link>
                                 </ListItem>
                                 <ListItem>
-                                  <ListItemButton>
-                                    <Link href='/sign-in'>
+                                  <Link href='/sign-in'>
+                                    <ListItemButton>
                                       <ListItemIcon>
                                         <LoginOutlinedIcon sx={{color: '#f3f4f6'}} />
                                       </ListItemIcon>
                                       <Typography variant='body1'>Sign in</Typography>
-                                    </Link>
-                                  </ListItemButton>
+                                    </ListItemButton>
+                                  </Link>
                                 </ListItem>
                               </List>
                           </Box>
