@@ -1,11 +1,10 @@
 import React from 'react'
-import { Box, Button, Container, Grid, IconButton, Toolbar, Typography, Stack, Divider, List, ListSubheader, Collapse } from '@mui/material';
+import { Box, IconButton, Toolbar, Typography, Stack, Divider, List, Collapse, ListItemText } from '@mui/material';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import MuiDrawer from '@mui/material/Drawer';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import { styled, Theme, CSSObject } from '@mui/material/styles';
 import AppnavMenu from '../AppnavMenu';
-import ContainerPage from '../../atoms/ContainerPage';
 import MenuIcon from '@mui/icons-material/Menu';
 import CssBaseline from '@mui/material/CssBaseline';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -13,9 +12,6 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import Image from 'next/image';
 import Link from 'next/link';
 import FooterDashboard from '../FooterDashboard';
@@ -103,7 +99,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   ({ theme, open }) => ({
     width: drawerWidth,
     flexShrink: 0,
-    whiteSpace: 'nowrap',
+    // whiteSpace: 'nowrap',
     boxSizing: 'border-box',
     ...(open && {
       ...openedMixin(theme),
@@ -117,7 +113,6 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 // Menu Item Nested
-
 type Item = {
   id: number;
   title: string;
@@ -194,7 +189,6 @@ export default function DashboardUser(props: any) {
     } else {
         setOpen(true)
     }
-    // handleResize();
   }, [windowWidth])
   const [open, setOpen] = React.useState(true)
   const handleDrawerOpen = () => {
@@ -226,13 +220,13 @@ export default function DashboardUser(props: any) {
         </ListItem>
       </List>
       <Divider light className='border-gray-600 mx-5 mb-4' />
-      <List subheader={
+      <List component='nav' sx={{ width: '100%', maxWidth: 250 }} subheader={
         <Typography variant='overline' sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'} }} className='font-bold text-[#9ca3af] px-5'>Layanan</Typography>
       }>
-        <ListItem disablePadding sx={{ display: 'block' }} className='text-[#9ca3af] transition-all ease-in-out'>
-          {items.map((item) => {
-            return(
-              <>
+        {items.map((item) => {
+        return(
+          <>
+          <ListItem disablePadding sx={{ display: 'block' }} className='text-[#9ca3af] transition-all ease-in-out'>
                 <Link href='#'>
                   <ListItemButton onClick={() => handleClick(item.id)} sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5, }} className='xs:pl-7 md:pl-5 hover:brightness-[1.6]'>
                     <ListItemIcon sx={{ minWidth: 0, mr: open ? 2 : {xs: 2, md: 'auto'}, justifyContent: 'center', }}>
@@ -242,14 +236,15 @@ export default function DashboardUser(props: any) {
                     <Typography variant='body2' className='text-gray-400 w-full' sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'} }}>{item.title}</Typography>
                     {openMenu[item.id] ? <ExpandLess sx={{ color: '#9ca3af', display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'}}} fontSize='small' /> : <ExpandMore sx={{ color: '#9ca3af', display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'}}} fontSize='small' />}
                   </ListItemButton>
-                  <Collapse in={openMenu[item.id]} timeout={500} unmountOnExit>
-                    <List disablePadding>
+                  <Collapse in={openMenu[item.id]} timeout={500} unmountOnExit sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'}}}>
+                    <List disablePadding className=''>
                       {item.subItem.map((subitem) => {
                         return(
                           <>
                             <Link href={subitem.link}>
-                              <ListItemButton className='hover:brightness-[1.6] translate-x-1'>
-                                <Typography variant='body2' className='text-gray-400 xs:pl-12 md:pl-10'>{subitem.subtitle}</Typography>
+                              <ListItemButton className='hover:brightness-[1.6]'>
+                                {/* <ListItemText secondary={subitem.subtitle} className='text-gray-400' /> */}
+                                <Typography variant='body2' className='text-gray-400 xs:pl-12 md:pl-10 break-words'>{subitem.subtitle}</Typography>
                               </ListItemButton>
                             </Link>
                           </>
@@ -258,40 +253,10 @@ export default function DashboardUser(props: any) {
                     </List>
                   </Collapse>
                 </Link>
-              </>
-            )
-          })}
-        </ListItem>
-        {/* <ListItem disablePadding sx={{ display: 'block' }} className='text-[#9ca3af] transition-all ease-in-out'>
-          <Link href='#'>
-            <ListItemButton onClick={handleClick} sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5, }} className='xs:pl-7 md:pl-5 hover:brightness-[1.6]'>
-              <ListItemIcon sx={{ minWidth: 0, mr: open ? 2 : {xs: 2, md: 'auto'}, justifyContent: 'center', }}>
-                <Inventory2OutlinedIcon sx={{ color: '#9ca3af'}} className='' fontSize='small' />
-              </ListItemIcon>
-              <Typography variant='body2' className='text-gray-400 w-full' sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'} }}>Ajukan Layanan</Typography>
-              {openMenu ? <ExpandLess sx={{ color: '#9ca3af'}} fontSize='small' /> : <ExpandMore sx={{ color: '#9ca3af'}} fontSize='small' />}
-            </ListItemButton>
-            <Collapse in={openMenu} timeout={500} unmountOnExit>
-              <List disablePadding>
-                <Link href='/users/dashboard'>
-                  <ListItemButton className='hover:brightness-[1.6]'>
-                    <Typography variant='body2' className='text-gray-400 xs:pl-12 md:pl-10'>Layanan Hubungan Masyarakat</Typography>
-                  </ListItemButton>
-                </Link>
-                <Link href='/users/dashboard'>
-                  <ListItemButton className='hover:brightness-[1.6]'>
-                    <Typography variant='body2' className='text-gray-400 xs:pl-12 md:pl-10'>Layanan Publikasi</Typography>
-                  </ListItemButton>
-                </Link>
-                <Link href='/users/dashboard'>
-                  <ListItemButton className='hover:brightness-[1.6]'>
-                    <Typography variant='body2' className='text-gray-400 xs:pl-12 md:pl-10'>Layanan Media</Typography>
-                  </ListItemButton>
-                </Link>
-              </List>
-            </Collapse>
-          </Link>
-        </ListItem> */}
+          </ListItem>
+          </>
+        )
+        })}
       </List>
       <Divider light className='border-gray-600 mx-5 mb-4' />
       <List subheader={
@@ -320,7 +285,7 @@ export default function DashboardUser(props: any) {
       </List>
     </>
   )
-  
+
   return (
     <>
       <Box sx={{ display: 'flex' }}>
