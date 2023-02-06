@@ -1,5 +1,5 @@
 import React from 'react';
-import { Drawer, List, ListItem, ListItemText, IconButton, Box } from '@mui/material';
+import { Drawer, IconButton, Box, Typography, Stack, Divider } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
 type TDrawerMobileProps = {
@@ -43,6 +43,10 @@ export default function DrawerMobile(props: TDrawerMobileProps) {
         onClose={toggleDrawer('left', false)}
         PaperProps={{ sx: {backgroundColor: '#323742'}}}
       >
+        <Stack className='flex h-16' justifyContent='center' alignItems='center'>
+            <Typography variant='h6' className='text-gray-400' sx={{display:'flex', justifyContent:'center', alignItems:'center', fontSize: 18}}>DASHBOARD SINATA</Typography>
+        </Stack>
+        <Divider className='border-gray-700' />
         {sideList}
       </Drawer>
     </>
