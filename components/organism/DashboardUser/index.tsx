@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, IconButton, Toolbar, Typography, Stack, Divider, List, Collapse, ListItemText } from '@mui/material';
+import { Box, IconButton, Toolbar, Typography, Stack, Divider, List, Collapse, ListItemText, Popover } from '@mui/material';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import MuiDrawer from '@mui/material/Drawer';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
@@ -198,6 +198,16 @@ export default function DashboardUser(props: any) {
   const handleDrawerClose = () => {
       setOpen(false);
   }
+
+  // Popver Menu on Collapsed
+  const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
+  const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handlePopoverClose = () => {
+    setAnchorEl(null);
+  };
+  const openPopover = Boolean(anchorEl);
   
   // Menu List
   const [openMenu, setOpenMenu] = React.useState({} as { [key: number]: boolean })
@@ -207,20 +217,46 @@ export default function DashboardUser(props: any) {
   }
   const listMenu = (
     <>
-      <List>
-        <ListItem disablePadding sx={{ display: 'block' }} className='text-[#9ca3af] hover:brightness-[1.6] transition-all ease-in-out'>
+      <List component='nav'>
+        <ListItem disablePadding sx={{ display: 'block' }} className='text-[#9ca3af] hover:brightness-[1.6] transition-all ease-in-out' aria-owns={openPopover ? '0' : undefined} aria-haspopup="false" onMouseOver={!open? handlePopoverOpen : undefined} onMouseLeave={handlePopoverClose}>
           <Link href='/users/dashboard'>
             <ListItemButton sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5, }} className='xs:pl-7 md:pl-5'>
               <ListItemIcon sx={{ minWidth: 0, mr: open ? 2 : {xs: 2, md: 'auto'}, justifyContent: 'center', }}>
-                <HomeOutlinedIcon sx={{ color: '#9ca3af'}} fontSize='small' />
+                <HomeOutlinedIcon sx={{ color: '#9ca3af'}} fontSize='small'/>
               </ListItemIcon>
-              <Typography variant='body2' className='text-gray-400 w-full' sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'} }}>Dashboard</Typography>
+              <Typography variant='body2' className='text-gray-400 w-full' sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'} }} >Dashboard</Typography>
             </ListItemButton>
           </Link>
+          <Popover id="mouse-over-popover" sx={{pointerEvents: 'none', display: {xs: 'none', md: 'block'}}} open={openPopover} anchorEl={anchorEl} anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'right',
+          }}
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'left',
+          }} PaperProps={{sx: { borderRadius: 0 }}}>
+            <Box sx={{ pointerEvents: 'auto', width: 200}} onMouseLeave={handlePopoverClose}>
+              <Box className='bg-[#323742] mb-2'>
+                <ListItemButton className='text-gray-400 hover:text-light py-4'>
+                  <Typography variant='body2'>Dashboard</Typography>
+                </ListItemButton>
+              </Box>
+              <Box className='bg-white'>
+                <ListItemButton className='text-gray-400 hover:text-primary py-3 pl-8'>
+                  <Typography variant='body2'>Riwayat</Typography>
+                </ListItemButton>
+              </Box>
+              <Box className='bg-white'>
+                <ListItemButton className='text-gray-400 hover:text-primary py-3 pl-8'>
+                  <Typography variant='body2'>Riwayat</Typography>
+                </ListItemButton>
+              </Box>
+            </Box>
+          </Popover>
         </ListItem>
       </List>
       <Divider light className='border-gray-600 mx-5 mb-4' />
-      <List component='nav' sx={{ width: '100%', maxWidth: 250 }} subheader={
+      <List component='nav' sx={{ width: '100%' }} subheader={
         <Typography variant='overline' sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'} }} className='font-bold text-[#9ca3af] px-5'>Layanan</Typography>
       }>
         {items.map((item) => {
@@ -230,11 +266,10 @@ export default function DashboardUser(props: any) {
                 <Link href='#'>
                   <ListItemButton onClick={() => handleClick(item.id)} sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5, }} className='xs:pl-7 md:pl-5 hover:brightness-[1.6]'>
                     <ListItemIcon sx={{ minWidth: 0, mr: open ? 2 : {xs: 2, md: 'auto'}, justifyContent: 'center', }}>
-                      {/* <DateRangeOutlinedIcon sx={{ color: '#9ca3af'}} className='' fontSize='small' /> */}
                       {item.icon}
                     </ListItemIcon>
                     <Typography variant='body2' className='text-gray-400 w-full' sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'} }}>{item.title}</Typography>
-                    {openMenu[item.id] ? <ExpandLess sx={{ color: '#9ca3af', display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'}}} fontSize='small' /> : <ExpandMore sx={{ color: '#9ca3af', display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'}}} fontSize='small' />}
+                    {openMenu[item.id] ? <ExpandMore sx={{ color: '#9ca3af', display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'}}} fontSize='small' /> : <ChevronRightIcon sx={{ color: '#9ca3af', display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'}}} fontSize='small' />}
                   </ListItemButton>
                   <Collapse in={openMenu[item.id]} timeout={500} unmountOnExit sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'}}}>
                     <List disablePadding className=''>
@@ -243,8 +278,7 @@ export default function DashboardUser(props: any) {
                           <>
                             <Link href={subitem.link}>
                               <ListItemButton className='hover:brightness-[1.6]'>
-                                {/* <ListItemText secondary={subitem.subtitle} className='text-gray-400' /> */}
-                                <Typography variant='body2' className='text-gray-400 xs:pl-12 md:pl-10 break-words'>{subitem.subtitle}</Typography>
+                                <Typography variant='body2' className='text-gray-400 xs:pl-12 md:pl-10'>{subitem.subtitle}</Typography>
                               </ListItemButton>
                             </Link>
                           </>
