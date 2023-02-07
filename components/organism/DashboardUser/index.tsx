@@ -113,17 +113,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 // Menu Item Nested
-type Item = {
-  id: number;
-  title: string;
-  icon: React.ReactNode;
-  subItem: {
-    id: number;
-    subtitle: string;
-    link: string;
-  }[],
-}
-const getCustomsOptions = ():Item[] => {
+const getCustomsOptions = () => {
   return [
     {
       id: 1,
