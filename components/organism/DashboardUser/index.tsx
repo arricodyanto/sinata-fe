@@ -1,11 +1,10 @@
 import React from 'react'
-import { Box, Button, Container, Grid, IconButton, Toolbar, Typography, Stack, Divider, List, ListSubheader, Collapse } from '@mui/material';
+import { Box, IconButton, Toolbar, Typography, Stack, Divider, List, Collapse, ListItemText, Popover } from '@mui/material';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import MuiDrawer from '@mui/material/Drawer';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import { styled, Theme, CSSObject } from '@mui/material/styles';
 import AppnavMenu from '../AppnavMenu';
-import ContainerPage from '../../atoms/ContainerPage';
 import MenuIcon from '@mui/icons-material/Menu';
 import CssBaseline from '@mui/material/CssBaseline';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -13,9 +12,6 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import Image from 'next/image';
 import Link from 'next/link';
 import FooterDashboard from '../FooterDashboard';
@@ -103,7 +99,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   ({ theme, open }) => ({
     width: drawerWidth,
     flexShrink: 0,
-    whiteSpace: 'nowrap',
+    // whiteSpace: 'nowrap',
     boxSizing: 'border-box',
     ...(open && {
       ...openedMixin(theme),
@@ -117,8 +113,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 // Menu Item Nested
-
-type Item = {
+interface ListItemProps {
   id: number;
   title: string;
   icon: React.ReactNode;
@@ -126,9 +121,9 @@ type Item = {
     id: number;
     subtitle: string;
     link: string;
-  }[],
+  }[]
 }
-const getCustomsOptions = ():Item[] => {
+const getCustomsOptions = ():ListItemProps[] => {
   return [
     {
       id: 1,
@@ -194,7 +189,6 @@ export default function DashboardUser(props: any) {
     } else {
         setOpen(true)
     }
-    // handleResize();
   }, [windowWidth])
   const [open, setOpen] = React.useState(true)
   const handleDrawerOpen = () => {
@@ -204,6 +198,29 @@ export default function DashboardUser(props: any) {
   const handleDrawerClose = () => {
       setOpen(false);
   }
+
+  // Popover Menu on Collapsed
+  // const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
+  // const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
+  // const handlePopoverClose = () => {
+  //   setAnchorEl(null);
+  // };
+  // const openPopover = Boolean(anchorEl);
+
+  // Popover Menu on Collapsed
+  const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
+  const [currentPopover, setCurrentPopover] = React.useState<null | ListItemProps>(null);
+  const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>, popover: ListItemProps) => {
+    setAnchorEl(event.currentTarget);
+    setCurrentPopover(popover);
+  };
+  const handlePopoverClose = () => {
+    setAnchorEl(null);
+    setCurrentPopover(null);
+  };
+  const openPopover = Boolean(anchorEl);
   
   // Menu List
   const [openMenu, setOpenMenu] = React.useState({} as { [key: number]: boolean })
@@ -213,85 +230,110 @@ export default function DashboardUser(props: any) {
   }
   const listMenu = (
     <>
-      <List>
+      <List component='nav'>
+        {/* <ListItem disablePadding sx={{ display: 'block' }} className='text-[#9ca3af] hover:brightness-[1.6] transition-all ease-in-out' aria-owns={openPopover ? '0' : undefined} aria-haspopup="false" onMouseOver={!open? handlePopoverOpen : undefined} onMouseLeave={handlePopoverClose}> */}
         <ListItem disablePadding sx={{ display: 'block' }} className='text-[#9ca3af] hover:brightness-[1.6] transition-all ease-in-out'>
           <Link href='/users/dashboard'>
             <ListItemButton sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5, }} className='xs:pl-7 md:pl-5'>
               <ListItemIcon sx={{ minWidth: 0, mr: open ? 2 : {xs: 2, md: 'auto'}, justifyContent: 'center', }}>
-                <HomeOutlinedIcon sx={{ color: '#9ca3af'}} fontSize='small' />
+                <HomeOutlinedIcon sx={{ color: '#9ca3af'}} fontSize='small'/>
               </ListItemIcon>
-              <Typography variant='body2' className='text-gray-400 w-full' sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'} }}>Dashboard</Typography>
+              <Typography variant='body2' className='text-gray-400 w-full' sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'} }} >Dashboard</Typography>
             </ListItemButton>
           </Link>
+          {/* <Popover id="mouse-over-popover" sx={{pointerEvents: 'none', display: {xs: 'none', md: 'block'}}} open={openPopover} anchorEl={anchorEl} anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'right',
+          }}
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'left',
+          }} PaperProps={{sx: { borderRadius: 0 }}}>
+            <Box sx={{ pointerEvents: 'auto', width: 200}} onMouseLeave={handlePopoverClose}>
+              <Box className='bg-[#323742] mb-2'>
+                <ListItemButton className='text-gray-400 hover:text-light py-4'>
+                  <Typography variant='body2'>Dashboard</Typography>
+                </ListItemButton>
+              </Box>
+              <Box className='bg-white'>
+                <ListItemButton className='text-gray-400 hover:text-primary py-3 pl-8'>
+                  <Typography variant='body2'>Riwayat</Typography>
+                </ListItemButton>
+              </Box>
+              <Box className='bg-white'>
+                <ListItemButton className='text-gray-400 hover:text-primary py-3 pl-8'>
+                  <Typography variant='body2'>Riwayat</Typography>
+                </ListItemButton>
+              </Box>
+            </Box>
+          </Popover> */}
         </ListItem>
       </List>
       <Divider light className='border-gray-600 mx-5 mb-4' />
-      <List subheader={
+      <List component='nav' sx={{ width: '100%' }} subheader={
         <Typography variant='overline' sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'} }} className='font-bold text-[#9ca3af] px-5'>Layanan</Typography>
       }>
-        <ListItem disablePadding sx={{ display: 'block' }} className='text-[#9ca3af] transition-all ease-in-out'>
-          {items.map((item) => {
-            return(
-              <>
-                <Link href='#'>
-                  <ListItemButton onClick={() => handleClick(item.id)} sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5, }} className='xs:pl-7 md:pl-5 hover:brightness-[1.6]'>
-                    <ListItemIcon sx={{ minWidth: 0, mr: open ? 2 : {xs: 2, md: 'auto'}, justifyContent: 'center', }}>
-                      {/* <DateRangeOutlinedIcon sx={{ color: '#9ca3af'}} className='' fontSize='small' /> */}
-                      {item.icon}
-                    </ListItemIcon>
-                    <Typography variant='body2' className='text-gray-400 w-full' sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'} }}>{item.title}</Typography>
-                    {openMenu[item.id] ? <ExpandLess sx={{ color: '#9ca3af', display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'}}} fontSize='small' /> : <ExpandMore sx={{ color: '#9ca3af', display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'}}} fontSize='small' />}
+        {items.map((item) => {
+        return(
+          <>
+          <ListItem key={item.id} disablePadding sx={{ display: 'block' }} className='text-[#9ca3af] transition-all ease-in-out'>
+            <Link href='#'>
+              {/* <ListItemButton onClick={() => handleClick(item.id)} sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5, }} className='xs:pl-7 md:pl-5 hover:brightness-[1.6]'> */}
+              <ListItemButton onClick={() => handleClick(item.id)} onMouseOver={!open? (e) => handlePopoverOpen(e, item) : undefined} onMouseDown={handlePopoverClose} sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5, }} className='xs:pl-7 md:pl-5 hover:brightness-[1.6]'>
+                <ListItemIcon sx={{ minWidth: 0, mr: open ? 2 : {xs: 2, md: 'auto'}, justifyContent: 'center', }}>
+                  {item.icon}
+                </ListItemIcon>
+                <Typography variant='body2' className='text-gray-400 w-full' sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'} }}>{item.title}</Typography>
+                {openMenu[item.id] ? <ExpandMore sx={{ color: '#9ca3af', display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'}}} fontSize='small' /> : <ChevronRightIcon sx={{ color: '#9ca3af', display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'}}} fontSize='small' />}
+              </ListItemButton>
+              <Collapse in={openMenu[item.id]} timeout={500} unmountOnExit sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'}}}>
+                <List disablePadding className=''>
+                  {item.subItem.map((subitem) => {
+                    return(
+                      <>
+                        <Link href={subitem.link}>
+                          <ListItemButton className='hover:brightness-[1.6]'>
+                            <Typography variant='body2' className='text-gray-400 xs:pl-12 md:pl-10'>{subitem.subtitle}</Typography>
+                          </ListItemButton>
+                        </Link>
+                      </>
+                    )
+                  })}
+                </List>
+              </Collapse>
+            </Link>
+          </ListItem>
+          <Popover open={openPopover} anchorEl={anchorEl} sx={{ pointerEvents: 'none', display: open? 'none' : {xs: 'none', md: 'block'} }} anchorOrigin={{vertical: 'top',
+            horizontal: 'right',
+          }}
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'left',
+          }} PaperProps={{sx: { borderRadius: 0, boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)'}}}>
+            {currentPopover ? <>
+              <Box sx={{ pointerEvents: 'auto', width: 200}} onMouseLeave={handlePopoverClose}>
+                <Box className='bg-[#323742] mb-2'>
+                  <ListItemButton className='text-gray-400 hover:text-light py-4'>
+                    <Typography variant='body2'>{currentPopover.title}</Typography>
                   </ListItemButton>
-                  <Collapse in={openMenu[item.id]} timeout={500} unmountOnExit>
-                    <List disablePadding>
-                      {item.subItem.map((subitem) => {
-                        return(
-                          <>
-                            <Link href={subitem.link}>
-                              <ListItemButton className='hover:brightness-[1.6] translate-x-1'>
-                                <Typography variant='body2' className='text-gray-400 xs:pl-12 md:pl-10'>{subitem.subtitle}</Typography>
-                              </ListItemButton>
-                            </Link>
-                          </>
-                        )
-                      })}
-                    </List>
-                  </Collapse>
-                </Link>
-              </>
-            )
-          })}
-        </ListItem>
-        {/* <ListItem disablePadding sx={{ display: 'block' }} className='text-[#9ca3af] transition-all ease-in-out'>
-          <Link href='#'>
-            <ListItemButton onClick={handleClick} sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5, }} className='xs:pl-7 md:pl-5 hover:brightness-[1.6]'>
-              <ListItemIcon sx={{ minWidth: 0, mr: open ? 2 : {xs: 2, md: 'auto'}, justifyContent: 'center', }}>
-                <Inventory2OutlinedIcon sx={{ color: '#9ca3af'}} className='' fontSize='small' />
-              </ListItemIcon>
-              <Typography variant='body2' className='text-gray-400 w-full' sx={{ display: open ? {xs: 'none', md: 'block'} : {xs: 'block', md: 'none'} }}>Ajukan Layanan</Typography>
-              {openMenu ? <ExpandLess sx={{ color: '#9ca3af'}} fontSize='small' /> : <ExpandMore sx={{ color: '#9ca3af'}} fontSize='small' />}
-            </ListItemButton>
-            <Collapse in={openMenu} timeout={500} unmountOnExit>
-              <List disablePadding>
-                <Link href='/users/dashboard'>
-                  <ListItemButton className='hover:brightness-[1.6]'>
-                    <Typography variant='body2' className='text-gray-400 xs:pl-12 md:pl-10'>Layanan Hubungan Masyarakat</Typography>
-                  </ListItemButton>
-                </Link>
-                <Link href='/users/dashboard'>
-                  <ListItemButton className='hover:brightness-[1.6]'>
-                    <Typography variant='body2' className='text-gray-400 xs:pl-12 md:pl-10'>Layanan Publikasi</Typography>
-                  </ListItemButton>
-                </Link>
-                <Link href='/users/dashboard'>
-                  <ListItemButton className='hover:brightness-[1.6]'>
-                    <Typography variant='body2' className='text-gray-400 xs:pl-12 md:pl-10'>Layanan Media</Typography>
-                  </ListItemButton>
-                </Link>
-              </List>
-            </Collapse>
-          </Link>
-        </ListItem> */}
+                </Box>
+                <>
+                  {currentPopover.subItem.map((subitem) => {
+                    return(
+                      <Box key={subitem.id} className='bg-white'>
+                        <ListItemButton className='text-gray-400 hover:text-primary py-3 pl-5'>
+                          <Typography variant='body2'>{subitem.subtitle}</Typography>
+                        </ListItemButton>
+                      </Box>
+                    )
+                  })}
+                </>
+              </Box>
+            </> : null}
+          </Popover>
+          </>
+        )
+        })}
       </List>
       <Divider light className='border-gray-600 mx-5 mb-4' />
       <List subheader={
@@ -320,7 +362,7 @@ export default function DashboardUser(props: any) {
       </List>
     </>
   )
-  
+
   return (
     <>
       <Box sx={{ display: 'flex' }}>
