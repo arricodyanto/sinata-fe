@@ -303,7 +303,7 @@ export default function DashboardUser(props: any) {
               </Collapse>
             </Link>
           </ListItem>
-          <Popover open={openPopover} anchorEl={anchorEl} sx={{ pointerEvents: 'none', display: open? 'none' : 'block' }} anchorOrigin={{vertical: 'top',
+          <Popover open={openPopover} anchorEl={anchorEl} sx={{ pointerEvents: 'none', display: open? 'none' : {xs: 'none', md: 'block'} }} anchorOrigin={{vertical: 'top',
             horizontal: 'right',
           }}
           transformOrigin={{
