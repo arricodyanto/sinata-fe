@@ -134,6 +134,10 @@ export default function UpdateItems() {
                 <li>- Update Sidebar Drawer Menu in collapsed for desktop device</li>
                 <li>- Update Updates Log content</li>
             </TimelineUpdates> 
+            <TimelineUpdates date='10 Feb, 2023' version='v1.4.2'>
+                <li>- Fix several Sidebar Drawer Menu in collapsed for desktop device</li>
+                <li>- Update Updates Log content</li>
+            </TimelineUpdates> 
         </Stack>
     </>
   )
