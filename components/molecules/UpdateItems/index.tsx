@@ -139,6 +139,10 @@ export default function UpdateItems() {
                 <li>- Fix content Sidebar Drawer Menu in collapsed for desktop device with Array</li>
                 <li>- Update Updates Log content</li>
             </TimelineUpdates> 
+            <TimelineUpdates date='15 Feb, 2023' version='v1.4.3'>
+                <li>- Add breadcrumbs and header page to dashboard</li>
+                <li>- Update Updates Log content</li>
+            </TimelineUpdates> 
         </Stack>
     </>
   )
