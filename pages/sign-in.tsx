@@ -13,7 +13,7 @@ export default function SignIn() {
         <Head>
             <title>Sign in - Sinata</title>
         </Head>
-        <Box className='grid place-items-center bg-light' sx={{height: {xs: '100vh'}}}>
+        <Box className='grid place-items-center bg-grey' sx={{height: {xs: '100vh'}}}>
             <ContainerPage className='lg:max-w-[1000px]'>
                 <Box mt={2} gridColumn={2} className="border rounded-md bg-white shadow-lg">
                     <Grid container>

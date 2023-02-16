@@ -24,7 +24,7 @@ export default function SignUpForm() {
             <FormControlLabel className='pl-1' sx={{alignItems: 'flex-start'}} control={<Checkbox size='small' sx={{ marginTop: -1 }} checked={checked} onChange={handleChecked}/>} label={<Typography variant='caption' className='text-gray-500'>
               dengan mencentang kolom ini, berarti anda setuju dengan syarat dan aturan yang berlaku
             </Typography>}/>
-            <Button variant='contained' disabled={!checked} fullWidth color='primary' className='mt-4 mb-1'>Register</Button>
+            <Button variant='contained' disabled={!checked} href='/sign-in' fullWidth color='primary' className='mt-4 mb-1'>Register</Button>
         </Box>
       </form>
     </>
