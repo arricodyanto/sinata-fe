@@ -19,7 +19,7 @@ export default function PengumumanContent() {
                                     {monthString}
                                 </Typography>
                             </Paper>
-                            <Paper component={Stack} sx={{display: {xs: 'none', sm: 'none', md: 'flex'}}} direction="column" justifyContent="center" elevation={0} className='bg-light text-center h-16 rounded-none'>
+                            <Paper component={Stack} sx={{display: {xs: 'none', sm: 'none', md: 'flex'}}} direction="column" justifyContent="center" elevation={0} className='bg-grey text-center h-16 rounded-none'>
                                 <Typography variant='caption' className='text-gray-600' sx={{fontSize: 6}}>
                                     {item.date}
                                 </Typography>

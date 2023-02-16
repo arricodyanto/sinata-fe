@@ -13,7 +13,7 @@ export default function SignUp() {
         <Head>
             <title>Create a New Account - Sinata</title>
         </Head>
-        <Box className='grid place-items-center bg-light mt-4' sx={{height: {xs: '100vh'}}}>
+        <Box className='grid place-items-center bg-grey mt-4' sx={{height: {xs: '100vh'}}}>
             <ContainerPage className='lg:max-w-[1000px]'>
                 <Box gridColumn={2} className="border rounded-md bg-white shadow-sm">
                     <Grid container py={4}>
