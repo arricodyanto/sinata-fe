@@ -22,10 +22,10 @@ export default function FlowCard(props: TFlowCardProps) {
     <>
         <Paper className='p-6 h-40 shadow-md rounded-xl' sx={{ bgcolor: `${color}`, color: `${text}`}}>
             <Stack spacing={1} direction='row'>
-                <Box className='w-2/3'>
+                <Box className='w-full'>
                     {icon}
                 </Box>
-                <Box>
+                <Box className='-translate-y-10 w-1/2'>
                     <BasicLineChart data={data} />
                 </Box>
             </Stack>
