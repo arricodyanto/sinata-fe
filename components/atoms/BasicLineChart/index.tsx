@@ -13,13 +13,36 @@ export default function BasicLineChart(props: TBasicLineChartProps & Partial<Ape
     const options = {
         chart: {
             id: 'basic-line',
+            toolbar: {
+                show: false
+            }
         },
         xaxis: {
+            tooltip: { enabled: false },
+            labels: {
+                show: false,
+            },
+              axisTicks: {
+                show: false
+              },
             categories: data.map((d) => d.x),
+        },
+        yaxis: {
+            labels: {
+                show: false,
+            }
         },
         grid: {
             show: false
         },
+        stroke: {
+            width: 2,
+            curve: (props as any).curve || 'smooth'
+        },
+        colors: ['#f87171'],
+        tooltip: {
+            // enabled: false
+        }
     }
     const series = [
         {
@@ -29,7 +52,8 @@ export default function BasicLineChart(props: TBasicLineChartProps & Partial<Ape
     ]
   return (
     <>
-        <ReactApexChart options={options} series={series} type="line" width={"100%"} height={150} />
+        <ReactApexChart options={options} series={series} type="line" width={"100%"} height={130} />
+        
     </>
   )
 }

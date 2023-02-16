@@ -145,6 +145,7 @@ export default function UpdateItems() {
             </TimelineUpdates> 
             <TimelineUpdates date='16 Feb, 2023' version='v1.4.4'>
                 <li>- Add service Flow Card to next section in dashboard</li>
+                <li>- Update Line Graph in Flow Card</li>
                 <li>- Update Updates Log content</li>
             </TimelineUpdates> 
         </Stack>
