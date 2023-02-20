@@ -33,8 +33,8 @@ export default function BasicDonutChart(props: TBasicDonutChartProps & Partial<A
                 breakpoint: 1200,
                 options: {
                     chart: {
-                        width: 120,
-                        height: 120
+                        width: 150,
+                        height: 150
                     }
                 }
             },

@@ -66,18 +66,18 @@ export default function Dashboard() {
               <FlowCard text={dark} lineColor={complete} data={data2} headline='Layanan selesai' icon={<CheckCircleOutlinedIcon fontSize='large' className='text-complete'/>} />
             </Grid>
           </Grid>
-          <Grid container marginBottom={8} rowSpacing={2} columnSpacing={4}>
+          <Grid container marginBottom={8} spacing={2}>
             <Grid item xs={12} md={4}>
-              <Paper className='shadow-md rounded-xl p-6'>
-                <Typography variant='subtitle1' color='text.primary' className='font-bold mb-4'>Layanan Yang Diajukan</Typography>
+              <Paper className='shadow-md px-6 py-4'>
+                <Typography variant='subtitle1' color='text.primary' className='font-bold mb-4 leading-5'>Layanan Yang Diajukan</Typography>
                 <Stack justifyContent='center' alignItems='center'>
                   <BasicDonutChart data={donutData} />
                 </Stack>
               </Paper>
             </Grid>
             <Grid item xs={12} md={8}>
-              <Paper className='shadow-md rounded-xl'>
-                <Typography variant='subtitle1' color='text.primary' className='p-6 font-bold'>Riwayat Layanan</Typography>
+              <Paper className='shadow-md px-6 py-4'>
+                <Typography variant='subtitle1' color='text.primary' className='font-bold mb-4 leading-5'>Riwayat Layanan</Typography>
               </Paper>
             </Grid>
           </Grid>
