@@ -5,11 +5,12 @@ import { ApexOptions } from 'apexcharts';
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 type TBasicLineChartProps = {
+    lineColor: string
     data: { x: string; y: number }[];
 }
 
 export default function BasicLineChart(props: TBasicLineChartProps & Partial<ApexOptions>) {
-    const { data } = props
+    const { lineColor, data } = props
     const options = {
         chart: {
             id: 'basic-line',
@@ -39,7 +40,7 @@ export default function BasicLineChart(props: TBasicLineChartProps & Partial<Ape
             width: 2,
             curve: (props as any).curve || 'smooth'
         },
-        colors: ['#f87171'],
+        colors: [`${lineColor}`],
         tooltip: {
             // enabled: false
         }
