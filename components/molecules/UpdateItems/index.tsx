@@ -148,6 +148,11 @@ export default function UpdateItems() {
                 <li>- Update Line Graph in Flow Card</li>
                 <li>- Update Updates Log content</li>
             </TimelineUpdates> 
+            <TimelineUpdates date='20 Feb, 2023' version='v1.4.4'>
+                <li>- Update line graph color, data graph</li>
+                <li>- Add Headline Flowcard and the summary</li>
+                <li>- Update Updates Log content</li>
+            </TimelineUpdates> 
         </Stack>
     </>
   )
