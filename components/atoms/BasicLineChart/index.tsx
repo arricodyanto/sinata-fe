@@ -54,7 +54,6 @@ export default function BasicLineChart(props: TBasicLineChartProps & Partial<Ape
   return (
     <>
         <ReactApexChart options={options} series={series} type="line" width={"100%"} height={130} />
-        
     </>
   )
 }
