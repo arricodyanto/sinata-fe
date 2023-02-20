@@ -153,6 +153,10 @@ export default function UpdateItems() {
                 <li>- Add Headline Flowcard and the summary</li>
                 <li>- Update Updates Log content</li>
             </TimelineUpdates> 
+            <TimelineUpdates date='20 Feb, 2023' version='v1.4.5'>
+                <li>- Add Layanan yang diajukan, Riwayat Layanan&apos;s section</li>
+                <li>- Update Updates Log content</li>
+            </TimelineUpdates> 
         </Stack>
     </>
   )
