@@ -23,12 +23,12 @@ export default function Dashboard() {
     { x: 'Jun', y: 55 },
   ];
   const data1 = [
-    { x: 'Jan', y: 12 },
-    { x: 'Feb', y: 11 },
-    { x: 'Mar', y: 13 },
-    { x: 'Apr', y: 10 },
-    { x: 'May', y: 13 },
-    { x: 'Jun', y: 10 },
+    { x: 'Jan', y: 1 },
+    { x: 'Feb', y: 2 },
+    { x: 'Mar', y: 1 },
+    { x: 'Apr', y: 3 },
+    { x: 'May', y: 2 },
+    { x: 'Jun', y: 3 },
   ];
   const data2 = [
     { x: 'Jan', y: 71 },
@@ -37,7 +37,7 @@ export default function Dashboard() {
     { x: 'Apr', y: 51 },
     { x: 'May', y: 27 },
     { x: 'Jun', y: 33 },
-  ];
+  ]
   return (
     <>
       <Box className='bg-grey'>
@@ -46,13 +46,13 @@ export default function Dashboard() {
           <HeaderBreadcrumbs pageHeader='Dashboard' currentPage='Dashboard' />
           <Grid container spacing={4} className='mb-8'>
             <Grid item xs={12} md={4}>
-              <FlowCard text={dark} lineColor={primary} data={data} icon={<ArrowCircleDownOutlinedIcon fontSize='large' className='text-primary'/>} />
+              <FlowCard text={dark} lineColor={primary} data={data} headline='Layanan diajukan' icon={<ArrowCircleDownOutlinedIcon fontSize='large' className='text-primary'/>} />
             </Grid>
             <Grid item xs={12} md={4}>
-              <FlowCard text={dark} lineColor={pending} data={data1} icon={<PendingOutlinedIcon fontSize='large' className='text-pending'/>} />
+              <FlowCard text={dark} lineColor={pending} data={data1} headline='Layanan dalam proses' icon={<PendingOutlinedIcon fontSize='large' className='text-pending'/>} />
             </Grid>
             <Grid item xs={12} md={4}>
-              <FlowCard text={dark} lineColor={complete} data={data2} icon={<CheckCircleOutlinedIcon fontSize='large' className='text-complete'/>} />
+              <FlowCard text={dark} lineColor={complete} data={data2} headline='Layanan selesai' icon={<CheckCircleOutlinedIcon fontSize='large' className='text-complete'/>} />
             </Grid>
           </Grid>
         </DashboardUser>
