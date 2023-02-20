@@ -11,18 +11,39 @@ type TBasicDonutChartProps = {
 export default function BasicDonutChart(props: TBasicDonutChartProps & Partial<ApexOptions>) {
     const { data } = props
     const options = {
-        chart: {
-            id: 'basic-donut',
-        },
         legend: {
             show: false
         },
+        stroke: {
+            width: 0
+        },
         labels: data.map((d) => d.x),
-        series: data.map((d) => d.y)
+        series: data.map((d) => d.y),
+        responsive: [
+            {
+                breakpoint: 480,
+                options: {
+                    chart: {
+                        width: 300,
+                        height: 300
+                    }
+                }
+            },
+            {
+                breakpoint: 1200,
+                options: {
+                    chart: {
+                        width: 150,
+                        height: 150
+                    }
+                }
+            },
+        ]
+
     }
   return (
     <>
-        <ReactApexChart options={options} series={options.series} type="donut" width={"100%"} height={330} />
+        <ReactApexChart options={options} series={options.series} type="donut" width={300} height={300} />
     </>
   )
 }
