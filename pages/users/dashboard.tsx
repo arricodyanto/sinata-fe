@@ -22,6 +22,22 @@ export default function Dashboard() {
     { x: 'May', y: 35 },
     { x: 'Jun', y: 55 },
   ];
+  const data1 = [
+    { x: 'Jan', y: 12 },
+    { x: 'Feb', y: 11 },
+    { x: 'Mar', y: 13 },
+    { x: 'Apr', y: 10 },
+    { x: 'May', y: 13 },
+    { x: 'Jun', y: 10 },
+  ];
+  const data2 = [
+    { x: 'Jan', y: 71 },
+    { x: 'Feb', y: 23 },
+    { x: 'Mar', y: 63 },
+    { x: 'Apr', y: 51 },
+    { x: 'May', y: 27 },
+    { x: 'Jun', y: 33 },
+  ];
   return (
     <>
       <Box className='bg-grey'>
@@ -33,10 +49,10 @@ export default function Dashboard() {
               <FlowCard text={dark} lineColor={primary} data={data} icon={<ArrowCircleDownOutlinedIcon fontSize='large' className='text-primary'/>} />
             </Grid>
             <Grid item xs={12} md={4}>
-              <FlowCard text={dark} lineColor={pending} data={data} icon={<PendingOutlinedIcon fontSize='large' className='text-pending'/>} />
+              <FlowCard text={dark} lineColor={pending} data={data1} icon={<PendingOutlinedIcon fontSize='large' className='text-pending'/>} />
             </Grid>
             <Grid item xs={12} md={4}>
-              <FlowCard text={dark} lineColor={complete} data={data} icon={<CheckCircleOutlinedIcon fontSize='large' className='text-complete'/>} />
+              <FlowCard text={dark} lineColor={complete} data={data2} icon={<CheckCircleOutlinedIcon fontSize='large' className='text-complete'/>} />
             </Grid>
           </Grid>
         </DashboardUser>
