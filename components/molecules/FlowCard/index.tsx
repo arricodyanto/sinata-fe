@@ -25,7 +25,7 @@ export default function FlowCard(props: TFlowCardProps) {
                 </Box>
             </Stack>
             <Stack>
-                <Typography variant='subtitle1' color='text.secondary' className='leading-4'>{headline}</Typography>
+                <Typography variant='subtitle1' color='text.secondary' className='leading-4 capitalize'>{headline}</Typography>
                 <Typography variant='h6' color='text.primary'>{data.map(item => item.y).reduce((prev, next) => prev + next)}</Typography>
             </Stack>
         </Paper>

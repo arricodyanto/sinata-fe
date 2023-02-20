@@ -8,6 +8,7 @@ import DashboardUser from '../../components/organism/DashboardUser'
 import ArrowCircleDownOutlinedIcon from '@mui/icons-material/ArrowCircleDownOutlined';
 import PendingOutlinedIcon from '@mui/icons-material/PendingOutlined';
 import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
+import BasicDonutChart from '../../components/atoms/BasicDonutChart';
 
 export default function Dashboard() {
   const dark = '#1f2937'
@@ -38,13 +39,24 @@ export default function Dashboard() {
     { x: 'May', y: 27 },
     { x: 'Jun', y: 33 },
   ]
+  const donutData = [
+    { x: 'Layanan Peliputan', y: 71 },
+    { x: 'Layanan Konferensi Pers', y: 0 },
+    { x: 'Layanan Pembaruan Informasi Unit di Laman', y: 0 },
+    { x: 'Layanan Live Streaming', y: 17 },
+    { x: 'Layanan Publikasi di Medsos & Laman UNS', y: 27 },
+    { x: 'Layanan Publikasi Majalah di UNS', y: 7 },
+    { x: 'Layanan Opini di Media', y: 0 },
+    { x: 'Layanan Penayangan Konten di Videotron', y: 17 },
+    { x: 'Layanan Pemasangan Baliho', y: 2 },
+  ]
   return (
     <>
       <Box className='bg-grey'>
         <TitlePage title='Dashboard User - Sinata' />
         <DashboardUser>
           <HeaderBreadcrumbs pageHeader='Dashboard' currentPage='Dashboard' />
-          <Grid container spacing={4} className='mb-8'>
+          <Grid container marginBottom={{ xs: 2, md: 4 }} rowSpacing={2} columnSpacing={4}>
             <Grid item xs={12} md={4}>
               <FlowCard text={dark} lineColor={primary} data={data} headline='Layanan diajukan' icon={<ArrowCircleDownOutlinedIcon fontSize='large' className='text-primary'/>} />
             </Grid>
@@ -53,6 +65,19 @@ export default function Dashboard() {
             </Grid>
             <Grid item xs={12} md={4}>
               <FlowCard text={dark} lineColor={complete} data={data2} headline='Layanan selesai' icon={<CheckCircleOutlinedIcon fontSize='large' className='text-complete'/>} />
+            </Grid>
+          </Grid>
+          <Grid container marginBottom={8} rowSpacing={2} columnSpacing={4}>
+            <Grid item xs={12} md={4}>
+              <Paper className='shadow-md rounded-xl'>
+                <Typography variant='subtitle1' color='text.primary' className='p-6 font-bold'>Layanan Yang Diajukan</Typography>
+                <BasicDonutChart data={donutData} />
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Paper className='shadow-md rounded-xl'>
+                <Typography variant='subtitle1' color='text.primary' className='p-6 font-bold'>Riwayat Layanan</Typography>
+              </Paper>
             </Grid>
           </Grid>
         </DashboardUser>
