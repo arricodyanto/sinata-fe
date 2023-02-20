@@ -44,7 +44,7 @@ export default function Dashboard() {
         <TitlePage title='Dashboard User - Sinata' />
         <DashboardUser>
           <HeaderBreadcrumbs pageHeader='Dashboard' currentPage='Dashboard' />
-          <Grid container spacing={4} className='mb-8'>
+          <Grid container spacing={4} marginBottom={4}>
             <Grid item xs={12} md={4}>
               <FlowCard text={dark} lineColor={primary} data={data} headline='Layanan diajukan' icon={<ArrowCircleDownOutlinedIcon fontSize='large' className='text-primary'/>} />
             </Grid>
@@ -53,6 +53,18 @@ export default function Dashboard() {
             </Grid>
             <Grid item xs={12} md={4}>
               <FlowCard text={dark} lineColor={complete} data={data2} headline='Layanan selesai' icon={<CheckCircleOutlinedIcon fontSize='large' className='text-complete'/>} />
+            </Grid>
+          </Grid>
+          <Grid container spacing={4} marginBottom={8}>
+            <Grid item xs={12} md={4}>
+              <Paper className='shadow-md rounded-xl'>
+                <Typography variant='subtitle1' color='text.primary' className='p-6 font-bold'>Layanan Yang Diajukan</Typography>
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Paper className='shadow-md rounded-xl'>
+                <Typography variant='subtitle1' color='text.primary' className='p-6 font-bold'>Riwayat Layanan</Typography>
+              </Paper>
             </Grid>
           </Grid>
         </DashboardUser>
