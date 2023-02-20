@@ -11,6 +11,17 @@ import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
 
 export default function Dashboard() {
   const dark = '#1f2937'
+  const primary = '#0ea5e9'
+  const pending = '#f59e0b'
+  const complete = '#22c55e'
+  const data = [
+    { x: 'Jan', y: 40 },
+    { x: 'Feb', y: 30 },
+    { x: 'Mar', y: 45 },
+    { x: 'Apr', y: 50 },
+    { x: 'May', y: 35 },
+    { x: 'Jun', y: 55 },
+  ];
   return (
     <>
       <Box className='bg-grey'>
@@ -19,13 +30,13 @@ export default function Dashboard() {
           <HeaderBreadcrumbs pageHeader='Dashboard' currentPage='Dashboard' />
           <Grid container spacing={4} className='mb-8'>
             <Grid item xs={12} md={4}>
-              <FlowCard text={dark} icon={<ArrowCircleDownOutlinedIcon fontSize='large' className='text-primary'/>} />
+              <FlowCard text={dark} lineColor={primary} data={data} icon={<ArrowCircleDownOutlinedIcon fontSize='large' className='text-primary'/>} />
             </Grid>
             <Grid item xs={12} md={4}>
-              <FlowCard text={dark} icon={<PendingOutlinedIcon fontSize='large' className='text-pending'/>} />
+              <FlowCard text={dark} lineColor={pending} data={data} icon={<PendingOutlinedIcon fontSize='large' className='text-pending'/>} />
             </Grid>
             <Grid item xs={12} md={4}>
-              <FlowCard text={dark} icon={<CheckCircleOutlinedIcon fontSize='large' className='text-complete'/>} />
+              <FlowCard text={dark} lineColor={complete} data={data} icon={<CheckCircleOutlinedIcon fontSize='large' className='text-complete'/>} />
             </Grid>
           </Grid>
         </DashboardUser>
