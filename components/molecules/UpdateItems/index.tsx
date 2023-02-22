@@ -165,6 +165,10 @@ export default function UpdateItems() {
                 <li>- Add modal button to each table row</li>
                 <li>- Update Updates Log content</li>
             </TimelineUpdates> 
+            <TimelineUpdates date='23 Feb, 2023' version='v1.4.5'>
+                <li>- Add responsive editable form to modal box</li>
+                <li>- Update Updates Log content</li>
+            </TimelineUpdates> 
         </Stack>
     </>
   )
