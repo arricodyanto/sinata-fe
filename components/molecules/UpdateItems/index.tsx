@@ -159,6 +159,10 @@ export default function UpdateItems() {
                 <li>- Update responsiveness of Donut Chart to multiple devices</li>
                 <li>- Update Updates Log content</li>
             </TimelineUpdates> 
+            <TimelineUpdates date='22 Feb, 2023' version='v1.4.5'>
+                <li>- Add Riwayat Layanan Table Data</li>
+                <li>- Update Updates Log content</li>
+            </TimelineUpdates> 
         </Stack>
     </>
   )
