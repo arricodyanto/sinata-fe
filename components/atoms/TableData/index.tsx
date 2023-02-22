@@ -1,7 +1,13 @@
 import React from 'react'
-import { Box, Chip, Fade, IconButton, Modal, Paper, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
+import { Box, Button, Chip, Fade, IconButton, InputAdornment, Modal, Paper, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
+import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
+import TextfieldBasic from '../TextfieldBasic';
+import DatePickerBasic from '../DatePickerBasic';
+import TimePickerBasic from '../TimePickerBasic';
+import DeleteIcon from '@mui/icons-material/Delete';
+import SaveIcon from '@mui/icons-material/Save';
 
 function createData(
     jenisLayanan: string,
@@ -86,10 +92,28 @@ export default function TableData() {
                         { rows.filter((item, i) => i === currIndex).map(data => {
                             return(
                                 <>
-                                    <Typography variant='subtitle2' className='font-bold'>{data.judulKegiatan}</Typography>
+                                    <TextfieldBasic label='Jenis Layanan' value={data.jenisLayanan} disabled />
+                                    <TextfieldBasic label='Judul Kegiatan' value={data.judulKegiatan} InputProps={{ endAdornment: (<InputAdornment position='end'><SearchIcon /></InputAdornment>)}} />
+                                    <Stack direction='row' spacing={1} className='mb-6'>
+                                        <DatePickerBasic label='Tanggal Kegiatan' defaultValue={data.tanggal} />
+                                        <TimePickerBasic label='Waktu Kegiatan' defaultValue={data.tanggal+' '+data.waktu} />
+                                    </Stack>
+                                    <TextfieldBasic label='Tempat Kegiatan' value={data.tempat} />
+                                    <Stack direction='row' spacing={1} className='mb-2'>
+                                        <Typography variant='subtitle2' className='font-bold'>Status</Typography>
+                                        {
+                                            data.status === 'Pending' ? <Chip label={data.status} size='small' className='bg-primary text-white text-xs' /> 
+                                            : data.status === 'On Progress' ? <Chip label={data.status} size='small' className='bg-pending text-white text-xs' /> 
+                                            : data.status === 'Completed' ? <Chip label={data.status} size='small' className='bg-complete text-white text-xs' /> : undefined
+                                        }
+                                    </Stack>
                                 </>
                             )
                         })}
+                        <Stack direction='row' justifyContent='flex-end' spacing={1} marginBottom={1}>
+                            <Button variant='outlined' color='error' size='small' className='rounded-md' startIcon={<DeleteIcon fontSize='small' className='-mr-2' />}>Hapus</Button>
+                            <Button variant='contained' color='success' size='small' className='rounded-md' disableElevation startIcon={<SaveIcon fontSize='small' className='-mr-2' />}>Simpan</Button>
+                        </Stack>
                     </Box>
                 </Box>
             </Fade>

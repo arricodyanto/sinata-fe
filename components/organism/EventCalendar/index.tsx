@@ -12,7 +12,26 @@ import EventModalItems from '../EventModalItems';
 
 export default function EventCalendar() {
   const initialValue = dayjs()
-  const [fetchP, setFetchP] = React.useState<number[]>([])
+  const getBulan = initialValue.month()+1
+  const getTahun = initialValue.year()
+  // get array of object from db (json)
+  const jsonValue = event.map((item) => item.date)
+
+  // filter array of object from db (json) by current month
+  const filterMonthdb = jsonValue.filter((item:any) => item.split('/')[1] == getBulan.toString())
+  // const splitDate = filterMonthdb.map((item) => item.split('/')[1] == currentMonth.toString())
+
+  // filter array from filterMonthdb by current year
+  const filterYeardb = filterMonthdb.filter((item:any) => item.split('/')[2] == getTahun.toString())
+  // console.log(filterYeardb)
+  
+  // get only date from array of object from db (json)
+  const stringDate = filterYeardb.map((item:any) => item.split('/')[0])
+
+  // convert date string to number
+  const highlightDays = stringDate.map(Number)
+
+  const [fetchP, setFetchP] = React.useState<number[]>(highlightDays)
   const requestAbortController = React.useRef<AbortController | null>(null);
   const [isLoading, setIsLoading] = React.useState(false);
   const [highlightedDays, setHighlightedDays] = React.useState([1, 2, 15]);
@@ -37,7 +56,7 @@ export default function EventCalendar() {
         const daysToHighlight = highlightDays;
         
         const dateValue = value?.format('D-M-YYYY')
-        console.log(highlightDays)
+        // console.log(highlightDays)
   
         resolve({ daysToHighlight });
       }, 500);
