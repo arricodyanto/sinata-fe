@@ -1,7 +1,9 @@
-import { Chip, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import React from 'react'
+import { Box, Chip, Fade, IconButton, Modal, Paper, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import CloseIcon from '@mui/icons-material/Close';
 
-function createData(
+  function createData(
     jenisLayanan: string,
     judulKegiatan: string,
     tanggal: string,
@@ -11,6 +13,17 @@ function createData(
   ) {
     return { jenisLayanan, judulKegiatan, tanggal, waktu, tempat, status };
   }
+
+  function getData(i:number) {
+    // console.log(rows[index])
+    return(
+        <>
+            <Box>
+                <Typography variant='h6' fontWeight='bold' color='primary.main'>{rows[i].judulKegiatan}</Typography>
+            </Box>
+        </>
+    )
+  }
   
   const rows = [
     createData('Layanan Peliputan', 'Lomba Gobak Sodor Dharmawanita UNS', '07/03/2023', '08.00', 'Selasar Auditorium UNS', 'Pending'),
@@ -19,7 +32,14 @@ function createData(
   ]
 
 export default function TableData() {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = (index:number) => {
+        setOpen(true)
+        getData(index)
+        // console.log(index)
+    }
     
+    const handleClose = () => setOpen(false);
   return (
     <>
         <TableContainer component={Paper} className='shadow-none overflow-x-auto'>
@@ -36,7 +56,7 @@ export default function TableData() {
                 </TableRow>
                 </TableHead>
                 <TableBody>
-                {rows.map((row) => (
+                {rows.map((row, index) => (
                     <TableRow key={row.judulKegiatan} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                         <TableCell component="th" scope="row">
                             {row.jenisLayanan}
@@ -45,17 +65,40 @@ export default function TableData() {
                         <TableCell align='center'>{row.tanggal}</TableCell>
                         <TableCell align='center'>{row.waktu}</TableCell>
                         <TableCell>{row.tempat}</TableCell>
-                        <TableCell align='center'>Aksi</TableCell>
+                        <TableCell align='center'>
+                            <IconButton onClick={() => handleOpen(index)} aria-label='view-more' size='small' className='hover:text-primary'>
+                                <VisibilityIcon fontSize='small' />
+                            </IconButton>
+                        </TableCell>
                         <TableCell align='center'>{
-                            row.status === 'Pending' ? <Chip label={row.status} size='small' className='bg-primary text-white' /> 
-                            : row.status === 'On Progress' ? <Chip label={row.status} size='small' className='bg-pending text-white' /> 
-                            : row.status === 'Completed' ? <Chip label={row.status} size='small' className='bg-complete text-white' /> : undefined
+                            row.status === 'Pending' ? <Chip label={row.status} size='small' className='bg-primary text-white text-xs' /> 
+                            : row.status === 'On Progress' ? <Chip label={row.status} size='small' className='bg-pending text-white text-xs' /> 
+                            : row.status === 'Completed' ? <Chip label={row.status} size='small' className='bg-complete text-white text-xs' /> : undefined
                         }</TableCell>
                     </TableRow>
                 ))}
                 </TableBody>
             </Table>
         </TableContainer>
+        <Modal open={open} onClose={handleClose}>
+            <Fade in={open}>
+                <Box className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white py-4 px-6 rounded-md xs:w-[calc(100%-40px)] md:w-[600px]'>
+                    <Stack direction='row' justifyContent='space-between' className='sticky'>
+                        <Typography id="transition-modal-title" variant="subtitle1" component="h2" className='font-bold'>
+                            Riwayat Layanan
+                        </Typography>
+                        <IconButton onClick={handleClose} aria-label='close' size='small' className='hover:text-primary'>
+                            <CloseIcon fontSize='small' />
+                        </IconButton>
+                    </Stack>
+                    <Typography id="transition-modal-description" sx={{ mt: 2 }}>
+                        <>
+                            
+                        </>
+                    </Typography>
+                </Box>
+            </Fade>
+        </Modal>
     </>
   )
 }
