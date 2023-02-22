@@ -3,39 +3,29 @@ import { Box, Chip, Fade, IconButton, Modal, Paper, Stack, Table, TableBody, Tab
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import CloseIcon from '@mui/icons-material/Close';
 
-  function createData(
+function createData(
     jenisLayanan: string,
     judulKegiatan: string,
     tanggal: string,
     waktu: string,
     tempat: string,
     status: string,
-  ) {
+) {
     return { jenisLayanan, judulKegiatan, tanggal, waktu, tempat, status };
-  }
+}
 
-  function getData(i:number) {
-    // console.log(rows[index])
-    return(
-        <>
-            <Box>
-                <Typography variant='h6' fontWeight='bold' color='primary.main'>{rows[i].judulKegiatan}</Typography>
-            </Box>
-        </>
-    )
-  }
-  
-  const rows = [
+const rows = [
     createData('Layanan Peliputan', 'Lomba Gobak Sodor Dharmawanita UNS', '07/03/2023', '08.00', 'Selasar Auditorium UNS', 'Pending'),
     createData('Layanan Penayangan Konten di Videotron', 'World Dance Event 46 - PUI Javanologi UNS', '10/03/2023', '08.00', 'Halaman Kantor Pusat UNS', 'On Progress'),
     createData('Layanan Live Streaming', 'Webinar Strategi Pencegahan Klaster Covid PTM Terbatas', '17/03/2023', '13.00', 'Ruang Sidang II Kantor Pusat UNS', 'Completed'),
-  ]
+]
 
 export default function TableData() {
     const [open, setOpen] = React.useState(false);
+    const [currIndex, setCurrIndex] = React.useState(0)
     const handleOpen = (index:number) => {
         setOpen(true)
-        getData(index)
+        setCurrIndex(index)
         // console.log(index)
     }
     
@@ -69,6 +59,7 @@ export default function TableData() {
                             <IconButton onClick={() => handleOpen(index)} aria-label='view-more' size='small' className='hover:text-primary'>
                                 <VisibilityIcon fontSize='small' />
                             </IconButton>
+                            
                         </TableCell>
                         <TableCell align='center'>{
                             row.status === 'Pending' ? <Chip label={row.status} size='small' className='bg-primary text-white text-xs' /> 
@@ -91,11 +82,15 @@ export default function TableData() {
                             <CloseIcon fontSize='small' />
                         </IconButton>
                     </Stack>
-                    <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-                        <>
-                            
-                        </>
-                    </Typography>
+                    <Box id="transition-modal-description" sx={{ mt: 2 }}>
+                        { rows.filter((item, i) => i === currIndex).map(data => {
+                            return(
+                                <>
+                                    <Typography variant='subtitle2' className='font-bold'>{data.judulKegiatan}</Typography>
+                                </>
+                            )
+                        })}
+                    </Box>
                 </Box>
             </Fade>
         </Modal>
