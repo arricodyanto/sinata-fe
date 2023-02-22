@@ -161,6 +161,7 @@ export default function UpdateItems() {
             </TimelineUpdates> 
             <TimelineUpdates date='22 Feb, 2023' version='v1.4.5'>
                 <li>- Add Riwayat Layanan Table Data</li>
+                <li>- Fix Rensponsivenes Table Data on multiple devices</li>
                 <li>- Update Updates Log content</li>
             </TimelineUpdates> 
         </Stack>
