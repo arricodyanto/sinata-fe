@@ -23,7 +23,6 @@ import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
-import ContainerPage from '../../atoms/ContainerPage';
 
 type TDashboardUserProps = {
     children: React.ReactNode;
@@ -374,12 +373,10 @@ export default function DashboardUser(props: any) {
           <Divider className='border-gray-700' />
             {listMenu}
         </Drawer>
-        <Box component="main" className='pt-3 min-w-0'>
-          <ContainerPage>
-            <DrawerHeader />
-            {children}
-            <FooterDashboard />
-          </ContainerPage>
+        <Box component="main" className='pt-3 min-w-0 xs:px-4 sm:px-7 min-h-screen'>
+          <DrawerHeader />
+          {children}
+          <FooterDashboard />
         </Box>
       </Box>
     </>
