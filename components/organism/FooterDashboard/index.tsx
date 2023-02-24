@@ -6,7 +6,7 @@ export default function FooterDashboard() {
     var year = new Date().getFullYear()
   return (
     <>
-    <Stack className='w-full'>
+    <Stack className='w-full mt-8'>
         <Divider light />
         <Stack direction="row" justifyContent="space-between" alignItems="center" className='py-3 px-6'>
             <Stack direction="row" alignItems="center">

@@ -9,6 +9,7 @@ import PendingOutlinedIcon from '@mui/icons-material/PendingOutlined';
 import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
 import BasicDonutChart from '../../components/atoms/BasicDonutChart';
 import TableData from '../../components/atoms/TableData'
+import DaisyCarousel from '../../components/organism/DaisyCarousel'
 
 export default function Dashboard() {
   const dark = '#1f2937'
@@ -67,7 +68,7 @@ export default function Dashboard() {
               <FlowCard text={dark} lineColor={complete} data={data2} headline='Layanan selesai' icon={<CheckCircleOutlinedIcon fontSize='large' className='text-complete'/>} />
             </Grid>
           </Grid>
-          <Grid container marginBottom={8} spacing={2}>
+          <Grid container spacing={2}>
             <Grid item xs={12} md={4}>
               <Paper className='shadow-md px-6 py-4'>
                 <Typography variant='subtitle1' color='text.primary' className='font-bold mb-4 leading-5'>Layanan Yang Diajukan</Typography>
@@ -83,6 +84,12 @@ export default function Dashboard() {
               </Paper>
             </Grid>
           </Grid>
+          <Paper className='shadow-md px-6 py-4 mt-3'>
+            <Typography variant='subtitle1' color='text.primary' className='font-bold mb-2 leading-5'>Agenda Terkini</Typography>
+            <Box className='justify-center flex'>
+              <DaisyCarousel />
+            </Box>
+          </Paper>
         </DashboardUser>
       </Box>
     </>

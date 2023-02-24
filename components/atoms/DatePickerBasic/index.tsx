@@ -21,7 +21,7 @@ export default function DatePickerBasic(props: TDatePickerBasicProps) {
   return (
     <>
         <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker label={label} inputFormat='DD/MM/YYYY' value={value} onChange={handleChange} renderInput={(params) => <TextField className='mb-6' fullWidth variant='outlined' size='small' inputProps={{style: {fontSize: 14}}} sx={{'& .MuiOutlinedInput-root': { '&:hover fieldset': { borderColor: '#0ea5e9',}}}} {...params} />} />
+            <DatePicker label={label} inputFormat='DD/MM/YYYY' value={value} onChange={handleChange} InputProps={{ style: {fontSize: 14}}} renderInput={(params) => <TextField className='mb-6' fullWidth variant='outlined' size='small' sx={{'& .MuiOutlinedInput-root': { '&:hover fieldset': { borderColor: '#0ea5e9',}}}} {...params} />} />
         </LocalizationProvider>
     </>
   )
