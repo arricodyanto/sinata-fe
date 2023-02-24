@@ -26,7 +26,7 @@ const rows = [
     createData('Layanan Live Streaming', 'Webinar Strategi Pencegahan Klaster Covid PTM Terbatas', '17/03/2023', '13.00', 'Ruang Sidang II Kantor Pusat UNS', 'Completed'),
 ]
 
-export default function TableData() {
+export default function TableRiwayat() {
     const [open, setOpen] = React.useState(false);
     const [currIndex, setCurrIndex] = React.useState(0)
     const handleOpen = (index:number) => {
@@ -65,7 +65,6 @@ export default function TableData() {
                             <IconButton onClick={() => handleOpen(index)} aria-label='view-more' size='small' className='hover:text-primary'>
                                 <VisibilityIcon fontSize='small' />
                             </IconButton>
-                            
                         </TableCell>
                         <TableCell align='center'>{
                             row.status === 'Pending' ? <Chip label={row.status} size='small' className='bg-primary text-white text-xs' /> 
