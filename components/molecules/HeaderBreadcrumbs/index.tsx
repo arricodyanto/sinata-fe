@@ -18,12 +18,10 @@ export default function HeaderBreadcrumbs(props: THeaderBreadcrumbsProps) {
             </Grid>
             <Grid item xs={12} md={6} className='flex sm:justify-start md:justify-end'>
                 <Breadcrumbs aria-label='breadcrumb' sx={{ color: 'text.secondary'}}>
-                    <Box className='text-zinc-900 hover:underline hover:decoration-1 hover:underline-offset-2'>
-                        <Link href='/'>
-                            Sinata
-                        </Link>
-                        {children}
-                    </Box>
+                    <Link href='/' className='text-zinc-900 hover:underline hover:decoration-1 hover:underline-offset-2'>
+                        Sinata
+                    </Link>
+                    {children}
                     <Typography color='text.secondary'>{currentPage}</Typography>
                 </Breadcrumbs>
             </Grid>

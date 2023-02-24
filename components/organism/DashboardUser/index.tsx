@@ -142,13 +142,13 @@ const getCustomsOptions = ():ListItemProps[] => {
       subheader: 'Layanan',
       title: 'Riwayat',
       icon: <DateRangeOutlinedIcon sx={{ color: '#9ca3af' }} fontSize='small' />,
-      link: '#',
+      link: '',
       divider: null,
       subItem: [
         {
           id: 1,
           subtitle: 'Riwayat Kegiatan',
-          link: '/users/dashboard',
+          link: '/users/riwayat-kegiatan',
         },
         {
           id: 2,
@@ -162,7 +162,7 @@ const getCustomsOptions = ():ListItemProps[] => {
       subheader: '',
       title: 'Ajukan Layanan',
       icon: <Inventory2OutlinedIcon sx={{ color: '#9ca3af' }} fontSize='small' />,
-      link: '#',
+      link: '',
       divider: <Divider light className='border-gray-600 mx-5 mb-4' />,
       subItem: [
         {
@@ -373,7 +373,7 @@ export default function DashboardUser(props: any) {
           <Divider className='border-gray-700' />
             {listMenu}
         </Drawer>
-        <Box component="main" className='pt-3 min-w-0 xs:px-4 sm:px-7 min-h-screen'>
+        <Box component="main" className='pt-3 min-w-0 xs:px-4 sm:px-7 min-h-screen w-screen'>
           <DrawerHeader />
           {children}
           <FooterDashboard />

@@ -174,6 +174,10 @@ export default function UpdateItems() {
                 <li>- Add Agenda Terkini&apos;s section to Dashboard User</li>
                 <li>- Update Updates Log content</li>
             </TimelineUpdates> 
+            <TimelineUpdates date='25 Feb, 2023' version='v1.5.0'>
+                <li>- Add user&apos;s Riwayat Kegiatan Page</li>
+                <li>- Update Updates Log content</li>
+            </TimelineUpdates> 
         </Stack>
     </>
   )
