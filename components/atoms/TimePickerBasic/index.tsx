@@ -22,7 +22,7 @@ export default function TimePickerBasic(props: TTimePickerBasicProps) {
   return (
     <>
         <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <TimePicker label={label} inputFormat='HH:mm' value={value} onChange={handleChange} renderInput={(params) => <TextField className='mb-6' fullWidth variant='outlined' size='small' inputProps={{style: {fontSize: 14}}} sx={{'& .MuiOutlinedInput-root': { '&:hover fieldset': { borderColor: '#0ea5e9',}}}} {...params} />} />
+            <TimePicker label={label} inputFormat='HH:mm' value={value} onChange={handleChange} InputProps={{ style: {fontSize: 14}}} renderInput={(params) => <TextField className='mb-6' fullWidth variant='outlined' size='small' inputProps={{style: {fontSize: 14}}} sx={{'& .MuiOutlinedInput-root': { '&:hover fieldset': { borderColor: '#0ea5e9',}}}} {...params} />} />
         </LocalizationProvider>
     </>
   )

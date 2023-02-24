@@ -111,8 +111,8 @@ export default function TableData() {
                             )
                         })}
                         <Stack direction='row' justifyContent='flex-end' spacing={1} marginBottom={1}>
-                            <Button variant='outlined' color='error' size='small' className='rounded-md' startIcon={<DeleteIcon fontSize='small' className='-mr-2' />}>Hapus</Button>
-                            <Button variant='contained' color='success' size='small' className='rounded-md' disableElevation startIcon={<SaveIcon fontSize='small' className='-mr-2' />}>Simpan</Button>
+                            <Button variant='outlined' color='error' size='small' className='rounded-md capitalize' startIcon={<DeleteIcon fontSize='small' className='-mr-2' />}>Hapus</Button>
+                            <Button variant='contained' color='success' size='small' className='rounded-md capitalize' disableElevation startIcon={<SaveIcon fontSize='small' className='-mr-2' />}>Simpan</Button>
                         </Stack>
                     </Box>
                 </Box>

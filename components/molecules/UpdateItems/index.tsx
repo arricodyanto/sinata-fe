@@ -167,6 +167,7 @@ export default function UpdateItems() {
             </TimelineUpdates> 
             <TimelineUpdates date='23 Feb, 2023' version='v1.4.5'>
                 <li>- Add responsive editable form to modal box</li>
+                <li>- Fix start state value of highlight days of calendar events (beranda page)</li>
                 <li>- Update Updates Log content</li>
             </TimelineUpdates> 
         </Stack>
