@@ -69,7 +69,7 @@ export default function Home() {
                 {/* <EventCarousel /> */}
                 <Box>
                   <Typography variant='h5' className='font-bold mb-2' color='primary'>Agenda Terkini</Typography>
-                  <Box className='justify-center flex'>
+                  <Box className='justify-center flex max-w-[40rem]'>
                     <DaisyCarousel />
                   </Box>
                   <Box className='flex justify-center mt-6 mb-10'>

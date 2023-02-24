@@ -170,6 +170,10 @@ export default function UpdateItems() {
                 <li>- Fix start state value of highlight days of calendar events (beranda page)</li>
                 <li>- Update Updates Log content</li>
             </TimelineUpdates> 
+            <TimelineUpdates date='24 Feb, 2023' version='v1.4.6'>
+                <li>- Add Agenda Terkini&apos;s section to Dashboard User</li>
+                <li>- Update Updates Log content</li>
+            </TimelineUpdates> 
         </Stack>
     </>
   )

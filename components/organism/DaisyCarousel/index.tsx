@@ -7,7 +7,7 @@ import { Carousel } from 'react-daisyui'
 export default function DaisyCarousel() {
   return (
     <>
-        <Carousel display='sequential' className='py-2 max-w-[40rem]'>
+        <Carousel display='sequential' className='py-2'>
             { event.map((item) =>  {
                  return (
                     <>
