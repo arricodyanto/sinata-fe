@@ -80,14 +80,14 @@ export default function TableKegiatan(props: TRiwayatAjuanProps) {
                 </TableBody>
             </Table>
         </TableContainer>
-        {/* <TablePagination
+        <TablePagination
             component="div"
             count={count}
             page={page}
             onPageChange={handleChangePage}
             rowsPerPage={rowsPerPage}
             onRowsPerPageChange={handleChangeRowsPerPage}
-        /> */}
+        />
         <Modal open={open} onClose={handleClose}>
             <Fade in={open}>
                 <Box className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white py-4 px-6 rounded-md xs:w-[calc(100%-40px)] md:w-[600px]'>
