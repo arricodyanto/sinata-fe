@@ -9,7 +9,8 @@ import PendingOutlinedIcon from '@mui/icons-material/PendingOutlined';
 import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
 import BasicDonutChart from '../../components/atoms/BasicDonutChart';
 import DaisyCarousel from '../../components/organism/DaisyCarousel'
-import TableRiwayat from '../../components/atoms/TableRiwayat'
+import TableRiwayat from '../../components/molecules/TableRiwayat'
+import rows from '../../json/riwayatAjuan.json'
 
 export default function Dashboard() {
   const dark = '#1f2937'
@@ -80,7 +81,7 @@ export default function Dashboard() {
             <Grid item xs={12} md={8}>
               <Paper className='shadow-md px-6 py-4'>
                 <Typography variant='subtitle1' color='text.primary' className='font-bold mb-4 leading-5'>Riwayat Layanan</Typography>
-                <TableRiwayat />
+                <TableRiwayat rows={rows} />
               </Paper>
             </Grid>
           </Grid>
