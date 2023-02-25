@@ -178,6 +178,11 @@ export default function UpdateItems() {
                 <li>- Add user&apos;s Riwayat Kegiatan Page</li>
                 <li>- Update Updates Log content</li>
             </TimelineUpdates> 
+            <TimelineUpdates date='25 Feb, 2023' version='v1.5.1'>
+                <li>- Add user&apos; Riwayat Kegiatan Table</li>
+                <li>- Add Riwayat Kegiatan Pagination Table</li>
+                <li>- Update Updates Log content</li>
+            </TimelineUpdates> 
         </Stack>
     </>
   )

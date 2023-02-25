@@ -1,32 +1,27 @@
 import React from 'react'
-import { Box, Button, Chip, Fade, IconButton, InputAdornment, Modal, Paper, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
+import { Box, Button, Chip, Fade, IconButton, InputAdornment, Modal, Paper, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, Typography } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
-import TextfieldBasic from '../TextfieldBasic';
-import DatePickerBasic from '../DatePickerBasic';
-import TimePickerBasic from '../TimePickerBasic';
+import TextfieldBasic from '../../atoms/TextfieldBasic';
+import DatePickerBasic from '../../atoms/DatePickerBasic';
+import TimePickerBasic from '../../atoms/TimePickerBasic';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SaveIcon from '@mui/icons-material/Save';
 
-function createData(
-    jenisLayanan: string,
-    judulKegiatan: string,
-    tanggal: string,
-    waktu: string,
-    tempat: string,
-    status: string,
-) {
-    return { jenisLayanan, judulKegiatan, tanggal, waktu, tempat, status };
+type TRiwayatAjuanProps = {
+    rows: {
+        jenisLayanan: string
+        judulKegiatan: string
+        tanggal: string
+        waktu: string
+        tempat: string
+        status: string
+    }[]
 }
 
-const rows = [
-    createData('Layanan Peliputan', 'Lomba Gobak Sodor Dharmawanita UNS', '07/03/2023', '08.00', 'Selasar Auditorium UNS', 'Pending'),
-    createData('Layanan Penayangan Konten di Videotron', 'World Dance Event 46 - PUI Javanologi UNS', '10/03/2023', '08.00', 'Halaman Kantor Pusat UNS', 'On Progress'),
-    createData('Layanan Live Streaming', 'Webinar Strategi Pencegahan Klaster Covid PTM Terbatas', '17/03/2023', '13.00', 'Ruang Sidang II Kantor Pusat UNS', 'Completed'),
-]
-
-export default function TableRiwayat() {
+export default function TableRiwayat(props: TRiwayatAjuanProps) {
+    const { rows }= props
     const [open, setOpen] = React.useState(false);
     const [currIndex, setCurrIndex] = React.useState(0)
     const handleOpen = (index:number) => {
@@ -34,8 +29,20 @@ export default function TableRiwayat() {
         setCurrIndex(index)
         // console.log(index)
     }
-    
-    const handleClose = () => setOpen(false);
+    const handleClose = () => setOpen(false)
+
+     // Table Pagination
+     const [page, setPage] = React.useState(0)
+     const [rowsPerPage, setRowsPerPage] = React.useState(5)
+     const handleChangePage = ( event: React.MouseEvent<HTMLButtonElement> | null, newPage: number, ) => {
+         setPage(newPage)
+     }
+     
+     const handleChangeRowsPerPage = ( event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, ) => {
+         setRowsPerPage(parseInt(event.target.value, 10))
+         setPage(0)
+     }
+     const count = rows.length
   return (
     <>
         <TableContainer component={Paper} className='shadow-none overflow-x-auto'>
@@ -76,6 +83,15 @@ export default function TableRiwayat() {
                 </TableBody>
             </Table>
         </TableContainer>
+        <TablePagination
+            component="div"
+            rowsPerPageOptions={[5, 10, 25]}
+            count={count}
+            page={page}
+            onPageChange={handleChangePage}
+            rowsPerPage={rowsPerPage}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+        />
         <Modal open={open} onClose={handleClose}>
             <Fade in={open}>
                 <Box className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white py-4 px-6 rounded-md xs:w-[calc(100%-40px)] md:w-[600px]'>
