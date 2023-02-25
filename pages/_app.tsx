@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material';
+import { Analytics } from '@vercel/analytics/react';
 
 let theme = createTheme({
   breakpoints: {
@@ -39,6 +40,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />
+        <Analytics />
       </ThemeProvider>
     </>
   )
