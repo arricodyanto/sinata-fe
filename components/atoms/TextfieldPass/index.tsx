@@ -22,7 +22,7 @@ export default function TextfieldPass(props: TTextfieldProps & Partial<TextField
   return (
     <>
         
-        <TextField fullWidth id='password' label='Kata Sandi' type={showPassword ? 'text' : 'password'} InputProps={{ startAdornment: (
+        <TextField fullWidth {...textfieldProps} label='Kata Sandi' type={showPassword ? 'text' : 'password'} InputProps={{ startAdornment: (
             <InputAdornment position='start'>{icon}</InputAdornment>
             ), endAdornment: (
             <InputAdornment position='end'>

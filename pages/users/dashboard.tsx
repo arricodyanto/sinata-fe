@@ -13,6 +13,14 @@ import TableRiwayat from '../../components/molecules/TableRiwayat'
 import rows from '../../json/riwayatAjuan.json'
 
 export default function Dashboard() {
+  const [loginInfo, setLoginInfo] = React.useState('')
+  React.useEffect(() => {
+    const login = localStorage.getItem("loginInfo")
+    if (login) {
+      setLoginInfo(JSON.parse(login))
+    }
+  }, [])
+  console.log(loginInfo)
   const dark = '#1f2937'
   const primary = '#0ea5e9'
   const pending = '#f59e0b'
