@@ -180,8 +180,13 @@ export default function UpdateItems() {
             </TimelineUpdates> 
             <TimelineUpdates date='25 Feb, 2023' version='v1.5.1'>
                 <li>- Add user&apos; Riwayat Kegiatan Table</li>
-                <li>- Add Riwayat Kegiatan&apos; Pagination Table</li>
-                <li>- Activate Audience&apos; Analytics to vercel with installing some package</li>
+                <li>- Add Riwayat Kegiatan&apos;s Pagination Table</li>
+                <li>- Activate Audiences&apos; Analytics to vercel with installing some package</li>
+                <li>- Update Updates Log content</li>
+            </TimelineUpdates> 
+            <TimelineUpdates date='27 Feb, 2023' version='v1.5.2'>
+                <li>- Add login validation to Sign In page</li>
+                <li>- Save Login Info to local storage</li>
                 <li>- Update Updates Log content</li>
             </TimelineUpdates> 
         </Stack>
